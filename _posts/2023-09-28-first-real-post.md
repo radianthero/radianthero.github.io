@@ -1,5 +1,5 @@
 ---
-title: Hello World
+title: First real post!
 date: 2023-09-28 12:00:00 -500
 catagories: [blog]
 tags: [random]
