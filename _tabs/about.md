@@ -17,7 +17,7 @@ What are my favorite games? Hard choices.
 
 For video games: Wonder Project J2, Fallout: New Vegas, Smash 64 (not remix), Mario 3. 
 
-For Table tops: Risk Legacy Season 3 (other 2 aren't as fun), Space Hulk, Munchkins Dungeon.
+For Table tops: Risk Legacy Season 3 (season 2 is okay, season 1 blows), Space Hulk, Munchkins Dungeon and Fire & Stone: Siege of Vienna (it's a very lobsided game but so fun.)
 
 Though maybe not in my favorites, I love Final Fantasy 11 and Old School RuneScape, only real MMOs I've gotten into.
 
@@ -25,8 +25,8 @@ Favorite music: Truth be told, I'm not much of a music listener, but I really en
 
 ## What does Radiant Ink mean?
 
- Well, nothing really. Radiant is a handle I like to use often, but what about Ink? One of the things that made me interested in running a blog was the nostalgia of the early 2000s where artists would commonly have their own website, and one of those was called "India Ink". Not a whole lot more than that
+Well, nothing really. Radiant is a handle I like to use often, but what about Ink? One of the things that made me interested in running a blog was the nostalgia of the early 2000s where artists would commonly have their own website, and one of those was called "India Ink". Not a whole lot more than that
 
- ## What are the goals for the blog?
+## What are the goals for the blog?
 
- To get me back into doing more, or a place to post random thoughts that I don't know where else to post it to. For now my art will be photographed (not ideal) but when I feel more invested in the art, I'll consider getting a scanner/tablet.
+To get me back into doing more, or a place to post random thoughts that I don't know where else to post it to. For now my art will be photographed (not ideal) but when I feel more invested in the art, I'll consider getting a scanner.
