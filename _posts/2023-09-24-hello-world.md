@@ -11,4 +11,4 @@ How are you doing?
 
 # Photo of the day
 
-![](/assets/pictures/jigen.png)
+![](/assets/images/jigen.png)
