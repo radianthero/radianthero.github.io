@@ -15,7 +15,7 @@ Some dislikes are loud people (tell them to be quiet!), smokers (especially in a
 
 What are my favorite games? Hard choices.
 
-For video games: Wonder Project J2, Fallout: New Vegas, Smash 64 (not remix), Mario 3. 
+For video games: Wonder Project J2, Fallout: New Vegas, Smash 64 (not Remix), Mario 3. 
 
 For Table tops: Risk Legacy Season 3 (season 2 is okay, season 1 blows), Space Hulk, Munchkins Dungeon and Fire & Stone: Siege of Vienna (it's a very lobsided game but so fun.)
 
