@@ -16,7 +16,7 @@ But I bought an art tablet today! Yay! But why buy it? Well my art supplies are 
 Another reason why is my process is kinda slow. I would first draw on paper, take a pic, then draw that on the computer. Why start on paper? I only had a mouse and while I have done a few art stuff with only the mouse as seen bellow
 
 ![Picture of random character I thought of](/assets/images/pretz.png)
-This character is named Pretz, named in 2018. Not much to say.
+This character is named Pretz, made in 2018. Not much to say.
 
 ![Banner made for oceanfront 4](/assets/images/oceanfront%204.png)
 
