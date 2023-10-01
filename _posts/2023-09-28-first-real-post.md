@@ -30,6 +30,6 @@ Overall, nothing noteworthy but we all gotta start somewhere.
 
 For those curious, I got the Wacom Intuos Small Graphics Drawing Tablet. Medium costs too much and a good friend of mine recommended me this, she uses it personally and makes amazing art. I commissioned her to make this - based on my OSRS character (I don't own Justicar anymore though lol) check her out here https://twitter.com/NsNapk1 
 
-![osrs character with justicar top/bottom with nezzy faceguard, dfs, dhl, prim, torture, quest cape](/assets/images/runescape_guy.png)
+![OSRS character with justicar top/bottom with nezzy faceguard, dfs, dhl, prim, torture, quest cape](/assets/images/runescape_guy.png)
 
 That's all that there is to write about for now. I'll be receiving it tomorrow (9/28) and will be practicing. Next update should be more exciting.
