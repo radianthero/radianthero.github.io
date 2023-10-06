@@ -3,6 +3,7 @@ title: First real drawing with the tablet
 date: 2023-10-1 12:00:00 -500
 catagories: [blog]
 tags: [art]
+{% include welcomments/comments.html website_id = "pNhaGEPCYV4vR3vrmmmgwqMXj" %}
 ---
 
 ## Website changes
