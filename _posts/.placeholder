@@ -1,1 +1,8 @@
 
+---
+title: First real post!
+date: 2023-09-28 12:00:00 -500
+catagories: [blog]
+tags: [random]
+{% include welcomments/comments.html website_id = "pNhaGEPCYV4vR3vrmmmgwqMXj" %}
+---
