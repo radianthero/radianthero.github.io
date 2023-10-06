@@ -1,8 +1,15 @@
+---
+title: First real post!
+date: 2023-10-6 12:00:00 -500
+catagories: [blog]
+tags: [random]
+---
+
 ## Good morning! What time is it?   
 
 Its @812.50 at this moment... I should add an internet time clock here lol.
 
-It's been a while? Whats up? Tell me, hows your day been? Wait. You can't talk? 
+It's been a while? Whats up? Tell me, hows your day been? Wait. You can't talk? One moment... 
 
 ## Now you can!
 
