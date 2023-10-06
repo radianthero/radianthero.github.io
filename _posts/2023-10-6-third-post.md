@@ -1,5 +1,5 @@
 ---
-title: First real post!
+title: Slight update
 date: 2023-10-6 12:00:00 -500
 catagories: [blog]
 tags: [random]
