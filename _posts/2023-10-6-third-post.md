@@ -19,7 +19,7 @@ You all have github don't you? (lol)
 
 ## Aren't you supposed to post something? What happened to that?
 
-It's coming don't worry. As we speak, at @816.70, I have already finished the art, now it's mostly just cleanup. Should be posted by tomorrow, which is good in terms of being on time as I gave myself a week to start/finish, so doing it in 5/6 days is chill. No color on this one, but the next one will, though it'll prob be a lot simpler of a post so I can focus more on the coloring aspect. 
+It's coming don't worry. As we speak, at @816.70, I have already finished the art, now it's mostly just cleanup. Should be posted by tomorrow, which is good in terms of being on time as I gave myself a week to start/finish, so doing it in 5/6 days is chill. No color on this one, but the next one will, though it'll prob be a lot simpler of a picture so I can focus more on the coloring aspect. 
 
 One step at a time! 
 
