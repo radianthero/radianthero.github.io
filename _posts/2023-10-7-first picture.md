@@ -7,7 +7,7 @@ tags: [art]
 
 ## Get ready!
 
-Good morning! Its 705 swatch beats! After spending an hour on the art to clean it up, I'll be releasing it today! Its a bit scary releasing art so publicly, but overall I think it turned out well enough. If I had more time, I'd keep working on it, but I"m trying to train myself to get artwork done by the week. 
+Good morning! Its @705 swatch beats! After spending an hour on the art to clean it up, I'll be releasing it today! Its a bit scary releasing art so publicly, but overall I think it turned out well enough. If I had more time, I'd keep working on it, but I"m trying to train myself to get artwork done by the week. 
 
 I don't want to be that student where the teacher goes "put your pencils down, times done" and I'm still writing, going "Yea, its going down, just one more second!"
 
