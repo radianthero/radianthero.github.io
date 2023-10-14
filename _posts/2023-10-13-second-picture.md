@@ -10,6 +10,7 @@ tags: [art]
 Welcome back! Been working to push through to finish this on time. It ended up being more complicated than I thought it was going to be at first. Coloring sure is hard. Actually, I broke the tip of the pen from how hard I was pressing, whoops! Thankfully the pen comes with more, if I start to damage it more but I'll be more careful next time! Here's how it looks lol. 
 
 ![broken pen nib](/assets/images/pen%20down.png)
+
 ![broken pen nib](/assets/images/pen_down2.png)
 
 I'll mess with pressure sensitivity within Krita to hopefully not repeat this again! But enough about me, what about the picture? I finished this afternoon (10/14) but had to go into work so I couldn't actually finish making this entry. 
