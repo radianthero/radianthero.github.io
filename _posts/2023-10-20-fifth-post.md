@@ -1,6 +1,6 @@
 ---
 title: Wrist feeling better 
-date: 2023-10-13 12:00:00 -500
+date: 2023-10-20 12:00:00 -500
 catagories: [random]
 tags: [random]
 ---
