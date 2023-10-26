@@ -1,4 +1,4 @@
---
+---
 title: New emotes 
 date: 2023-10-25 12:00:00 -500
 catagories: [art]
