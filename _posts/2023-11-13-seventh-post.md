@@ -1,6 +1,6 @@
 ---
 title: Its been a while, oops. 
-date: 2023-10-25 12:00:00 -500
+date: 2023-11-33 12:00:00 -500
 catagories: [random]
 tags: [random]
 ---
