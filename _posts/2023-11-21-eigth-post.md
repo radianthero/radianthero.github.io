@@ -1,6 +1,6 @@
 ---
-title: Its been a while, oops. 
-date: 2023-11-23 10:00:00 -500
+title: I'm back from BATB
+date: 2023-11-21 10:00:00 -500
 catagories: [vlog]
 tags: [vlog]
 ---
