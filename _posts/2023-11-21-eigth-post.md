@@ -9,7 +9,7 @@ tags: [vlog]
 
 So I came back on Monday from Arizona, and I had a blast. But don't my word for it. Here's a link to the vlog I made that I posted on YouTube.
 
-<a>https://www.youtube.com/watch?v=xCbqL9lxnS4
+<https://www.youtube.com/watch?v=xCbqL9lxnS4>
 
 ## What now? 
 
