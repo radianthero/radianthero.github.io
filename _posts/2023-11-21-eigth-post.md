@@ -1,6 +1,6 @@
 ---
 title: Its been a while, oops. 
-date: 2023-11-23 12:00:00 -500
+date: 2023-11-23 10:00:00 -500
 catagories: [vlog]
 tags: [vlog]
 ---
