@@ -15,7 +15,7 @@ So I came back on Monday from Arizona, and I had a blast. But don't my word for 
 
 Arhkma has already given me news on his next tourney, which I will be drawing for. There's a plan of one or two more picture before then. Outside of that I also want to start working on my translation project, if you wanna watch the progress, here's the link. 
 
-https://github.com/DOL-Translations/lupin-III
+<https://github.com/DOL-Translations/lupin-III>
 
 My priority will be the translation project, I want to finish at least 2 chapters before December - I'm already over halfway through chapter 1 good ending and each chapter gets quicker as its not as long. 
 
