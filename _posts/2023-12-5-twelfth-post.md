@@ -17,4 +17,4 @@ Sneak peak for those interested in my friend's series, along with showing off my
 
 You can find the show at my friends channel here: <https://www.youtube.com/@arhkma_muddykipz> it should be up by the end of the week.
 
-That's all from me today. 
+That's all from me today!
