@@ -18,3 +18,8 @@ Its coming don't worry. Overall I think it turned out pretty well, and I'm fairl
 ![Poster for Oceanfront 6](/assets/images/of6.png)
 
 I write this as I listen to some Ogre Battle 64 ost, the official cd release has the uncompressed versions of the music for all the tracks, and it sounds quite lovely, even if I think the game has issues overall. I'll be taking the rest of the year off, and will resume art next year. Until next time!
+
+
+## Update
+
+Having issues with Jekyll pushing this to live, trying to get it fixed now, this was originally made on 12/25.
