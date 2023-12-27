@@ -13,7 +13,7 @@ As I said, work has been completely pwning me, I finished the background in like
 
 ## Yea yea, what about the art?
 
-Its coming don't worry. Overall I think it turned out well, and I'm fairly happy with it. I think Link's legs could have been more spread out but I quite liked the outcome as is. Take a look
+Its coming don't worry. Overall I think it turned out pretty well, and I'm fairly happy with it. I think Link's legs could have been more spread out but I quite liked the outcome as is. Take a look
 
 ![Poster for Oceanfront 6](/assets/images/of6.png)
 
