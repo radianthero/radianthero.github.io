@@ -1,6 +1,6 @@
 ---
 title: Finished the art
-date: 2023-12-23 10:00:00 -500
+date: 2023-12-26 10:00:00 -500
 catagories: [art]
 tags: [art]
 ---
