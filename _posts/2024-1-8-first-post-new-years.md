@@ -19,4 +19,8 @@ Here's an example of how it looks.
 
 Pretty cool huh? Hoping to get more translators soon, If you wanna see the overall progress, here's the link for it <https://github.com/DOL-Translations/lupin-III>
 
+I did make this for my pfp for Decenmber. 
+
+![Link with christmas hat](/assets/images/link,%20christmas.png)
+
 Since I'm waiting for more translations to be done, I'll be making an art or two soon, see you then.
