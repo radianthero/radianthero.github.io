@@ -1,5 +1,5 @@
 ---
-title: First picture
+title: Translation project
 date: 2024-1-8 12:00:00 -500
 catagories: [random]
 tags: [random]
