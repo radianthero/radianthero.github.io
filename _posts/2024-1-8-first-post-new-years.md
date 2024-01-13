@@ -5,7 +5,7 @@ catagories: [random]
 tags: [random]
 ---
 
-## I haven't showered since new years - wait what?
+## I haven't showered since last year - wait what?
 
 I've been wanting to post for a few days, but I've been mad busy - though not drawing yet. I've been wanting to make something for a while though. So what have I been working on? A while ago I posted about working on a translation project, and I've finally got around to making big progress on it. I got through chapter 1-5 in like a week, but currently need more translators to finish the rest. We also have some artists working on the project to make new textures in English. 
 
@@ -19,7 +19,7 @@ Here's an example of how it looks.
 
 Pretty cool huh? Hoping to get more translators soon, If you wanna see the overall progress, here's the link for it <https://github.com/DOL-Translations/lupin-III>
 
-I did make this for my pfp for Decenmber. 
+I did make this for my pfp for December. 
 
 ![Link with christmas hat](/assets/images/link,%20christmas.png)
 
