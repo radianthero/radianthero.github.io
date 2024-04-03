@@ -14,7 +14,7 @@ I also met a nice pal from PSO named bflo who I should be making an art trade so
 Of course, volume warning
 
 <audio controls>
-    <source src="/home/josh/Documents/GitHub/radianthero.github.io/assets/images/The Epic Remains.flac">
+    <source src="/home/josh/Documents/GitHub/radianthero.github.io/audio/papaya.mp3">
 </audio>
 
 It's fairly easy to include, and all my song files are tagged, so it's easy to figure out what its from.
