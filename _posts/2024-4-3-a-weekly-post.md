@@ -14,7 +14,7 @@ I also met a nice pal from PSO named bflo who I should be making an art trade so
 Of course, volume warning
 
 <audio controls>
-    <source src="/home/josh/Documents/GitHub/radianthero.github.io/audio/papaya.mp3">
+    <source src="/audio/The Epic Remains.flac">
 </audio>
 
 It's fairly easy to include, and all my song files are tagged, so it's easy to figure out what its from.
@@ -34,5 +34,5 @@ and I made another sketch, I didn't really like how it turned out, which is what
 However, this means I'm legally obligated to post another song from the game, because it's quite good. 
 
 <audio controls>
-    <source src="/home/josh/Documents/GitHub/radianthero.github.io/assets/images/Evil Queen.flac">
+    <source src="/audio/EvilQueen.flac">
 </audio>
