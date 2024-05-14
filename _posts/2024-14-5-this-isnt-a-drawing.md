@@ -1,6 +1,6 @@
 ---
 title: What is this? 
-date: 2024-14-5 12:00:00 -500
+date: 2024-5-14 12:00:00 -500
 catagories: [art]
 tags: [art]
 ---
@@ -48,4 +48,4 @@ A long while ago I was big into 40k tabletop, I played the Blood Angels faction.
 
 ## What about the art from bflo?
 
-I believe he's done pretty soon with a draft of the shared image, but also sometimes he falls down holes, and I have to go check on him. S
+I believe he's done pretty soon with a draft of the shared image, but also sometimes he falls down holes, and I have to go check on him.
