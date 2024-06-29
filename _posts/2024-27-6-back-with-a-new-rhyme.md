@@ -1,5 +1,5 @@
 ---
-title: What is this? 
+title: The Return 
 date: 2024-6-27 12:00:00 -500
 catagories: [art]
 tags: [art]
