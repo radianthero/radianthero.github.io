@@ -2,7 +2,7 @@
 title: Trying something new. 
 date: 2024-7-9 12:00:00 -500
 catagories: [art]
-tags: [art, tutorial]
+tags: [tutorial]
 ---
 
 <audio controls>
