@@ -1,6 +1,6 @@
 ---
 title: Trying something new. 
-date: 2024-7-24 12:00:00 -500
+date: 2024-7-9 12:00:00 -500
 catagories: [art]
 tags: [art, tutorial]
 ---
