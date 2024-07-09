@@ -77,6 +77,8 @@ Now lets start with drawing, I already have an idea for what I want, and if we f
 
 For joints sizes I try for 1/4 size of a head for both width and height. The girl on their tippy toes, so the number of lines isn't the 7 I usually do, and we can say she's a bit taller than normal. Some people say 6 heads is good for girl heights, and 7 for guys - but as I said all body types aren't the same so if you can be creative. 
 
+A simple way to measure feet is to use two ball joints, one for the joint itself, and the other for the rest of the feet. I forgot to show this off.
+
 You'll also notice the head is below the line, thats on purpose for the pose I want to do. Each arm is will be one head size (length), so even though its bent, it's the correct size.
 
 Even if what you've done isn't very good, what you want to focus on is getting correct porpition sizes over anything else. Everything else will fall in place. 
