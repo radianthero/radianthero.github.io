@@ -2,7 +2,7 @@
 title: Trying something new. 
 date: 2024-7-9 12:00:00 -500
 catagories: [art]
-tags: [tutorial]
+tags: [art, tutorial]
 ---
 
 <audio controls>
@@ -41,9 +41,9 @@ Here's some pictures from different sources to help show off what I mean.
 
 ![Head size chart 1](/assets/images/body1.png)
 
-![Head size chart 2](/assets/images/body2.png)
+![Head size chart 2](/assets/images/body2.jpg)
 
-![Head size chart 1](/assets/images/body3.png)
+![Head size chart 3](/assets/images/body3.png)
 
 ## So now we have scale, but how do we actually draw? 
 
