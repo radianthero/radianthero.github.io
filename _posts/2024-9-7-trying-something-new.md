@@ -9,19 +9,19 @@ tags: [art, tutorial]
     <source src="/audio/Technology.flac">
 </audio>
 
-## I did a stream for a bit for practice, but decided to instead make soemthing more permanent. 
+## I did a stream for a bit for practice, but decided to instead make something more permanent. 
 
-This will be part 1 of the tutorial I would like to do.  Orignally I was just gonna take screenshots of the stream, but figured it'd be better to just start again. 
+This will be part 1 of the tutorial I would like to do.  Originally I was just gonna take screenshots of the stream, but figured it'd be better to just start again. 
 
 The things you'll need:
 
-A pencil with an eraser, a pen, paper (perferably not lined). Ideally a sketch book, printer paper will also work. A ruler, a compass (or anything small and can make perfect circles, bottle caps, cups, ) 
+A pencil with an eraser, a pen, paper (preferably not lined). Ideally a sketch book, printer paper will also work. A ruler, a compass (or anything small and can make perfect circles, bottle caps, cups, ) 
 
 and lastly a good attitude for learning, since we're all bad when we start.
 
 ## So you have everything gathered, now what?
 
-First we have to figure out how to hold the pencil before we can even start! You can hold it 2 ways, as close to the base as you can, and closse to touching the earaser. How you'll hold it will depend on what's currently being drawn. 
+First we have to figure out how to hold the pencil before we can even start! You can hold it 2 ways, as close to the base as you can, and closes to touching the eraser. How you'll hold it will depend on what's currently being drawn. 
 
 Another thing to note is that you should NEVER draw dark, you have to draw light so its easy to erase and draw again. Once things look nice, then you're gonna use a pen. 
 
@@ -29,11 +29,11 @@ I repeat, under no circumstances, do you draw dark with the pencil.
 
 ## Now we can start drawing (real) 
 
-We're gonna learn to draw a person, but we don't "just" draw. We have to learn what actually makes a human. No humans are the same, and when you're dawing something more cartoonic then teh scale won't be the same. Even if your plan to draw more of an anime style, learning to daw correct porptions is important 
+We're gonna learn to draw a person, but we don't "just" draw. We have to learn what actually makes a human. No humans are the same, and when you're drawing something more cartoonic then the scale won't be the same. Even if your plan to draw more of an anime style, learning to draw correct proportions is important 
 
 ## Learning to scale
 
-In drawing, a body is meassured in "heads", being the actual head at the top of the body. Different people will tell you different sizes, but I usually say 7 heads is a good size, but some people will say 7.5, others 8. You'll also want to make the body to be 2 head size wide, if it's an even wider body, then 2.5 isn't too bad.
+In drawing, a body is measured in "heads", being the actual head at the top of the body. Different people will tell you different sizes, but I usually say 7 heads is a good size, but some people will say 7.5, others 8. You'll also want to make the body to be 2 head size wide, if it's an even wider body, then 2.5 isn't too bad.
 
 As for how big you want the head to be, you want it to be a proper scale for your paper/how big you want it to be. (This is why we have a ruler) So if your paper is 8 inches tall, then 1 inch for a head size, and you'll have a 7 inch human! This will be a bit tricky if you pose for more than straight on. 
 
@@ -57,7 +57,7 @@ For our example, the head will be a circle, arms and legs will be cylinders.
 
 So taking all that I said into consideration, here's what I've made to use as my example, if you would like to use what I have drawn to follow the tutorial, you're more than welcome to, but the tutorial should be detailed enough to follow with any pose. 
 
-I do not reccomend drawing a straight on image, instead try drawing at an angle, even if slight, but that's up to you. 
+I do not recommend drawing a straight on image, instead try drawing at an angle, even if slight, but that's up to you. 
 
 So now that everything has been explained, lets start.
 
@@ -79,9 +79,9 @@ For joints sizes I try for 1/4 size of a head for both width and height. The gir
 
 A simple way to measure feet is to use two ball joints, one for the joint itself, and the other for the rest of the feet. I forgot to show this off.
 
-You'll also notice the head is below the line, thats on purpose for the pose I want to do. Each arm is will be one head size (length), so even though its bent, it's the correct size.
+You'll also notice the head is below the line, that is on purpose for the pose I want to do. Each arm is will be one head size (length), so even though its bent, it's the correct size.
 
-Even if what you've done isn't very good, what you want to focus on is getting correct porpition sizes over anything else. Everything else will fall in place. 
+Even if what you've done isn't very good, what you want to focus on is getting correct proportion sizes over anything else. Everything else will fall in place. 
 
 Lastly this is just a rough draft, so don't worry if it's not perfect now. 
 
