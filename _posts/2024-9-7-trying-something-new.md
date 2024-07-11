@@ -1,5 +1,5 @@
 ---
-title: Trying something new. 
+title: Art tutorial 1 
 date: 2024-7-9 12:00:00 -500
 catagories: [art]
 tags: [art, tutorial]
@@ -87,4 +87,4 @@ Lastly this is just a rough draft, so don't worry if it's not perfect now.
 
 ## Practice makes perfect.
 
-Don't just do this once and call it a day, you have to practice, do multiple poses, and focus on getting exact sizes done.
+Don't just do this once and call it a day, you have to practice, do multiple poses, and focus on getting exact sizes done. The size in my picture won't line up with that I have, but the method will still be the same.
