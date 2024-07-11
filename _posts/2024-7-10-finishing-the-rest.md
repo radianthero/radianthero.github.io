@@ -37,9 +37,10 @@ This one will be at a different angle. For general hand sizes, make 2 small ball
 
 ![Starting another hand](/assets/images/hand%20part%206.png)
 
+![Complete](/assets/images/hand%20part%204.png)
+
 ![Adding fingers](/assets/images/hand%20part%205.png)
 
-![Complete](/assets/images/hand%20part%204.png)
 
 ## Now that we have knowledge on how to make hands, lets add some to our art. 
 
