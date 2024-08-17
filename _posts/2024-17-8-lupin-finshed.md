@@ -1,5 +1,5 @@
 ---
-title: Not an art tutorial update, but something else.
+title: Lupin III translation released
 date: 2024-8-17 12:00:00 -500
 catagories: [random]
 tags: [random]
