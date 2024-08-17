@@ -14,7 +14,7 @@ The street situation was weird since many homes were built on the main roads, wh
 I'm very thankful for Arhkma for inviting me, it was the first vacation I've had since Battle at the Border in Az, and it was just so much fun, and words can not describe how thankful I've been for being invited. We got a few recording sessions, finished "River City Girls," and started the second game. It was a very fun beat 'em up, great music, and fun gameplay, even if it was a bit stiff with combos, and exploring felt boring after getting close to the game. Keep an eye out on [Arhkma's YouTube for this release, along with many more to come with us!](https://www.youtube.com/@arhkma_muddykipz)
 
 <audio controls>
-    <source src="/audio/Índio.flac">
+    <source src="/audio/Indio.flac">
 </audio>
 
 ![Sun rise by bed](/assets/images/vacataion%201.jpg)
