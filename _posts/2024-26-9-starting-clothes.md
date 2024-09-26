@@ -1,5 +1,5 @@
 ---
-title: Learning to make clothes
+title: Art tutorial 4
 date: 2024-9-26 12:00:00 -500
 catagories: [art]
 tags: [art, tutorial]
