@@ -21,6 +21,6 @@ Hair is typically two eyes high above the eyes, with the eyelashes one above the
 
 A good way to clean up art is to actually redraw it, this will make things looks more consistant, isntead of trying to cut half of it, and drawing over it.
 
-After a few minutes, here we are! I quite like how it turned out. Just remember, practice makes perfect~
+After a few minutes, here we are! I quite like how it turned out. Just remember, practice makes perfect~!
 
 ![Finished art](/assets/images/finshed%20tutorial.png)
