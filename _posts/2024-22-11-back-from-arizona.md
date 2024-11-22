@@ -90,4 +90,4 @@ I thought about going to the upstairs venue to see the club, and I was actually 
 
 The Waymo was super cool; it was a somewhat slow but very comfy car ride, safer than some Uber drivers I've had in the past. Despite it being a little scary the first few minutes, I ended up just forgetting I was in a self-driving car and just vibed out. 
 
-That's all from me today. expect a part 2 for the blog.
+That's all from me today. expect a part 2 to art tutorials, as I enjoyed making the first one a lot.
