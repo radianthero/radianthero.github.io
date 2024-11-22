@@ -55,6 +55,10 @@ This was meant to be a gift, but I decided to pivot into the fishing picture as 
 
 I honestly forgot about this, but I was near finishing the sketching part; I mostly had to work on fixing up portions... I think this was like 4 months ago, lol.
 
+![Gif for vlog video](/assets/images/disc%20gif.gif)
+
+I made this for the vlog, I cropped it later, but didn't save that one to the linux os, but but here's how it was done. I actually made it with wick editor, which was the art program I used oringally before I got my tablet.
+
 ## Extra vlog tidbits.
 
 <audio controls>
