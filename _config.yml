@@ -23,7 +23,7 @@ title: Radiant Ink # the main title
 tagline: A blog for art and random stuff # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
-  A blog for art and random stuff
+  A blog for art and random stuff.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: "https://radianthero.github.io"
