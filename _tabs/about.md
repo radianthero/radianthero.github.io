@@ -41,3 +41,6 @@ When I drew on the mouse, I used the Wick Editor, which is a great tool for anim
 
 Now I use Krita. I've tried The Fire Llama but didn't like the UI, which works. It has a lot of great brush options, and the coloring capabilities are great, too. It works out of the box for Linux and Wacom drivers. 
 
+## Do you have any other social media?
+
+Not really; I don't really like social media. Usually, I don't even use it, and in the past, I've made an account, then just deleted it about 2 weeks later. I just don't get it lol. It's why I made a blog; it's a format I enjoy more.
