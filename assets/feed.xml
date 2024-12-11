@@ -1,5 +1,6 @@
 ---
 layout: compress
+<?xml-stylesheet type="text/xsl" href="feed.xsl"?>
 permalink: /feed.xml
 # Atom Feed, reference: https://validator.w3.org/feed/docs/atom.html
 ---
@@ -21,6 +22,18 @@ permalink: /feed.xml
   <rights> © {{ 'now' | date: '%Y' }} {{ site.social.name }} </rights>
   <icon>{{ site.baseurl }}/assets/img/favicons/favicon.ico</icon>
   <logo>{{ site.baseurl }}/assets/img/favicons/favicon-96x96.png</logo>
+  <entry>
+    <title>{{ post.title | escape }}</title>
+    <link href="{{ post.url | absolute_url }}"/>
+    <id>{{ post.id | xml_escape }}</id>
+    <updated>{{ post.date | date_to_xmlschema }}</updated>
+    <summary type="html">{{ post.excerpt | xml_escape }}</summary>
+    <content type="html">
+      <![CDATA[
+      {{ post.content | strip_newlines }}
+      ]]>
+    </content>
+  </entry>
 
 {% for post in site.posts limit: 5 %}
   {% assign post_absolute_url = post.url | absolute_url %}

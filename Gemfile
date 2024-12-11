@@ -2,6 +2,8 @@
 
 source "https://rubygems.org"
 
+gem "jekyll-feed"
+
 gemspec
 
 gem "html-proofer", "~> 5.0", group: :test
