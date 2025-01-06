@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="New banner for website">
+    <link rel="icon" href="../favicons/favicon.ico" sizes="32x32" type="image/x-icon">
+    <link rel="icon" href="../favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="../favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="../favicons/mstile-150x150.png" sizes="150x150" type="image/png">
+    <link rel="icon" href="../favicons/android-chrome-192x192.png" sizes="192x192" type="image/png">
+    <link rel="icon" href="../favicons/android-chrome-512x512.png" sizes="512x512" type="image/png">
+    <link rel="icon" href="../favicons/apple-touch-icon.png" sizes="180x180" type="image/png">
+    <link rel="mask-icon" href="../favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="browserconfig" href="../favicons/browserconfig.xml" />
+    <link rel="manifest" href="../favicons/site.webmanifest">
+    <title>New Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #4B1C26; /* Dark autumn red */
+            color: #f0f0f0; /* Light off-white for text contrast */
+            overflow: auto;
+        }
+
+        /* Main container */
+        .container {
+            display: flex;
+            max-width: 1440px;
+            margin: 0 auto;
+            background-color: #4B1C26; /* Dark autumn red for container */
+            border: 1px solid #444;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            flex-wrap: wrap;
+        }
+
+        /* Content styles */
+        .content {
+            flex: 1;
+            padding: 40px 20px;
+            color: #f0f0f0; /* Light text color */
+            background-color: #4B1C26; /* Dark autumn red for content */
+        }
+
+        h1, h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #7F1C1C; /* Dark burnt red for header */
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #B76B3F; /* Dark reddish-brown for subheader */
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: #B27B3B; /* Subdued golden yellow for links */
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Sidebar styles */
+        .sidebar {
+            width: 25%;
+            background-color: #5C2F2F; /* Dark brick red for sidebar */
+            color: #f0f0f0; /* Light text for contrast */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 20px;
+            font-size: 22px;
+            height: 100vh;
+            position: sticky;
+            top: 0;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* List item styles */
+        .sidebar ul li {
+            padding: 15px;
+            text-align: center;
+            background-color: #5C2F2F; /* Same as sidebar background */
+            border: 2px solid #fff;
+            font-size: 22px;
+            line-height: 1.5;
+            margin-bottom: 5px;
+            transition: background-color 0.5s ease, box-shadow 0.3s ease;
+        }
+
+        /* Link styles inside list item */
+        .sidebar ul li a {
+            color: #f0f0f0; /* Light text for links */
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Sidebar hover effect */
+        .sidebar ul li:hover {
+            background-color: #B27B3B; /* Subdued golden yellow on hover */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1080px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                padding: 15px;
+                order: 0;
+            }
+            .content {
+                width: 100%;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>Hello, and welcome to the new blog!</h1>
+
+            <p>I'm sure as you guys can see, I completely changed the layout of my blog. This was something I'd been thinking about for a while.</p>
+
+            <h1>But why?</h1>
+            
+            <p>This was a layout I always wanted but decided that I didn't want to do it at the time, and instead, I went for Jekyll. But I wanted to make things more personal, and include things that I couldn't before. So now, here we are.</p>
+
+            <h1>What about the old layout?</h1>
+
+            <p>Its currently archived right now, just hidden. If I decide that the current iteration is too much to handle, then I can always fall back on it. Otherwise, this will be the new base of operation, and the old layout isn't going to be used for now.</p>
+            <audio controls>
+                <source src="../../audio/popn.flac">
+            </audio>
+
+            <p>I now have a section with all my old artwork, (mostly) organized neatly by year and date made, a completely different section for the tutorial series, to make it easier to follow.</p>
+
+            <p>While this takes more work for me to run, I think it's overall not too bad.</p>
+
+            <h1>Did you make any new art?</h1>
+
+            <p>Sorta? Because I spent so much time the past month working on the new layout, and the next part of the tutorial is done, I didn't really have time to many any art for the new year. But that's okay, it's just another year.</p>
+
+            <p>But outside of the new tutorial section I made, I also made a completely new banner! I spent a fair amount of time working on it, and I'm planning on working on my coloring more this year. But here it is, without the text.</p>
+
+            <img src="../../pics/blog/banner.png" alt="New banner">
+
+            <p>I quite liked how it turned out! At any rate, your bookmarking/rss should be the same, so no need to update it. But if you haven't, please subscribe to my RSS to get the latest updates on my work!</p>
+
+            <p>That's all from me today, I hope you guys had a good holiday/new years, and I'll see you guys next time.</p>
+
+        </div>
+
+        <div class="sidebar">
+            <ul>
+                <li><a href="../../index.html">Back to Home Page</a></li>
+                <li><a href="../../port/porthome.html">My Art Portfolio</a></li>
+                <li><a href="../../tut/tuthome.html">My Art Tutorial Series</a></li>
+                <li><a href="../../aboutme.html">About Me</a></li>
+                <li><a href="../../rss/feed.xml">Subscribe to my RSS Feed</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

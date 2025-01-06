@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learning to draw the body.">
+    <link rel="icon" href="../favicons/favicon.ico" sizes="32x32" type="image/x-icon">
+    <link rel="icon" href="../favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="../favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="../favicons/mstile-150x150.png" sizes="150x150" type="image/png">
+    <link rel="icon" href="../favicons/android-chrome-192x192.png" sizes="192x192" type="image/png">
+    <link rel="icon" href="../favicons/android-chrome-512x512.png" sizes="512x512" type="image/png">
+    <link rel="icon" href="../favicons/apple-touch-icon.png" sizes="180x180" type="image/png">
+    <link rel="mask-icon" href="../favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="browserconfig" href="../favicons/browserconfig.xml" />
+    <link rel="manifest" href="../favicons/site.webmanifest">
+    <title>Art Tutorial 1 - Radiant Ink</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #E6F1F6; /* Soft light blue */
+            overflow: auto;
+        }
+
+        /* Main container */
+        .container {
+            display: flex;
+            flex-direction: row;
+            max-width: 1440px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border: 1px solid #000;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+
+        /* Content styles */
+        .content {
+            flex: 1;
+            padding: 40px 20px;
+            color: #333;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;  /* Center content horizontally */
+            justify-content: center;  /* Center content vertically */
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #004c6d; /* Deep blue */
+        }
+
+        h2 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #006f8a; /* Slightly lighter blue */
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        /* Sidebar styles */
+        .sidebar {
+            width: 25%;
+            background-color: #1e2d3b; /* Deep navy blue */
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 20px;
+            font-size: 22px;
+            height: 100vh;
+            position: sticky;
+            top: 0;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* List item styles */
+        .sidebar ul li {
+            padding: 15px;
+            text-align: center;
+            background-color: #333;
+            border: 2px solid #fff;
+            font-size: 22px;
+            line-height: 1.5;
+            margin-bottom: 5px; /* Add space between the text boxes */
+            transition: background-color 0.5s ease, box-shadow 0.3s ease;
+        }
+
+        /* Link styles inside list item */
+        .sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Hover effect for sidebar list items */
+        .sidebar ul li:hover {
+            background-color: #3c4d66; /* Slightly lighter navy */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1080px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                padding: 15px;
+                order: 0;
+            }
+            .content {
+                width: 100%;
+                padding: 20px;
+            }
+        }
+
+        /* Navigation Footer Styles */
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .footer a {
+            color: #004c6d; /* Deep blue */
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #E6F1F6;
+            border-radius: 5px;
+            margin: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .footer a:hover {
+            background-color: #ddd;
+        }
+
+        /* Ensure images are centered and maintain their natural size */
+        .content img {
+            display: block;
+            margin: 20px auto;  /* Center images horizontally */
+            max-width: 80%; /* Or set a specific max width to avoid overflow */
+            height: auto;
+        }
+
+        /* Ensure images and audio players are stacked vertically */
+        .content img, .content audio {
+            display: block;
+            margin-bottom: 20px; /* Add space between the elements */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>Art Tutorial 1</h1>
+            <p><strong>Date:</strong> 2024-7-9 12:00:00</p>
+            <audio controls>
+                <source src="../audio/Technology.flac">
+            </audio>
+            <h2>The things you'll need:</h2>
+            <p>A pencil with an eraser, a pen, paper (preferably not lined). Ideally a sketchbook, printer paper will also work. A ruler, a compass (or anything small that can make perfect circles, bottle caps, cups), and lastly a good attitude for learning, since we're all bad when we start.</p>
+            
+            <h2>So you have everything gathered, now what?</h2>
+            <p>First we have to figure out how to hold the pencil before we can even start! You can hold it 2 ways: as close to the base as you can, or as close to touching the eraser. How you hold it will depend on what's currently being drawn.</p>
+            <p>Another thing to note is that you should NEVER draw dark; you have to draw light so it's easy to erase and draw again. Once things look nice, then you're gonna use a pen.</p>
+            <p>I repeat, under no circumstances, do you draw dark with the pencil.</p>
+            
+            <h2>Now we can start drawing (for real)</h2>
+            <p>We're gonna learn to draw a person, but we don't "just" draw. We have to learn what actually makes a human. No humans are the same, and when you're drawing something more cartoonic, the scale won't be the same. Even if you plan to draw more of an anime style, learning to draw correct proportions is important.</p>
+            
+            <h2>Learning to scale</h2>
+            <p>In drawing, a body is measured in "heads," with the actual head at the top of the body. Different people will tell you different sizes, but I usually say 7 heads is a good size. Some people say 7.5, others 8. You'll also want to make the body 2 head sizes wide, if it's an even wider body, 2.5 is also good.</p>
+            <p>As for how big you want the head to be, you want it to be a proper scale for your paper/how big you want it to be. (This is why we have a ruler!) So, if your paper is 8 inches tall, then 1 inch for a head size will give you a 7-inch tall human! This will be a bit tricky if you pose for more than straight on.</p>
+            <p>Here are some pictures from different sources to help show off what I mean:</p>
+            
+            <img src="../pics/tut/body1.png" alt="Head size chart 1">
+            <img src="../pics/tut/body2.jpg" alt="Head size chart 2">
+            <img src="../pics/tut/body3.png" alt="Head size chart 3">
+
+            <h2>So now we have scale, but how do we actually draw?</h2>
+            <audio controls>
+                <source src="../audio/Serene Nights.flac">
+            </audio>
+            <p>An important thing to note is that everything we draw is actually just basic shapes—cones, rectangular prisms, cubes, and so on. For our example, the head will be a circle, and the arms and legs will be cylinders.</p>
+            <p>Taking all that I said into consideration, here's what I've made to use as my example. You're welcome to use what I have drawn to follow the tutorial, but the tutorial should be detailed enough to follow with any pose. I do not recommend drawing a straight-on image, instead try drawing at an angle, even if slight. But that's up to you.</p>
+            
+            <img src="../pics/tut/bodychart.png" alt="Chart for body sizes">
+            <p>It's hard to give a proper size on digital, but since I explained how to scale things already, you can use your own scale. Now let's start with drawing. I already have an idea for what I want, and if we follow the charts listed above, the simple shapes will come out perfectly.</p>
+            
+            <img src="../pics/tut/roughbody.png" alt="Body done">
+
+            <audio controls>
+                <source src="../audio/Stolen Moments.flac">
+            </audio>
+            
+            <h2>What are the extra things added?</h2>
+            <p>For joint sizes, I try for 1/4 size of a head for both width and height. The girl is on her tippy toes, so the number of lines isn't the 7 I usually do, and we can say she's a bit taller than normal. Some people say 6 heads is good for girls' heights, and 7 for guys—but as I said, all body types aren't the same, so feel free to be creative.</p>
+            <p>A simple way to measure feet is to use two ball joints, one for the joint itself and the other for the rest of the feet. I forgot to show this off.</p>
+            <p>You'll also notice the head is below the line, which is on purpose for the pose I want to do. Each arm will be one head size (length), so even though it's bent, it's the correct size.</p>
+            <p>Even if what you've done isn't very good, what you want to focus on is getting the correct proportion sizes over anything else. Everything else will fall into place. Lastly, this is just a rough draft, so don't worry if it's not perfect now.</p>
+            
+            <h2>Practice makes perfect</h2>
+            <p>Don't just do this once and call it a day. You have to practice, do multiple poses, and focus on getting the exact sizes right. The size in my picture won't line up exactly with yours, but the method will still be the same.</p>
+
+            <!-- Footer Section -->
+            <div class="footer">
+                <a href="tuthome.html">Back to Tutorial Home</a>
+                <a href="tut2.html">Next Tutorial</a>
+            </div>
+        </div>
+        
+        <div class="sidebar">
+            <ul>
+                <li><a href="../index.html">Back to Home Page</a></li>
+                <li><a href="../blog/bloghome.html">My Blog Posts</a></li>
+                <li><a href="../port/porthome.html">My Art Portfolio</a></li>
+                <li><a href="../aboutme.html">About Me</a></li>
+                <li><a href="../rss/feed.xml">Subscribe to my RSS Feed</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

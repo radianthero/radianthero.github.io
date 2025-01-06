@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="My about me page.">
+    <link rel="icon" href="./favicons/favicon.ico" sizes="32x32" type="image/x-icon">
+    <link rel="icon" href="./favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="./favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="./favicons/mstile-150x150.png" sizes="150x150" type="image/png">
+    <link rel="icon" href="./favicons/android-chrome-192x192.png" sizes="192x192" type="image/png">
+    <link rel="icon" href="./favicons/android-chrome-512x512.png" sizes="512x512" type="image/png">
+    <link rel="icon" href="./favicons/apple-touch-icon.png" sizes="180x180" type="image/png">
+    <link rel="mask-icon" href="./favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="browserconfig" href="./favicons/browserconfig.xml" />
+    <link rel="manifest" href="./favicons/site.webmanifest">
+    <title>About Me - Radiant Ink</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #F3E2A9; /* Light autumn beige */
+            color: #4B3F26; /* Dark autumn brown */
+            overflow: auto;
+        }
+
+        /* Main container */
+        .container {
+            display: flex;
+            flex-direction: row;
+            max-width: 1440px;
+            margin: 0 auto;
+            background-color: #FFF7E3; /* Soft cream */
+            border: 1px solid #D2A56A; /* Warm beige border */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+
+        /* Content styles */
+        .content {
+            flex: 1;
+            padding: 40px 20px;
+            background-color: #FFF7E3; /* Soft cream */
+            color: #4B3F26; /* Dark autumn brown */
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #8A4F28; /* Autumn orange-brown */
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        /* Sidebar styles */
+        .sidebar {
+            width: 25%;
+            background-color: #5A2C1E; /* Darker autumn brown */
+            color: #FFF4E0; /* Light cream */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 20px;
+            font-size: 22px;
+            height: 100vh;
+            position: sticky;
+            top: 0;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* List item styles */
+        .sidebar ul li {
+            padding: 15px;
+            text-align: center;
+            background-color: #7C3F2B; /* Dark autumn brown */
+            border: 2px solid #8A4F28; /* Autumn orange-brown */
+            font-size: 22px;
+            line-height: 1.5;
+            margin-bottom: 5px;
+            transition: background-color 0.5s ease, box-shadow 0.3s ease;
+        }
+
+        /* Link styles inside list item */
+        .sidebar ul li a {
+            color: #FFF4E0; /* Light cream */
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Hover effect for sidebar list items */
+        .sidebar ul li:hover {
+            background-color: #9E5D3B; /* Lighter autumn brown */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1080px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                padding: 15px;
+                order: 0;
+            }
+            .content {
+                width: 100%;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>About Me</h1>
+            <p>Hello, and welcome to my art blog. If you want to know more about me and my blog, this is the right spot!</p>
+            <h1>Who am I?</h1>
+            <p>I’m Radiant, who's also the server admin. I enjoy a slow pace with life, playing games, either video or board games variety, collecting, writing, drawing, or (trying) to play music.</p>
+            <p>Some of my dislikes are loud people (tell them to be quiet!), smokers (especially in a public area), dishonest people, and now Windows (lol). I use Arch, btw.</p>
+            <h1>What are my favorite games?</h1>
+            <p><strong>For video games:</strong> Wonder Project J2, Fallout: New Vegas, Smash 64 (not Remix), Mario 3, and while not a game specifically, I enjoy rhythm games a lot, BMS, Pop'n. I also really enjoy watching Broodwar. I'm not much of a multiplayer gamer, but TF2 is fun. It's the most fun you can have online after all.</p>
+            <p><strong>For tabletop games:</strong> Risk Legacy Season 3, Space Hulk, Munchkin Dungeon, and Fire & Stone: Siege of Vienna. Root, RuneScape Kingdom, and more.</p>
+            <p>Some notable mentions: Final Fantasy 11 and Old School RuneScape, which are the only real MMOs I’ve gotten into unless you count virtual chat room games like Club Penguin as MMOs.</p>
+            <h1>What are my favorite songs? Genres?</h1> 
+            <p>Truth be told, I’m not much of a music listener, but I enjoy jazz, all forms of it. I also enjoy metal, but not so much super heavy stuff. Salsa is also really catchy. Outside of that, it’s mostly video games and remixes/covers of those game songs. (I’m pretty lame lol).</p>
+            <p>I say all of this despite having nearly 8k songs, mainly in FLAC/WAVs. I guess it’s an addiction to collecting, but not listening. However, when I listen to music, I just press shuffle and let Winamp/Groove music do its thing.</p>
+            <p>As for some artists? I've been into Guru/Gang Starr a lot lately. Kohmi Hirose has also been someone I've been listening to. The Crusaders are kinda obscure but have interesting songs. Gypsy Kings, John Coltrane, Masayoshi Takanaka are also always a good time.</p>
+            <h1>Why is this called Radiant Ink?</h1>
+            <p> Radiant is a name I use often, and it's a drawing blog. Nothing too fancy.</p>
+            <h1>What do you use to draw?</h1>
+            <p>I use a small Wacom Intuos as my drawing tablet of choice. I don’t need a bigger surface space; I don’t feel like the lack of a screen has negatively impacted my art.</p>
+            <p>When I drew on the mouse, I used the Wick Editor, which is a great tool for animation but has some pretty decent tools for drawings, like layering, coloring, different widths, pressure-sensitive options, etc.</p>
+            <p>Now I use Krita. I’ve tried The Fire Llama but didn’t like the UI, which works. It has a lot of great brush options, and the coloring capabilities are great, too. It works out of the box for Linux and Wacom drivers.</p>
+            <h1>Do you have any other social media?</h1>
+            <p>Not really. I don't enjoy social media, I tend to just not use it. I technically have a blue sky that I don't use. <a href="https://bsky.app/profile/carefulman.bsky.social">But if you care, add me here.</a></p>
+
+        </div>
+        <div class="sidebar">
+            <ul>
+                <li><a href="index.html">Back to Home Page</a></li>
+                <li><a href="blog/bloghome.html">My Blog Posts</a></li>
+                <li><a href="port/porthome.html">My Art Portfolio</a></li>
+                <li><a href="tut/tuthome.html">My Art Tutorial Series</a></li>
+                <li><a href="rss/feed.xml">Subscribe to my RSS Feed</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

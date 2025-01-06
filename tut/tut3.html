@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learning to draw body types.">
+    <link rel="icon" href="../favicons/favicon.ico" sizes="32x32" type="image/x-icon">
+    <link rel="icon" href="../favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="../favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="../favicons/mstile-150x150.png" sizes="150x150" type="image/png">
+    <link rel="icon" href="../favicons/android-chrome-192x192.png" sizes="192x192" type="image/png">
+    <link rel="icon" href="../favicons/android-chrome-512x512.png" sizes="512x512" type="image/png">
+    <link rel="icon" href="../favicons/apple-touch-icon.png" sizes="180x180" type="image/png">
+    <link rel="mask-icon" href="../favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="browserconfig" href="../favicons/browserconfig.xml" />
+    <link rel="manifest" href="../favicons/site.webmanifest">
+    <title>Art Tutorial 3 - Radiant Ink</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #E6F1F6; /* Soft light blue background */
+            color: #333; /* Dark gray text color */
+            overflow: auto;
+        }
+
+        /* Main container */
+        .container {
+            display: flex;
+            flex-direction: row;
+            max-width: 1440px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border: 1px solid #ddd; /* Corrected to match first layout */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+
+        /* Content styles */
+        .content {
+            flex: 1;
+            padding: 40px 20px;
+            background-color: #ffffff;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center-align content horizontally */
+            text-align: center; /* Center-align text */
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #004c6d; /* Deep blue for the header */
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #006f8a; /* Slightly lighter blue */
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        /* Sidebar styles */
+        .sidebar {
+            width: 25%;
+            background-color: #1e2d3b; /* Deep navy blue for sidebar */
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 20px;
+            font-size: 22px;
+            height: 100vh;
+            position: sticky;
+            top: 0;
+            box-shadow: 3px 0 5px rgba(0, 0, 0, 0.2); /* Added shadow to the sidebar */
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* List item styles */
+        .sidebar ul li {
+            padding: 15px;
+            text-align: center;
+            background-color: #2b3d4f; /* Slightly lighter navy blue */
+            border: 2px solid #fff;
+            font-size: 22px;
+            line-height: 1.5;
+            margin-bottom: 5px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Link styles inside list item */
+        .sidebar ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Hover effect for sidebar list items */
+        .sidebar ul li:hover {
+            background-color: #3c4d66; /* Slightly lighter on hover */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1080px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                padding: 15px;
+                order: 0;
+            }
+            .content {
+                width: 100%;
+                padding: 20px;
+            }
+        }
+
+        /* Navigation Footer Styles */
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .footer a {
+            color: #004c6d; /* Deep blue for footer links */
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            margin: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .footer a:hover {
+            background-color: #d8e1e9; /* Light gray hover effect */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>Art Tutorial 3</h1>
+            <p><strong>Date:</strong> 2024-7-11 12:00:00</p>
+            <audio controls>
+                <source src="../audio/I'm Old Fasioned.flac">
+            </audio>
+            <h2>Welcome back!</h2>
+            <p>This lesson will be short since we'll be finishing making our body. Different body shapes exist, depending on what you want to make. I'll show off a few pictures, and you'll decide what you want to make for your drawing.</p>
+
+            <img src="../pics/tut/femalebody.png" alt="Body Female">
+
+            <img src="../pics/tut/body22.jpg" alt="Second Body Female">
+            <img src="../pics/tut/body3.jpg" alt="Male body">
+            <img src="../pics/tut/body4.jpg" alt="Second Male Body">
+
+            <p>Something to note is that you have to start the curve early at the top, and make sure the body ends by the hips properly. Similar to the face example, everything can be done with math, and you can line everything perfectly. I'll start with the main body for now.</p>
+
+            <img src="../pics/tut/rough body 2.png" alt="Adding a body">
+
+            <p>Because I'm drawing a female, I have to make sure to leave some room around the top/middle of the body for the breast, you can see the line is about where it'll end, leaving room for the stomach on the space below. Now we'll clean up our arms/legs.</p>
+
+            <img src="../pics/tut/rough body 4.png" alt="Body art done">
+
+            <p>It all started from basic shapes, and now we got our figure done! We're gonna work on clothes next time you're here, so be sure to have a full pose picture ready for that.</p>
+
+            <!-- Footer Section -->
+            <div class="footer">
+                <a href="tut2.html">Previous Tutorial</a>
+                <a href="tuthome.html">Back to Tutorial Home</a>
+                <a href="tut4.html">Next Tutorial</a>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <ul>
+                <li><a href="../index.html">Back to Home Page</a></li>
+                <li><a href="../blog/bloghome.html">My Blog Posts</a></li>
+                <li><a href="../port/porthome.html">My Art Portfolio</a></li>
+                <li><a href="../aboutme.html">About Me</a></li>
+                <li><a href="../rss/feed.xml">Subscribe to my RSS Feed</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

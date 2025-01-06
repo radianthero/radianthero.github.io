@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Main page for my portfolio.">
+    <link rel="icon" href="../favicons/favicon.ico" sizes="32x32" type="image/x-icon">
+    <link rel="icon" href="../favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="../favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="../favicons/mstile-150x150.png" sizes="150x150" type="image/png">
+    <link rel="icon" href="../favicons/android-chrome-192x192.png" sizes="192x192" type="image/png">
+    <link rel="icon" href="../favicons/android-chrome-512x512.png" sizes="512x512" type="image/png">
+    <link rel="icon" href="../favicons/apple-touch-icon.png" sizes="180x180" type="image/png">
+    <link rel="mask-icon" href="../favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="browserconfig" href="../favicons/browserconfig.xml" />
+    <link rel="manifest" href="./favicons/site.webmanifest">
+    <title>Art Portfolio - Home</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #2E1C47; /* Dark purple for background */
+            color: #D6C6E0; /* Light off-white for text */
+            overflow: auto;
+        }
+
+        /* Main container */
+        .container {
+            display: flex;
+            max-width: 1440px;
+            margin: 0 auto;
+            background-color: #2E1C47; /* Dark purple for container */
+            border: 1px solid #8E4D92; /* Lighter purple for borders */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            flex-wrap: wrap;
+        }
+
+        /* Content styles */
+        .content {
+            flex: 1;
+            padding: 40px 20px;
+            color: #D6C6E0; /* Light text color */
+            background-color: #2E1C47; /* Dark purple for content */
+        }
+
+        /* Centered text styles */
+        .text-center {
+            text-align: center; /* Centers text horizontally */
+            margin: 20px auto; /* Add spacing around it and center horizontally */
+            max-width: 800px; /* Optional: Limit the width of the centered text */
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #8E4D92; /* Lighter purple for header */
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #7A4C9F; /* Slightly lighter purple for subheader */
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        /* Sidebar styles */
+        .sidebar {
+            width: 25%;
+            background-color: #3F2457; /* Darker purple for sidebar */
+            color: #D6C6E0; /* Light text for contrast */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 20px;
+            font-size: 22px;
+            height: 100vh;
+            position: sticky;
+            top: 0;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* List item styles */
+        .sidebar ul li {
+            padding: 15px;
+            text-align: center;
+            background-color: #3F2457; /* Darker purple for sidebar background */
+            border: 2px solid #D6C6E0; /* Light off-white for borders */
+            font-size: 22px;
+            line-height: 1.5;
+            margin-bottom: 5px;
+            transition: background-color 0.5s ease, box-shadow 0.3s ease;
+        }
+
+        /* Link styles inside list item */
+        .sidebar ul li a {
+            color: #D6C6E0; /* Light text for links */
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Sidebar hover effect */
+        .sidebar ul li:hover {
+            background-color: #7A4C9F; /* Subdued purple on hover */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Thumbnail Styles */
+        .thumbnail-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center; /* Center thumbnails horizontally */
+            padding: 20px 0; /* Add some vertical spacing */
+        }
+
+        .thumbnail {
+            width: 200px;
+            height: 200px;
+            background-color: #3F2457; /* Dark purple for the thumbnail background */
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            border: 2px solid #8E4D92; /* Lighter purple border */
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .thumbnail-text {
+    position: absolute;
+    bottom: 0; /* Aligns text to the bottom of the thumbnail */
+    left: 0;
+    width: 100%; /* Ensures the text spans the full width of the thumbnail */
+    color: #D6C6E0;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.6); /* Adds a semi-transparent background */
+    padding: 10px; /* Adds padding around the text */
+    text-align: center; /* Centers the text horizontally */
+    border-radius: 0 0 10px 10px; /* Matches thumbnail's bottom border radius */
+}
+
+
+        /* Responsive Design */
+        @media (max-width: 1080px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                padding: 15px;
+                order: 0;
+            }
+            .content {
+                width: 100%;
+                padding: 20px;
+            }
+            .thumbnail-container {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="text-center">
+                <h1>My Artwork done</h1>
+                <p>This is all the work I've done over the years, though I tried my best to add the correct year, some are unknown to me.</p>
+            </div>
+            
+            <div class="thumbnail-container">
+                <a href="./2025/2025port.html" class="thumbnail">
+                    <img src="../pics/port/thumbnail/2025/banner.jpg" alt="2025">
+                    <div class="thumbnail-text">2025</div>
+                </a>
+                <a href="./2024/2024port.html" class="thumbnail">
+                    <img src="../pics/port/thumbnail/2024/chaos.jpg" alt="2024">
+                    <div class="thumbnail-text">2024</div>
+                </a>
+                <a href="./2023/2023port.html" class="thumbnail">
+                    <img src="../pics/port/thumbnail/2023/mithra pld.jpg" alt="2023">
+                    <div class="thumbnail-text">2023</div>
+                </a>
+                <a href="./2022/2022port.html" class="thumbnail">
+                    <img src="../pics/port/thumbnail/2022/ciel 1.jpg" alt="2022">
+                    <div class="thumbnail-text">2022</div>
+                </a>
+                <a href="./2021/21port.html" class="thumbnail">
+                    <img src="../pics/port/thumbnail/2021/black and white mage.jpg" alt="2021">
+                    <div class="thumbnail-text">2021</div>
+                </a>
+                <a href="./2019/2019port.html" class="thumbnail">
+                    <img src="../pics/port/thumbnail/2019/captain.jpg" alt="2019">
+                    <div class="thumbnail-text">2019</div>
+                </a>
+                <a href="./2018/2018port.html" class="thumbnail">
+                    <img src="../pics/port/thumbnail/2018/for eve.jpg" alt="2018">
+                    <div class="thumbnail-text">2018</div>
+                </a>
+                <a href="./2017/2017port.html" class="thumbnail">
+                    <img src="../pics/port/thumbnail/2017/angry link.jpg" alt="2017">
+                    <div class="thumbnail-text">2017</div>
+                </a>
+                <a href="./2016/2016port.html" class="thumbnail">
+                    <img src="../pics/port/thumbnail/2016/caped mario.jpg" alt="2016">
+                    <div class="thumbnail-text">2016</div>
+                </a>
+                <a href="./Gifts/giftsport.html" class="thumbnail">
+                    <img src="../pics/port/thumbnail/Gifts/cat.jpg" alt="Gifts">
+                    <div class="thumbnail-text">Gifts</div>
+                </a>
+                <a href="./Unknown/unknownport.html" class="thumbnail">
+                    <img src="../pics/port/unkown/ifuknow2.jpg" alt="Unknown">
+                    <div class="thumbnail-text">Unknown</div>
+                </a>
+            </div>
+        </div>
+        <div class="sidebar">
+            <ul>
+                <li><a href="../index.html">Back to Home Page</a></li>
+                <li><a href="../blog/bloghome.html">My Blog Posts</a></li>
+                <li><a href="../tut/tuthome.html">My Art Tutorial Series</a></li>
+                <li><a href="../aboutme.html">About Me</a></li>
+                <li><a href="../rss/feed.xml">Subscribe to my RSS Feed</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

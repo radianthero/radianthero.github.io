@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learning to scale the picture.">
+    <link rel="icon" href="../favicons/favicon.ico" sizes="32x32" type="image/x-icon">
+    <link rel="icon" href="../favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="../favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="../favicons/mstile-150x150.png" sizes="150x150" type="image/png">
+    <link rel="icon" href="../favicons/android-chrome-192x192.png" sizes="192x192" type="image/png">
+    <link rel="icon" href="../favicons/android-chrome-512x512.png" sizes="512x512" type="image/png">
+    <link rel="icon" href="../favicons/apple-touch-icon.png" sizes="180x180" type="image/png">
+    <link rel="mask-icon" href="../favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="browserconfig" href="../favicons/browserconfig.xml" />
+    <link rel="manifest" href="../favicons/site.webmanifest">
+    <title>Art Tutorial 6 - Radiant Ink</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #E6F1F6; /* Soft light blue */
+            overflow: auto;
+        }
+
+        /* Main container */
+        .container {
+            display: flex;
+            flex-direction: row;
+            max-width: 1440px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border: 1px solid #000;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+
+        /* Content styles */
+        .content {
+            flex: 1;
+            padding: 40px 20px;
+            color: #333;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;  /* Center content horizontally */
+            justify-content: center;  /* Center content vertically */
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #004c6d; /* Deep blue */
+        }
+
+        h2 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #006f8a; /* Slightly lighter blue */
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        /* Sidebar styles */
+        .sidebar {
+            width: 25%;
+            background-color: #1e2d3b; /* Deep navy blue */
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 20px;
+            font-size: 22px;
+            height: 100vh;
+            position: sticky;
+            top: 0;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* List item styles */
+        .sidebar ul li {
+            padding: 15px;
+            text-align: center;
+            background-color: #333;
+            border: 2px solid #fff;
+            font-size: 22px;
+            line-height: 1.5;
+            margin-bottom: 5px; /* Add space between the text boxes */
+            transition: background-color 0.5s ease, box-shadow 0.3s ease;
+        }
+
+        /* Link styles inside list item */
+        .sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Hover effect for sidebar list items */
+        .sidebar ul li:hover {
+            background-color: #3c4d66; /* Slightly lighter navy */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1080px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                padding: 15px;
+                order: 0;
+            }
+            .content {
+                width: 100%;
+                padding: 20px;
+            }
+        }
+
+        /* Navigation Footer Styles */
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .footer a {
+            color: #004c6d; /* Deep blue */
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #E6F1F6;
+            border-radius: 5px;
+            margin: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .footer a:hover {
+            background-color: #ddd;
+        }
+
+        /* Ensure images are centered and maintain their natural size */
+        .content img {
+            display: block;
+            margin: 20px auto;  /* Center images horizontally */
+            max-width: 80%; /* Or set a specific max width to avoid overflow */
+            height: auto;
+        }
+
+        /* Ensure images and audio players are stacked vertically */
+        .content img, .content audio {
+            display: block;
+            margin-bottom: 20px; /* Add space between the elements */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>Art Tutorial 6, learning to scale</h1>
+            <audio controls>
+                <source src="../audio/Miracle Moon.flac">
+            </audio>
+            <h2>This will be a different type of tutorial</h2>
+            <p>This won't be a proper drawing tutorial, and really, it's more of a way to force me to draw this stuff more often and, in doing so, get more ideas for other stuff I want to do. But it should give a few ideas. Keep in mind ALL pictures drawn are drawn in 1000x1000, I like the 4:3 resolution for drawings, unless I'm making a banner, in which 16:9 is better. The extra space isn't always required, as I will explain.</p>
+
+            <h2>But what do I mean by scaling?</h2>
+            <p>Perspective does play a part in scale, but that isn't what I'm referring to. You don't need to draw the body taking up the the whole page of the picture, depending on what you want to show in the picture. For example, a full body picture may not be needed if you want to emphasize a facial expression, or if you want to show a weapon being held, do you need to see the whole picture? If you leave too much negative/empty space around the object drawing, it may look out of place and distract people from what the actual focus is or may lessen what you want to make.</p>
+            <p>The most common terms are:</p> 
+            <p>Headshot; best used for when you're trying to only focus on facial features, it usually stops around the neck.</p>
+            <img src="../pics/tut/woman headshot2.png" alt="Close up of face">
+            <p>Bust shot/half body; this is used to show the head down to about the waist, but some people stop by the waist instead.</p>
+            <img src="../pics/tut/shirt going on.png" alt="Mid shot of woman puttin on jacket.">
+            <p>Full body picture. Shows the whole body from head to feet.</p>
+            <img src="../pics/tut/josette.png" alt="Josette far away.">
+            
+
+            <h2>Now that we have an idea about sizing, let's talk about space. More specifically, about what negative space can do to a picture.</h2>
+            <p>Here's the roughly the same image: one is zoomed out, and one isn't. See the difference?</p>
+            <img src="../pics/tut/scythe1.png" alt="Woman holding scythe closer">
+            <img src="../pics/tut/scythe2.png" alt="Woman holding scythe farther">
+            <p>We have the same space in the bottom left, but because I had to zoom out to show more of the scythe/body, it looks a bit more awkward now. Of course, we can draw something behind it/under it to fix this issue, but we're now doing more work for something that we didn't have to when showing less.</p>
+            <p>You may think if you lower the resolution of your canvas, then it'd be easier to draw a certain size, but that's not true.</p>
+            <p>Of course, on actual paper, you can get different-sized paper. </p>
+
+            <h2>Drawing a rectangle to scale</h2>
+            <p>If you have a hard time visualizing something to be smaller, you can instead draw a square/rectangle for the size you want. This can be helpful if you want to draw multiple smaller sketches on a bigger paper or if you want to help with sizing. If you remember, back to my first tutorial, scaling properly is key, and within the rectangle, you can add lines to scale the figure.</p>
+
+            <img src="../pics/tut/rectangle.png" alt="Rectangle to scale">
+
+            <img src="../pics/tut/dr3 healer.png" alt="picture of healer in rectangle">
+
+            <img src="../pics/tut/dr3 healer2.png" alt="Removing the rectangle">
+            <audio controls>
+                <source src="../audio/Les Filles Balancent.flac">
+            </audio>
+
+            <h2>Now that we have an understanding, of different picture scaling, and how to determine the sizes, let's continue.</h2>
+
+            <p>If you want to draw something more complex, not just a picture with the characters facing forward like I showed you how to do in the previous tutorial. The first step is you'll have to visualize things around them. This is to say, background, what pose they'll be doing, if you're doing color, how the sun will cast a shadow.</p>
+            <p>If the focus isn't on the character for the drawing, the character could be drawn smaller compared to what you want to emphasize or the other way around if needed.</p>
+
+            <img src="../pics/tut/cardboard.png" alt="Close up of woman crying, holding person">
+
+            <img src="../pics/tut/playing flute.png" alt="Mid shot of person playing music">
+
+            <img src="../pics/tut/woman sitting.png" alt="Woman on bed">
+
+            <p>I hope by giving a few other pictures at different shots and angles, you can see how moving the camera closer/farther or with things around them gives depths without needing shading.</p>
+
+            <h2>Let's make a full picture with these concepts in mind.</h2>
+
+            <p>This won't go into great detail like my last tutorial did, as the images above and the text should give enough details/ideas on the topics discussed. However, I'll still show off a bit of a WiP timelapse thing to give an idea of how I draw things and the different phases of what I want to focus on.</p>
+
+            <img src="../pics/tut/first timelapse.png" alt="Showing base image">
+
+            <p>I started with a rectangle to where I wanted the focus to be on and started to draw from there.</p>
+
+            <img src="../pics/tut/second timelapse.png" alt="Expanding on it">
+
+            <p>Expanded the roof, and made the space for the text. Now that I have the base for how I want things to go, we can start with the rest.</p>
+
+            <img src="../pics/tut/third timelapse.png" alt="Adding a person">
+
+            <p>Added a person and window. Now that all of that is done, I have to decide what I want the background to be, and what to have inside the building.</p>
+
+            <img src="../pics/tut/fourth timelapse.png" alt="Added background and text">
+
+            <p>Added the text, will move it out of the way of the docks. With all of this completed, I'll draw over it with a new layer.</p>
+
+            <img src="../pics/tut/fifth timelapse.png" alt="Cleaned up line art">
+
+            <p>Finished up the rest of the background, and I added clothes to the person. Now that all our line art is done, we can start coloring.</p>
+
+            <img src="../pics/tut/banner.png" alt="Added color">
+
+            <p>I won't be showing the coloring process, as that's not what the tutorial is for, but the next tutorial will be about coloring. So I'll skip ahead to the finished picture. I'll be adding the text in the post for the front page.</p>
+
+
+
+            <!-- Footer Section -->
+            <div class="footer">
+                <a href="tuthome.html">Back to Tutorial Home</a>
+            </div>
+        </div>
+        
+        <div class="sidebar">
+            <ul>
+                <li><a href="../index.html">Back to Home Page</a></li>
+                <li><a href="../blog/bloghome.html">My Blog Posts</a></li>
+                <li><a href="../port/porthome.html">My Art Portfolio</a></li>
+                <li><a href="../aboutme.html">About Me</a></li>
+                <li><a href="../rss/feed.xml">Subscribe to my RSS Feed</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Main page for blog posts.">
+    <link rel="icon" href="../favicons/favicon.ico" sizes="32x32" type="image/x-icon">
+    <link rel="icon" href="../favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="../favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="../favicons/mstile-150x150.png" sizes="150x150" type="image/png">
+    <link rel="icon" href="../favicons/android-chrome-192x192.png" sizes="192x192" type="image/png">
+    <link rel="icon" href="../favicons/android-chrome-512x512.png" sizes="512x512" type="image/png">
+    <link rel="icon" href="../favicons/apple-touch-icon.png" sizes="180x180" type="image/png">
+    <link rel="mask-icon" href="../favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="browserconfig" href="../favicons/browserconfig.xml" />
+    <link rel="manifest" href="../favicons/site.webmanifest">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #4B1C26; /* Dark autumn red */
+            color: #f0f0f0; /* Light off-white for text contrast */
+            overflow: auto;
+        }
+
+        /* Main container */
+        .container {
+            display: flex;
+            max-width: 1440px;
+            margin: 0 auto;
+            background-color: #4B1C26; /* Dark autumn red for container */
+            border: 1px solid #444;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            flex-wrap: wrap;
+        }
+
+        /* Content styles */
+        .content {
+            flex: 1;
+            padding: 40px 20px;
+            color: #f0f0f0; /* Light text color */
+            background-color: #4B1C26; /* Dark autumn red for content */
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #7F1C1C; /* Dark burnt red for header */
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #B76B3F; /* Dark reddish-brown for subheader */
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        /* Sidebar styles */
+        .sidebar {
+            width: 25%;
+            background-color: #5C2F2F; /* Dark brick red for sidebar */
+            color: #f0f0f0; /* Light text for contrast */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 20px;
+            font-size: 22px;
+            height: 100vh;
+            position: sticky;
+            top: 0;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* List item styles */
+        .sidebar ul li {
+            padding: 15px;
+            text-align: center;
+            background-color: #5C2F2F; /* Same as sidebar background */
+            border: 2px solid #fff;
+            font-size: 22px;
+            line-height: 1.5;
+            margin-bottom: 5px;
+            transition: background-color 0.5s ease, box-shadow 0.3s ease;
+        }
+
+        /* Link styles inside list item */
+        .sidebar ul li a {
+            color: #f0f0f0; /* Light text for links */
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Sidebar hover effect */
+        .sidebar ul li:hover {
+            background-color: #B27B3B; /* Subdued golden yellow on hover */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Main section styling for years and months */
+        .years {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        /* Year Box Styling */
+        .year {
+            flex: 1;
+            margin-right: 20px;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            background-color: #4B1C26; /* Dark autumn red for year box */
+            transition: background-color 0.3s ease;
+            margin-bottom: 30px;
+        }
+
+        .year:hover {
+            background-color: #3F1922; /* Darker shade of red on hover */
+        }
+
+        /* Box for months under each year */
+        .month-box {
+            padding: 20px;
+            background-color: #4B1C26; /* Dark autumn red for month box */
+            min-height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+
+        .month-box h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .month-box a {
+            color: #f0f0f0; /* Light text for links */
+            text-decoration: none;
+            font-size: 18px;
+            padding: 5px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .month-box a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1080px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                padding: 15px;
+                order: 0;
+            }
+            .content {
+                width: 100%;
+                padding: 20px;
+            }
+            .years {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h2>Welcome to my blog where art and stories collide</h2>
+            <p>This is the place where I tend to post my art along with other random tidbits. If you want to only see the art, and you're not interested in the text, then check out the Art Portfolio Section.</p>
+
+            <!-- New Year Section Below -->
+            <div class="years">
+                <div class="year">
+                    <h2>2023</h2>
+                    <div class="month-box">
+                        <h3>September</h3>
+                        <a href="./2023/2023-09-28-first-real-post.html">First Real Post</a>
+                    </div>
+                    <div class="month-box">
+                        <h3>October</h3>
+                        <a href="./2023/2023-10-1-second-post.html">Random doodle</a>
+                        <a href="./2023/2023-10-7-first picture.html">Random doodle</a>
+                        <a href="./2023/2023-10-13-second-picture.html">First Art on Tablet</a>
+                        <a href="./2023/2023-10-25-sixth-post.html">Twitch Emotes</a>
+                    </div>
+                    <div class="month-box">
+                        <h3>November</h3>
+                        <a href="./2023/2023-11-13-seventh-post.html">Emote Done</a>
+                        <a href="./2023/2023-11-21-eigth-post.html">Vlog and Translation Project</a>
+                        <a href="./2023/2023-11-27-tenth-post.html">Fritz the Cat</a>
+                    </div>
+                    <div class="month-box">
+                        <h3>December</h3>
+                        <a href="./2023/2023-12-1-eleventh-post.html">Doodles</a>
+                        <a href="./2023/2023-12-5-twelfth-post.html">Melting Core Logo</a>
+                        <a href="./2023/2023-12-26-oceanfront6.html">Oceanfront 6 Logo</a>
+                    </div>
+                </div>
+                <div class="year">
+                    <h2>2024</h2>
+                    <div class="month-box">
+                        <h3>January</h3>
+                        <a href="./2024/2024-1-12-new-pic-new-me.html">Chaos Striker</a>
+                        <a href="./2024/2024-1-8-first-post-new-years.html">Translation Project Update</a>
+                        <a href="./2024/2024-1-28-bear.html">Cornet in Bear Suit</a>
+
+                    </div>
+                    <div class="month-box">
+                        <h3>February</h3>
+                        <a href="./2024/2024-14-5-this-isnt-a-drawing.html">Doodles and Mini Figs</a>
+                    </div>
+                    <div class="month-box">
+                        <h3>March</h3>
+                        <a href="./2024/2024-3-1-woah.html">MMR and Translation</a>
+                        <a href="./2024/2024-3-24-im-back.html">Soul Eater</a>
+                    </div>
+                    <div class="month-box">
+                        <h3>April</h3>
+                        <a href="./2024/2024-4-3-a-weekly-post.html">Ragnarok Online Art</a>
+                    </div>
+                    <div class="month-box">
+                        <h3>June</h3>
+                        <a href="./2024/2024-27-6-back-with-a-new-rhyme.html">Oceanfront 7</a>
+                    </div>
+                    <div class="month-box">
+                        <h3>August</h3>
+                        <a href="./2024/2024-17-8-lupin-finshed.html">Mini Vacation and Translation Tidbits</a>
+                    </div>
+                    <div class="month-box">
+                        <h3>July</h3>
+                        <a href="./2024/2024-22-11-back-from-arizona.html">Vlog 2 and art</a>
+                    </div>
+
+                </div>
+                <div class="year">
+                    <h2>2025</h2>
+                    <div class="month-box">
+                        <h3>January</h3>
+                        <a href="./2025/2025-5-1-new_year_again.html">New blog design</a>
+                        <a href="#">Place Holder</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar">
+            <ul>
+                <li><a href="../index.html">Back to Home Page</a></li>
+                <li><a href="../port/porthome.html">My Art Portfolio</a></li>
+                <li><a href="../tut/tuthome.html">My Art Tutorial Series</a></li>
+                <li><a href="../aboutme.html">About Me</a></li>
+                <li><a href="../rss/feed.xml">Subscribe to my RSS Feed</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

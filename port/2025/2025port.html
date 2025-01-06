@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Portfolio - 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #2E1C47; /* Dark purple for background */
+            color: #D6C6E0; /* Light off-white for text */
+            overflow: auto;
+        }
+
+        .container {
+            display: flex;
+            max-width: 1440px;
+            margin: 0 auto;
+            background-color: #2E1C47;
+            border: 1px solid #8E4D92;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            flex-wrap: wrap;
+        }
+
+        .content {
+            flex: 1;
+            padding: 40px 20px;
+            color: #D6C6E0;
+            background-color: #2E1C47;
+        }
+
+        .text-center {
+            text-align: center;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #8E4D92;
+        }
+
+        .thumbnail-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center; /* Centers the thumbnails horizontally */
+            margin: 0 auto; /* Centers the container itself */
+        }
+
+        .thumbnail {
+            width: 200px;
+            height: 200px;
+            background-color: #3F2457;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            border: 2px solid #8E4D92;
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .thumbnail-text {
+    position: absolute;
+    bottom: 0; /* Aligns text to the bottom of the thumbnail */
+    left: 0;
+    width: 100%; /* Ensures the text spans the full width of the thumbnail */
+    color: #D6C6E0;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.6); /* Adds a semi-transparent background */
+    padding: 10px; /* Adds padding around the text */
+    text-align: center; /* Centers the text horizontally */
+    border-radius: 0 0 10px 10px; /* Matches thumbnail's bottom border radius */
+}
+
+
+        .back-button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-button {
+            padding: 10px 20px;
+            background-color: #8E4D92;
+            color: #D6C6E0;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #7A4C9F;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .sidebar {
+            width: 25%;
+            background-color: #3F2457;
+            color: #D6C6E0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 20px;
+            font-size: 22px;
+            height: 100vh;
+            position: sticky;
+            top: 0;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar ul li {
+            padding: 15px;
+            text-align: center;
+            background-color: #3F2457;
+            border: 2px solid #D6C6E0;
+            font-size: 22px;
+            line-height: 1.5;
+            margin-bottom: 5px;
+            transition: background-color 0.5s ease, box-shadow 0.3s ease;
+        }
+
+        .sidebar ul li a {
+            color: #D6C6E0;
+            text-decoration: none;
+            display: block;
+        }
+
+        .sidebar ul li:hover {
+            background-color: #7A4C9F;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        @media (max-width: 1080px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                padding: 15px;
+                order: 0;
+            }
+
+            .content {
+                width: 100%;
+                padding: 20px;
+            }
+
+            .thumbnail-container {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="text-center">
+                <h1>Place Holder.</h1>
+            </div>
+            <div class="thumbnail-container">
+                <a href="page1.html" class="thumbnail">
+                    <img src="../../pics/port/thumbnail/2025/banner.jpg" alt="Banner art">
+                    <div class="thumbnail-text">New banner art</div>
+                </a>
+
+            </a>
+            </div>
+            <div class="back-button-container">
+                <a href="../porthome.html" class="back-button">Back</a>
+            </div>
+        </div>
+        <div class="sidebar">
+            <ul>
+                <li><a href="../../index.html">Back to Home Page</a></li>
+                <li><a href="../../blog/bloghome.html">My Blog Posts</a></li>
+                <li><a href="../../tut/tuthome.html">My Art Tutorial Series</a></li>
+                <li><a href="../../aboutme.html">About Me</a></li>
+                <li><a href="../../rss/feed.xml">Subscribe to my RSS Feed</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

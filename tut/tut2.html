@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learning to draw hands, head, feet.">
+    <link rel="icon" href="../favicons/favicon.ico" sizes="32x32" type="image/x-icon">
+    <link rel="icon" href="../favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="../favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="../favicons/mstile-150x150.png" sizes="150x150" type="image/png">
+    <link rel="icon" href="../favicons/android-chrome-192x192.png" sizes="192x192" type="image/png">
+    <link rel="icon" href="../favicons/android-chrome-512x512.png" sizes="512x512" type="image/png">
+    <link rel="icon" href="../favicons/apple-touch-icon.png" sizes="180x180" type="image/png">
+    <link rel="mask-icon" href="../favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="browserconfig" href="../favicons/browserconfig.xml" />
+    <link rel="manifest" href="../favicons/site.webmanifest">
+    <title>Art Tutorial 2 - Radiant Ink</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #E6F1F6; /* Soft light blue */
+            overflow: auto;
+        }
+
+        /* Main container */
+        .container {
+            display: flex;
+            flex-direction: row;
+            max-width: 1440px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border: 1px solid #000;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+
+        /* Content styles */
+        .content {
+            flex: 1;
+            padding: 40px 20px;
+            color: #333;
+            background-color: #ffffff;
+            text-align: center; /* Centering the text and images */
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #004c6d; /* Deep blue */
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #006f8a; /* Slightly lighter blue */
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        /* Sidebar styles */
+        .sidebar {
+            width: 25%;
+            background-color: #1e2d3b; /* Deep navy blue */
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 20px;
+            font-size: 22px;
+            height: 100vh;
+            position: sticky;
+            top: 0;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* List item styles */
+        .sidebar ul li {
+            padding: 15px;
+            text-align: center;
+            background-color: #333;
+            border: 2px solid #fff;
+            font-size: 22px;
+            line-height: 1.5;
+            margin-bottom: 5px;
+            transition: background-color 0.5s ease, box-shadow 0.3s ease;
+        }
+
+        /* Link styles inside list item */
+        .sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Hover effect for sidebar list items */
+        .sidebar ul li:hover {
+            background-color: #3c4d66; /* Slightly lighter navy */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1080px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                padding: 15px;
+                order: 0;
+            }
+            .content {
+                width: 100%;
+                padding: 20px;
+            }
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .footer-container {
+            max-width: 1440px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .footer-links a {
+            color: #004c6d; /* Deep blue */
+            text-decoration: none;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-button {
+            padding: 10px 20px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #444;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .footer-button:hover {
+            background-color: #555;
+        }
+
+        /* Navigation Footer Styles */
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .footer a {
+            color: #004c6d;
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            margin: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .footer a:hover {
+            background-color: #ddd;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>Art Tutorial 2</h1>
+            <p><strong>Date:</strong> 2024-7-10 12:00:00</p>
+
+            <p><strong>Did you practice? I hope so.</strong></p>
+            <p>If you didn't practice, then it'll never work out (bitter smile). As long as you're able to get the correct sizing done, then you'll do well!</p>
+            <p>This post will be a bit shorter, but we'll work on hands, feet, and the head, to create a complete figure to work on.</p>
+
+            <h2>Lets start with the hand</h2>
+            <audio controls>
+                <source src="../audio/Donpan Bushi.flac">
+            </audio>
+            <p>A lot of people say the hand is the hardest thing to draw, but that's mostly because they never learned how to do it proper! A hand is nothing more than a 3-D rectangle with some cylinders sticking out. Just make note that the hands are different where the left and the right are. Even I make this mistake sometimes.</p>
+            <p>Start with a simple rectangular prism like such.</p>
+            <img src="../pics/tut/handpart1.png" alt="Starting hand">
+            <p>From there, you want to start adding the cylinders, attempting to make it both flushed together.</p>
+            <img src="../pics/tut/handpart2.png" alt="Adding fingers to hand">
+            <p>I shortened the rectangular prism a bit. Make note of the thumb placement, it has to be lower, and the tip close to the index finger. From there, we're gonna start shaving off portions of the simple shapes.</p>
+            <img src="../pics/tut/handpart3.png" alt="Fixing up the hand">
+            <p>And now we have a hand. Lets do another example.</p>
+            <p>This one will be at a different angle. For general hand sizes, make 2 small balls, similar to joint sizes for the body. One ball for the hand, the other for the fingers.</p>
+            <img src="../pics/tut/handpart6.png" alt="Starting another hand">
+            <img src="../pics/tut/handpart4.png" alt="Complete">
+            <img src="../pics/tut/handpart5.png" alt="Adding fingers">
+            <h2>Now that we have knowledge on how to make hands, lets add some to our art.</h2>
+            <audio controls>
+                <source src="../audio/April in Paris.flac">
+            </audio>
+            <p>Following what we just learned, I create the hands desired for my pose.</p>
+            <img src="../pics/tut/roughbody2.png" alt="Adding the hands to our picture">
+            <p>How about that? Just gotta keep practicing! Hands are usually the thing struggles with, along with faces (we'll go over them next). Just gotta practice!</p>
+
+            <h2>Now on faces.</h2>
+            <p>You can actually, calculate this with math and rulers, and if you really want to get in depth with this sort of thing, I can recommend some readings later.</p>
+            <p>To make things simple, lets start with making a more correct head using a 2x3 square.</p>
+            <img src="../pics/tut/headpart1.png" alt="Starting the head">
+            <p>Next we will be drawing a circle in the first 2 squares, and we're gonna draw the chin (ignore how thick the circle is).</p>
+            <img src="../pics/tut/headpart2.png" alt="Drawing the rest chin">
+            <p>Now we're gonna do a bunch of math to fill in the rest. We're gonna measure the "eye" and use that to measure everything. We're gonna divide the squares into three equal parts.</p>
+            <img src="../pics/tut/headpart3.png" alt="Dividing into three parts">
+            <p>The lines aren't straight,
+ but if you have ruler it'll be easier, but it should about like this. Next we're gonna add eyes, they'll be put at specific spots.</p>
+            <img src="../pics/tut/headpart4.png" alt="Adding eyes">
+            <p>Now for the lips, they're gonna be in the middle of the eye, above line 6.</p>
+            <img src="../pics/tut/headpart5.png" alt="Adding Lips">
+            <p>The ears will be added in the middle of the eye to about the nose bottom.</p>
+            <img src="../pics/tut/headpart6.png" alt="Adding ears to the head">
+            <p>And now our face is complete! Its a bit creepy, isn't it? But once you add features, it'll be more appealing.</p>
+            <p>If you want to understand this more, I recommend checking out this website. Ignore that it's old and in Japanese, and don't ask why I know of this old website. It's a very good/detailed guide.</p>
+            <p><a href="https://web.archive.org/web/20030423135426/http://www1.dnet.gr.jp/~takayuki/syonen/art/frame.html" target="_blank">Link to the guide</a></p>
+            <h2>Now we'll add this to our body!</h2>
+            <img src="../pics/tut/roughbody3.png" alt="Adding facial features to body">
+
+            <h2>Now we'll finish with feet.</h2>
+            <audio controls>
+                <source src="../audio/One Last Time.flac">
+            </audio>
+            <p>This part is pretty simple, as it's similar to hands, except the feet are a bit longer. Truthfully, I usually add shoes, boots, etc. So I never really practice proper feet much.</p>
+            <p>We'll add a joint at the back of the feet, along with about the same size for the front. Since I normally put boots on, it'll look incomplete.</p>
+            <img src="../pics/tut/roughfeet1.png" alt="Feet">
+            <p>And now, we have our whole body set up! But its looking a bit blocky still. In the next lesson, we'll learn how to shape up the body.</p>
+
+            <h2>You better practice!</h2>
+
+            <div class="footer">
+                <a href="tut1.html">Previous Tutorial</a>
+                <a href="tuthome.html">Back to Tutorial Home</a>
+                <a href="tut3.html">Next Tutorial</a>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <ul>
+                <li><a href="../index.html">Back to Home Page</a></li>
+                <li><a href="../blog/bloghome.html">My Blog Posts</a></li>
+                <li><a href="../port/porthome.html">My Art Portfolio</a></li>
+                <li><a href="../aboutme.html">About Me</a></li>
+                <li><a href="../rss/feed.xml">Subscribe to my RSS Feed</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
