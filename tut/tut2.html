@@ -202,17 +202,24 @@
     transition: background-color 0.3s ease;
 }
 
-.footer a:hover {
-    background-color: #ddd;
-}
-
 /* Adjust button layout on mobile */
 @media (max-width: 768px) {
     .footer {
         flex-direction: row; /* Force buttons to be in a row */
         flex-wrap: nowrap; /* Prevent wrapping */
     }
+
+    /* Adjust button sizes */
+    .footer a:nth-child(1), .footer a:nth-child(3) {
+        flex: 2; /* Make left and right buttons larger */
+    }
+
+    .footer a:nth-child(2) {
+        flex: 1; /* Make the middle button smaller */
+    }
 }
+
+
 
 
         /* Image responsiveness */
