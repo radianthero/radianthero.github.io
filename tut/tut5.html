@@ -138,7 +138,7 @@
             }
         }
 
-        /* Navigation Footer Styles */
+        /* Footer Styles */
         .footer {
             margin-top: 20px;
             text-align: center;
@@ -159,27 +159,30 @@
             background-color: #d8e1e9; /* Light gray hover effect */
         }
 
-        /* Button Styles */
+        /* Adjusted button layout in footer */
+        .footer {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
         .footer a {
-            color: #ffffff;
-            background-color: #004c6d; /* Deep blue background */
-            border-radius: 5px;
             padding: 12px 25px;
             font-size: 18px;
-            text-decoration: none;
-            margin: 10px;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            background-color: #004c6d;
+            color: white;
+            border-radius: 5px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
         }
 
         .footer a:hover {
-            background-color: #006f8a; /* Slightly lighter blue on hover */
-            transform: translateY(-2px); /* Slight lift effect on hover */
+            background-color: #006f8a;
+            transform: translateY(-2px); /* Hover effect for slight lift */
         }
 
         .footer a:active {
-            background-color: #003c4d; /* Darker blue when clicked */
-            transform: translateY(0); /* Reset lift effect */
+            background-color: #003c4d;
+            transform: translateY(0); /* Reset on click */
         }
     </style>
 </head>
