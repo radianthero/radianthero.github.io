@@ -38,7 +38,7 @@
             max-width: 1440px;
             margin: 0 auto;
             background-color: #ffffff;
-            border: 1px solid #ddd; /* Corrected to match first layout */
+            border: 1px solid #ddd;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 100%;
         }
@@ -51,8 +51,8 @@
             color: #333;
             display: flex;
             flex-direction: column;
-            align-items: center; /* Center-align content horizontally */
-            text-align: center; /* Center-align text */
+            align-items: center;
+            text-align: center;
         }
 
         h1 {
@@ -92,7 +92,7 @@
             height: 100vh;
             position: sticky;
             top: 0;
-            box-shadow: 3px 0 5px rgba(0, 0, 0, 0.2); /* Added shadow to the sidebar */
+            box-shadow: 3px 0 5px rgba(0, 0, 0, 0.2);
         }
 
         .sidebar ul {
@@ -103,11 +103,10 @@
             flex-direction: column;
         }
 
-        /* List item styles */
         .sidebar ul li {
             padding: 15px;
             text-align: center;
-            background-color: #2b3d4f; /* Slightly lighter navy blue */
+            background-color: #2b3d4f;
             border: 2px solid #fff;
             font-size: 22px;
             line-height: 1.5;
@@ -115,20 +114,17 @@
             transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
 
-        /* Link styles inside list item */
         .sidebar ul li a {
             color: #ffffff;
             text-decoration: none;
             display: block;
         }
 
-        /* Hover effect for sidebar list items */
         .sidebar ul li:hover {
-            background-color: #3c4d66; /* Slightly lighter on hover */
+            background-color: #3c4d66;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         }
 
-        /* Responsive Design */
         @media (max-width: 1080px) {
             .container {
                 flex-direction: column;
@@ -150,12 +146,13 @@
             text-align: center;
             font-size: 18px;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         .footer a {
-            color: #004c6d; /* Deep blue for footer links */
+            color: #004c6d;
             text-decoration: none;
             padding: 10px 20px;
             background-color: #f0f0f0;
@@ -165,24 +162,21 @@
         }
 
         .footer a:hover {
-            background-color: #d8e1e9; /* Light gray hover effect */
+            background-color: #d8e1e9;
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
             .footer {
                 flex-direction: row;
-                justify-content: space-between;
-                width: 100%;
-                padding: 0 10px;
+                flex-wrap: nowrap;
             }
 
-            /* Adjust button layout on mobile */
             .footer a:nth-child(1), .footer a:nth-child(3) {
-                flex: 2; /* Make left and right buttons larger */
+                flex: 2;
             }
 
             .footer a:nth-child(2) {
-                flex: 1; /* Make the middle button smaller */
+                flex: 1;
             }
         }
     </style>
@@ -199,7 +193,6 @@
             <p>This lesson will be short since we'll be finishing making our body. Different body shapes exist, depending on what you want to make. I'll show off a few pictures, and you'll decide what you want to make for your drawing.</p>
 
             <img src="../pics/tut/femalebody.png" alt="Body Female">
-
             <img src="../pics/tut/body22.jpg" alt="Second Body Female">
             <img src="../pics/tut/body3.jpg" alt="Male body">
             <img src="../pics/tut/body4.jpg" alt="Second Male Body">
