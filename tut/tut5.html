@@ -152,15 +152,20 @@
         .footer a {
             color: #004c6d; /* Deep blue for footer links */
             text-decoration: none;
-            padding: 10px 20px;
-            background-color: #f0f0f0;
+            padding: 12px 25px;
+            font-size: 18px;
             border-radius: 5px;
-            margin: 5px;
-            transition: background-color 0.3s ease;
+            transition: transform 0.3s ease, background-color 0.3s ease;
         }
 
         .footer a:hover {
-            background-color: #d8e1e9; /* Light gray hover effect */
+            background-color: #006f8a;
+            transform: translateY(-2px); /* Hover effect for slight lift */
+        }
+
+        .footer a:active {
+            background-color: #003c4d;
+            transform: translateY(0); /* Reset on click */
         }
 
         /* Adjust button layout on mobile */
@@ -170,13 +175,8 @@
                 flex-wrap: nowrap; /* Prevent wrapping */
             }
 
-            /* Adjust button sizes */
-            .footer a:nth-child(1), .footer a:nth-child(3) {
-                flex: 2; /* Make left and right buttons larger */
-            }
-
-            .footer a:nth-child(2) {
-                flex: 1; /* Make the middle button smaller */
+            .footer a {
+                flex: 1; /* Ensure both buttons have equal size */
             }
         }
     </style>
