@@ -74,12 +74,11 @@
         }
 
         .sidebar ul li {
-            font-size: 1.8rem; /* Default font size */
-            padding: 1.5rem 2rem; /* Default padding */
+            font-size: 1.8rem;
+            padding: 1.5rem 2rem;
             text-align: center;
             border: 2px solid #ffffff;
-            margin-bottom: 1.5rem; /* Default spacing */
-            border-radius: 0;
+            margin-bottom: 1.5rem;
             background-color: #333333;
             transition: background-color 0.3s ease;
         }
@@ -126,9 +125,9 @@
             }
 
             .sidebar ul li {
-                font-size: 1.2rem; /* 1080p-specific font size */
-                padding: 1rem 1.5rem; /* 1080p-specific padding */
-                margin-bottom: 1rem; /* 1080p-specific spacing */
+                font-size: 1.2rem;
+                padding: 1rem 1.5rem;
+                margin-bottom: 1rem;
             }
 
             .caption {
@@ -148,15 +147,51 @@
                 padding: 50px 40px;
             }
 
-            /* Adjust sidebar box dimensions only for 1440p */
             .sidebar ul li {
-                font-size: 2.2rem; /* 1440p-specific font size */
-                padding: 2rem 3rem; /* 1440p-specific padding */
-                margin-bottom: 2.5rem; /* 1440p-specific spacing */
+                font-size: 2.2rem;
+                padding: 2rem 3rem;
+                margin-bottom: 2.5rem;
             }
 
             .caption {
                 font-size: 2.5rem;
+            }
+        }
+
+        /* Additional Media Query for Mobile Screens (below 768px) */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                width: 100vw;
+                height: auto;
+            }
+
+            .sidebar {
+                width: 100%;
+                padding: 15px;
+                background-color: #000000;
+                color: #ffffff;
+            }
+
+            .sidebar ul li {
+                font-size: 1rem;
+                padding: 0.8rem 1rem;
+                margin-bottom: 0.8rem;
+                background-color: #444444;
+                border-color: #ffffff;
+            }
+
+            .sidebar ul li a {
+                color: #ffffff;
+            }
+
+            .content {
+                padding: 15px;
+            }
+
+            .caption {
+                font-size: 1.2rem;
+                color: #666666;
             }
         }
     </style>
