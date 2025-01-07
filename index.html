@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Welcome to my art blog!">
     <link rel="icon" href="./favicons/favicon.ico" sizes="32x32" type="image/x-icon">
+    <link rel="icon" href="./favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="./favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="./favicons/mstile-150x150.png" sizes="150x150" type="image/png">
+    <link rel="icon" href="./favicons/android-chrome-192x192.png" sizes="192x192" type="image/png">
+    <link rel="icon" href="./favicons/android-chrome-512x512.png" sizes="512x512" type="image/png">
+    <link rel="icon" href="./favicons/apple-touch-icon.png" sizes="180x180" type="image/png">
+    <link rel="mask-icon" href="./favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="browserconfig" href="./favicons/browserconfig.xml" />
+    <link rel="manifest" href="./favicons/site.webmanifest">
     <title>Radiant Ink</title>
     <style>
         /* Ensure html and body fill the entire height */
@@ -16,9 +25,9 @@
             box-sizing: border-box;
         }
 
-        /* Container */
+        /* Container takes the full viewport height */
         .container {
-            width: 100%;
+            width: 90vw;
             max-width: 1430px;
             height: 100vh;
             display: flex;
@@ -31,11 +40,22 @@
             box-sizing: border-box;
         }
 
-        /* Sidebar */
+        /* Content section should center the image */
+        .content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Sidebar takes 25% of the width, full height */
         .sidebar {
             width: 25%;
-            background-color: #000000 !important; /* Force the color */
-            color: #ffffff !important; /* Force the text color */
+            background-color: #000000;
+            color: #ffffff;
             padding: 40px 30px;
             box-sizing: border-box;
             height: 100%;
@@ -44,11 +64,13 @@
             justify-content: flex-start;
         }
 
-        /* Sidebar Links */
+        /* Sidebar list items styled as full-width rectangles */
         .sidebar ul {
             list-style: none;
             padding: 0;
             margin: 0;
+            display: flex;
+            flex-direction: column;
         }
 
         .sidebar ul li {
@@ -62,33 +84,114 @@
         }
 
         .sidebar ul li a {
-            color: #ffffff !important;
+            color: #ffffff;
             text-decoration: none;
+            display: block;
         }
 
-        /* Mobile Styling */
+        /* Main image styling */
+        .main-image {
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        /* Caption styling */
+        .caption {
+            text-align: center;
+            font-size: 2rem;
+            color: #666666;
+            margin-top: 1rem;
+        }
+
+        /* Media Query for 1080p Screens */
+        @media (max-width: 1080px) {
+            .container {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .sidebar {
+                width: 100%;
+                padding: 20px;
+            }
+
+            .sidebar ul li {
+                font-size: 1.2rem;
+                padding: 1rem 1.5rem;
+                margin-bottom: 1rem;
+            }
+
+            .caption {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Media Query for 1440p Screens */
+        @media (min-width: 1440px) {
+            .container {
+                width: 80vw;
+                height: 100vh;
+                max-height: none;
+            }
+
+            .sidebar {
+                padding: 50px 40px;
+            }
+
+            .sidebar ul li {
+                font-size: 2.2rem;
+                padding: 2rem 3rem;
+                margin-bottom: 2.5rem;
+            }
+
+            .caption {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* Additional Media Query for Mobile Screens (below 768px) */
         @media (max-width: 768px) {
             .container {
-                flex-direction: row-reverse; /* Move sidebar to the right */
+                flex-direction: column;
                 width: 100vw;
                 height: auto;
             }
 
             .sidebar {
-                width: 100% !important;
-                padding: 20px;
-                background-color: #000000 !important; /* Ensure proper rendering */
-                color: #ffffff !important;
+                width: 100%;
+                padding: 15px;
+                background-color: #000000;
+                color: #ffffff;
             }
 
             .sidebar ul li {
-                font-size: 1.2rem;
-                padding: 1rem;
+                font-size: 1rem;
+                padding: 0.8rem 1rem;
+                margin-bottom: 0.8rem;
                 background-color: #444444;
+                border-color: #ffffff;
             }
 
             .sidebar ul li a {
-                color: #ffffff !important;
+                color: #ffffff;
+            }
+
+            .content {
+                padding: 15px;
+            }
+
+            .caption {
+                font-size: 1.2rem;
+                color: #666666;
             }
         }
     </style>
@@ -96,7 +199,9 @@
 <body>
     <div class="container">
         <div class="content">
-            <img src="homepage.png" alt="Insert a picture here" style="max-width: 100%; height: auto;">
+            <div class="main-image">
+                <img src="homepage.png" alt="Insert a picture here">
+            </div>
         </div>
         <div class="sidebar">
             <ul>
