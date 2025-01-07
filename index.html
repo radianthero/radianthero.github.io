@@ -160,37 +160,39 @@
 
         /* Additional Media Query for Mobile Screens (below 768px) */
         @media (max-width: 768px) {
-            body {
-                background-color: #2C2116;  /* Set the background color to #2C2116 for mobile */
+            html, body {
+                background-color: #2C2116;  /* Applying desired color on mobile */
             }
 
             .container {
                 flex-direction: column;
                 width: 100vw;
                 height: auto;
+                background-color: #2C2116;  /* Container around content also gets brown */
             }
 
             .sidebar {
                 width: 100%;
                 padding: 15px;
-                background-color: #000000;
+                background-color: #2C2116;  /* Sidebar will also have the same background color */
                 color: #ffffff;
+            }
+
+            .content {
+                background-color: #2C2116;  /* Applying brown color around the picture */
+                padding: 15px;
             }
 
             .sidebar ul li {
                 font-size: 1rem;
                 padding: 0.8rem 1rem;
                 margin-bottom: 0.8rem;
-                background-color: #333333;
+                background-color: #444444;
                 border-color: #ffffff;
             }
 
             .sidebar ul li a {
                 color: #ffffff;
-            }
-
-            .content {
-                padding: 15px;
             }
 
             .caption {
