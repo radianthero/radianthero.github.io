@@ -124,15 +124,28 @@
         }
 
         /* Image Styles */
-        .content img {
-            display: block;
-            margin: 20px auto;
-            border-radius: 10px;
-            max-width: 100%; /* Ensures image responsiveness */
-            height: auto; /* Maintain aspect ratio */
+        img {
+            width: 100%; /* Ensures responsiveness */
+            height: auto; /* Maintains aspect ratio */
+            max-width: 800px; /* Restricts size for larger screens */
+            margin-bottom: 20px;
         }
 
-        /* Responsive Design */
+        /* Media query for 1080p screens */
+        @media (min-width: 1920px) and (max-width: 2559px) {
+            img {
+                max-width: 600px; /* Smaller image size for 1080p */
+            }
+        }
+
+        /* Media query for 1440p screens */
+        @media (min-width: 2560px) {
+            img {
+                max-width: 800px; /* Larger image size for 1440p */
+            }
+        }
+
+        /* Responsive Design for Mobile */
         @media (max-width: 1080px) {
             .container {
                 flex-direction: column;
