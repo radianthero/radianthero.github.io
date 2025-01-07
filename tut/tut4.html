@@ -153,18 +153,29 @@
             align-items: center;
         }
 
+        /* Footer link styles (as buttons) */
         .footer a {
-            color: #004c6d; /* Deep blue for footer links */
+            color: #004c6d; /* Deep blue text color */
             text-decoration: none;
-            padding: 10px 20px;
-            background-color: #f0f0f0;
+            padding: 15px 30px; /* Increased padding for button appearance */
+            background-color: #ffffff; /* White background */
+            border: 2px solid #004c6d; /* Border matches the text color */
             border-radius: 5px;
-            margin: 5px;
-            transition: background-color 0.3s ease;
+            margin: 10px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-weight: bold;
         }
 
+        /* Hover effect for footer buttons */
         .footer a:hover {
-            background-color: #d8e1e9; /* Light gray hover effect */
+            background-color: #004c6d; /* Deep blue background on hover */
+            color: #ffffff; /* White text on hover */
+            transform: scale(1.05); /* Slight scale-up effect */
+        }
+
+        /* Active button state (click effect) */
+        .footer a:active {
+            transform: scale(0.95); /* Scale down on click */
         }
 
         @media (max-width: 600px) {
@@ -184,7 +195,7 @@
             <audio controls>
                 <source src="../audio/The Militia.flac">
             </audio>
-            <h2>Welcome back!</h2>
+            <h2>Welcome back</h2>
             <p>Hey there! I have some bigger projects in the pipeline, but I figured it'd be best to finish this tutorial first. We only have two lessons left anyway. Today, we'll be working on some clothes!</p>
 
             <p>There's a few things you have to understand first before we go into clothes, the most important thing is that cloth is some of the hardest thing to look amazing, so don't fret over if it's not as detailed as you'd like it to be, it just happens like that.</p>
