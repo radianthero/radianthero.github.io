@@ -127,6 +127,44 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         }
 
+        /* Footer Section */
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 18px;
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            flex-wrap: wrap; /* Allow wrapping if needed */
+        }
+
+        .footer a {
+            color: #004c6d;
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            margin: 5px; /* Add margin to create space between buttons */
+            transition: background-color 0.3s ease;
+        }
+
+        /* Adjust button layout on mobile */
+        @media (max-width: 768px) {
+            .footer {
+                flex-direction: row; /* Force buttons to be in a row */
+                flex-wrap: nowrap; /* Prevent wrapping */
+            }
+
+            /* Adjust button sizes */
+            .footer a:nth-child(1), .footer a:nth-child(3) {
+                flex: 2; /* Make left and right buttons larger */
+            }
+
+            .footer a:nth-child(2) {
+                flex: 1; /* Make the middle button smaller */
+            }
+        }
+
         /* Responsive Design */
         @media (max-width: 1080px) {
             .container {
@@ -140,49 +178,6 @@
             .content {
                 width: 100%;
                 padding: 20px;
-            }
-        }
-
-        /* Navigation Footer Styles */
-        .footer {
-            margin-top: 20px;
-            text-align: center;
-            font-size: 18px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        /* Footer link styles (as buttons) */
-        .footer a {
-            color: #004c6d; /* Deep blue text color */
-            text-decoration: none;
-            padding: 15px 30px; /* Increased padding for button appearance */
-            background-color: #ffffff; /* White background */
-            border: 2px solid #004c6d; /* Border matches the text color */
-            border-radius: 5px;
-            margin: 10px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            font-weight: bold;
-        }
-
-        /* Hover effect for footer buttons */
-        .footer a:hover {
-            background-color: #004c6d; /* Deep blue background on hover */
-            color: #ffffff; /* White text on hover */
-            transform: scale(1.05); /* Slight scale-up effect */
-        }
-
-        /* Active button state (click effect) */
-        .footer a:active {
-            transform: scale(0.95); /* Scale down on click */
-        }
-
-        @media (max-width: 600px) {
-            .footer a {
-                width: 100%;
-                text-align: center;
-                margin-bottom: 10px;
             }
         }
     </style>
