@@ -144,8 +144,9 @@
             text-align: center;
             font-size: 18px;
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            flex-wrap: wrap; /* Allow wrapping if needed */
         }
 
         .footer a {
@@ -162,30 +163,21 @@
             background-color: #d8e1e9; /* Light gray hover effect */
         }
 
-        .footer {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-        }
+        /* Adjust button layout on mobile */
+        @media (max-width: 768px) {
+            .footer {
+                flex-direction: row; /* Force buttons to be in a row */
+                flex-wrap: nowrap; /* Prevent wrapping */
+            }
 
-        .footer a {
-            color: #004c6d;
-            padding: 12px 25px;
-            font-size: 18px;
-            border-radius: 5px;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-        }
+            /* Adjust button sizes */
+            .footer a:nth-child(1), .footer a:nth-child(3) {
+                flex: 2; /* Make left and right buttons larger */
+            }
 
-        .footer a:hover {
-            background-color: #006f8a;
-            transform: translateY(-2px); /* Hover effect for slight lift */
-        }
-
-        .footer a:active {
-            background-color: #003c4d;
-            transform: translateY(0); /* Reset on click */
+            .footer a:nth-child(2) {
+                flex: 1; /* Make the middle button smaller */
+            }
         }
     </style>
 </head>
