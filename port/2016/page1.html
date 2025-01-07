@@ -128,22 +128,23 @@
             display: block;
             margin: 20px auto;
             border-radius: 10px;
-            width: 100%; /* Default: fills container */
-            max-width: auto; /* Default size for smaller screens */
+            max-width: 100%; /* Ensures image responsiveness */
             height: auto; /* Maintain aspect ratio */
         }
 
-        /* Specific Rules for 1080p (1920x1080) */
-        @media (min-width: 1920px) and (max-width: 2559px) {
-            .content img {
-                max-width: 600px; /* Adjust size for 1080p screens */
+        /* Responsive Design */
+        @media (max-width: 1080px) {
+            .container {
+                flex-direction: column;
             }
-        }
-
-        /* Specific Rules for 1440p (2560x1440 and above) */
-        @media (min-width: 2560px) {
-            .content img {
-                max-width: 800px; /* Larger size for 1440p screens */
+            .sidebar {
+                width: 100%;
+                padding: 15px;
+                order: 0;
+            }
+            .content {
+                width: 100%;
+                padding: 20px;
             }
         }
     </style>
@@ -153,7 +154,7 @@
         <div class="content">
             <h1>Mario and Geno</h1>
             <img src="../../pics/port/2016/mario and geno.jpg" alt="Mario & Geno" />
-            <a href="../2016/2016port.html" class="back-button">Back</a> <!-- Button link -->
+            <a href="../2016/2016port.html" class="back-button">Back</a>
         </div>
         <div class="sidebar">
             <ul>
