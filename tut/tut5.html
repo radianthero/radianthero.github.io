@@ -122,8 +122,8 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         }
 
-                /* Image responsiveness */
-            img {
+        /* Image responsiveness */
+        img {
             max-width: 100%;
             height: auto;
             object-fit: contain;
@@ -165,6 +165,10 @@
             font-size: 18px;
             border-radius: 5px;
             transition: transform 0.3s ease, background-color 0.3s ease;
+            display: block; /* Ensures the links are block-level elements */
+            width: 100%; /* Make each link take full width in the footer */
+            box-sizing: border-box; /* Prevent padding from affecting width calculation */
+            text-align: center; /* Center text within each link */
         }
 
         .footer a:hover {
@@ -179,12 +183,13 @@
         /* Adjust button layout on mobile */
         @media (max-width: 768px) {
             .footer {
-                flex-direction: row; /* Force buttons to be in a row */
-                flex-wrap: nowrap; /* Prevent wrapping */
+                flex-direction: column; /* Stack buttons vertically on mobile */
+                width: 100%; /* Ensure footer takes full width */
             }
 
             .footer a {
-                flex: 1; /* Ensure both buttons have equal size */
+                width: 100%; /* Ensure all links are the same size */
+                margin-bottom: 10px; /* Add space between buttons */
             }
         }
     </style>
