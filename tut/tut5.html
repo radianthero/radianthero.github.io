@@ -122,8 +122,8 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         }
 
-                /* Image responsiveness */
-                img {
+        /* Image responsiveness */
+        img {
             max-width: 100%;
             height: auto;
             object-fit: contain;
@@ -151,19 +151,23 @@
             text-align: center;
             font-size: 18px;
             display: flex;
-            justify-content: center; /* Center horizontally */
+            justify-content: space-between; /* Spread buttons with spacing */
             align-items: center; /* Center vertically */
-            flex-wrap: wrap; /* Allow wrapping if needed */
+            gap: 10px; /* Small spacing between buttons */
         }
 
         .footer a {
             color: #004c6d; /* Deep blue for footer links */
             background-color: #f0f0f0;
             text-decoration: none;
-            padding: 12px 25px;
+            padding: 20px;
             font-size: 18px;
             border-radius: 5px;
             transition: transform 0.3s ease, background-color 0.3s ease;
+            display: block;
+            width: 100%; /* Make them full width of the available space */
+            aspect-ratio: 1; /* Make them square */
+            box-sizing: border-box;
         }
 
         .footer a:hover {
