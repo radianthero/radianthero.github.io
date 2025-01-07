@@ -153,7 +153,7 @@
             display: flex;
             justify-content: center; /* Center horizontally */
             align-items: center; /* Center vertically */
-            gap: 10px; 
+            gap: 10px;
             flex-wrap: wrap; /* Allow wrapping if needed */
         }
 
@@ -165,10 +165,6 @@
             font-size: 18px;
             border-radius: 5px;
             transition: transform 0.3s ease, background-color 0.3s ease;
-            display: block; /* Ensures the links are block-level elements */
-            width: 100%; /* Make each link take full width in the footer */
-            box-sizing: border-box; /* Prevent padding from affecting width calculation */
-            text-align: center; /* Center text within each link */
         }
 
         .footer a:hover {
@@ -190,6 +186,7 @@
             .footer a {
                 width: 100%; /* Ensure all links are the same size */
                 margin-bottom: 10px; /* Add space between buttons */
+                padding: 20px 0; /* Make buttons equal height */
             }
         }
     </style>
