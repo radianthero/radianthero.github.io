@@ -153,7 +153,7 @@
             display: flex;
             justify-content: center; /* Center horizontally */
             align-items: center; /* Center vertically */
-            gap: 10px;
+            gap: 10px; 
             flex-wrap: wrap; /* Allow wrapping if needed */
         }
 
@@ -176,17 +176,20 @@
             transform: translateY(0); /* Reset on click */
         }
 
-        /* Adjust button layout on mobile */
+        /* Mobile-specific styles */
         @media (max-width: 768px) {
+            /* Change footer layout to horizontal on mobile */
             .footer {
-                flex-direction: column; /* Stack buttons vertically on mobile */
-                width: 100%; /* Ensure footer takes full width */
+                flex-direction: row; /* Display buttons horizontally */
+                gap: 10px; /* Space between buttons */
             }
 
+            /* Equal width for buttons */
             .footer a {
-                width: 100%; /* Ensure all links are the same size */
-                margin-bottom: 10px; /* Add space between buttons */
-                padding: 20px 0; /* Make buttons equal height */
+                width: 48%; /* Equal width */
+                margin: 0; /* Remove extra margin */
+                padding: 15px 0; /* Adjust padding for height */
+                text-align: center; /* Ensure text is centered */
             }
         }
     </style>
