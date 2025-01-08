@@ -144,11 +144,43 @@
         }
 
         @media (max-width: 768px) {
-            
+            .container {
+                background-color: #181A1B; /* Updated for mobile */
+                color: #ffffff; /* White text for contrast */
+            }
+
+            .content {
+                background-color: #181A1B; /* Match container background */
+                color: #ffffff; /* White text for readability */
+            }
+
+            .footer a {
+                background-color: #282A2B; /* Slightly lighter tone for footer links */
+                color: #ffffff; /* Consistent text color */
+            }
 
             .footer {
-                flex-direction: row;
-                flex-wrap: nowrap;
+                margin-top: 20px;
+                text-align: center;
+                font-size: 18px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+
+            .footer a {
+                color: #004c6d;
+                text-decoration: none;
+                padding: 10px 20px;
+                background-color: #f0f0f0;
+                border-radius: 5px;
+                margin: 5px;
+                transition: background-color 0.3s ease;
+            }
+
+            .footer a:hover {
+                background-color: #d8e1e9;
             }
 
             .footer a:nth-child(1), .footer a:nth-child(3) {
@@ -158,44 +190,7 @@
             .footer a:nth-child(2) {
                 flex: 1;
             }
-
-            @media (max-width: 768px) {
-    .container {
-        background-color: #181A1B; /* Updated for mobile */
-        color: #ffffff; /* White text for contrast */
-    }
-
-    .content {
-        background-color: #181A1B; /* Match container background */
-        color: #ffffff; /* White text for readability */
-    }
-
-    .footer a {
-        background-color: #282A2B; /* Slightly lighter tone for footer links */
-        color: #ffffff; /* Consistent text color */
-    }
         }
-        /* Navigation Footer Styles */
-        .footer {
-            margin-top: 20px;
-            text-align: center;
-            font-size: 18px;
-        }
-
-        .footer a {
-            color: #004c6d; /* Deep blue for footer links */
-            text-decoration: none;
-            padding: 10px 20px;
-            background-color: #f0f0f0;
-            border-radius: 5px;
-            margin: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .footer a:hover {
-            background-color: #d8e1e9; /* Light gray hover effect */
-        }
-    }
     </style>
 </head>
 <body>
@@ -243,25 +238,26 @@
 
             <p>Went from a fairly flat image to now something better.</p>
 
-            <p>That's all the work done today! I'm pretty happy with it! The next lesson will be cleaning up the rest of the art, and adding a few more details.</p>
+            <p>That's all the work done today! I'm pretty happy with it! The next lesson will be cleaning up the rest of the drawing!</p>
 
-            <!-- Footer Section -->
-            <div class="footer">
-                <a href="tut3.html">Previous Tutorial</a>
-                <a href="tuthome.html">Back to Tutorial Home</a>
-                <a href="tut5.html">Next Tutorial</a>
-            </div>
+            <audio controls>
+                <source src="../audio/Few Reasons.flac">
+            </audio>
         </div>
-        
+
         <div class="sidebar">
             <ul>
-                <li><a href="../index.html">Back to Home Page</a></li>
-                <li><a href="../blog/bloghome.html">My Blog Posts</a></li>
-                <li><a href="../port/porthome.html">My Art Portfolio</a></li>
-                <li><a href="../aboutme.html">About Me</a></li>
-                <li><a href="../rss/feed.xml">Subscribe to my RSS Feed</a></li>
+                <li><a href="tut3.html">Previous Tutorial</a></li>
+                <li><a href="tuthome.html">Back to Tutorial Home</a></li>
+                <li><a href="tut5.html">Next Tutorial</a></li>
             </ul>
         </div>
+    </div>
+
+    <div class="footer">
+        <a href="tut3.html">Previous Tutorial</a>
+        <a href="tuthome.html">Back to Tutorial Home</a>
+        <a href="tut5.html">Next Tutorial</a>
     </div>
 </body>
 </html>
