@@ -143,6 +143,38 @@
             }
         }
 
+        @media (max-width: 768px) {
+            
+
+            .footer {
+                flex-direction: row;
+                flex-wrap: nowrap;
+            }
+
+            .footer a:nth-child(1), .footer a:nth-child(3) {
+                flex: 2;
+            }
+
+            .footer a:nth-child(2) {
+                flex: 1;
+            }
+
+            @media (max-width: 768px) {
+    .container {
+        background-color: #181A1B; /* Updated for mobile */
+        color: #ffffff; /* White text for contrast */
+    }
+
+    .content {
+        background-color: #181A1B; /* Match container background */
+        color: #ffffff; /* White text for readability */
+    }
+
+    .footer a {
+        background-color: #282A2B; /* Slightly lighter tone for footer links */
+        color: #ffffff; /* Consistent text color */
+    }
+        }
         /* Navigation Footer Styles */
         .footer {
             margin-top: 20px;
