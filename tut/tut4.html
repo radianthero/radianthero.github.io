@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learning to draw clothes.">
+    <meta name="description" content="Learning to draw body types.">
     <link rel="icon" href="../favicons/favicon.ico" sizes="32x32" type="image/x-icon">
     <link rel="icon" href="../favicons/favicon-16x16.png" sizes="16x16" type="image/png">
     <link rel="icon" href="../favicons/favicon-32x32.png" sizes="32x32" type="image/png">
@@ -14,7 +14,7 @@
     <link rel="mask-icon" href="../favicons/safari-pinned-tab.svg" color="#5bbad5">
     <link rel="browserconfig" href="../favicons/browserconfig.xml" />
     <link rel="manifest" href="../favicons/site.webmanifest">
-    <title>Art Tutorial 4 - Radiant Ink</title>
+    <title>Art Tutorial 3 - Radiant Ink</title>
     <style>
         * {
             margin: 0;
@@ -27,6 +27,7 @@
             height: 100%;
             font-family: Arial, sans-serif;
             background-color: #E6F1F6; /* Soft light blue background */
+            color: #333; /* Dark gray text color */
             overflow: auto;
         }
 
@@ -46,12 +47,12 @@
         .content {
             flex: 1;
             padding: 40px 20px;
-            color: #333; /* Darker text for good readability */
             background-color: #ffffff;
+            color: #333;
             display: flex;
             flex-direction: column;
-            align-items: center; /* Center-align content horizontally */
-            text-align: center; /* Center-align text */
+            align-items: center;
+            text-align: center;
         }
 
         h1 {
@@ -62,7 +63,7 @@
 
         h2 {
             font-size: 24px;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             color: #006f8a; /* Slightly lighter blue */
         }
 
@@ -81,7 +82,7 @@
         /* Sidebar styles */
         .sidebar {
             width: 25%;
-            background-color: #1e2d3b; /* Deep navy blue for the sidebar */
+            background-color: #1e2d3b; /* Deep navy blue for sidebar */
             color: #ffffff;
             display: flex;
             flex-direction: column;
@@ -91,7 +92,7 @@
             height: 100vh;
             position: sticky;
             top: 0;
-            box-shadow: 3px 0 5px rgba(0, 0, 0, 0.2); /* Add a shadow to the sidebar to make it stand out */
+            box-shadow: 3px 0 5px rgba(0, 0, 0, 0.2);
         }
 
         .sidebar ul {
@@ -102,11 +103,10 @@
             flex-direction: column;
         }
 
-        /* List item styles */
         .sidebar ul li {
             padding: 15px;
             text-align: center;
-            background-color: #2b3d4f; /* Slightly lighter navy blue */
+            background-color: #2b3d4f;
             border: 2px solid #fff;
             font-size: 22px;
             line-height: 1.5;
@@ -114,20 +114,32 @@
             transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
 
-        /* Link styles inside list item */
         .sidebar ul li a {
             color: #ffffff;
             text-decoration: none;
             display: block;
         }
 
-        /* Hover effect for sidebar list items */
         .sidebar ul li:hover {
-            background-color: #3c4d66; /* Slightly lighter on hover */
+            background-color: #3c4d66;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 1080px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                padding: 15px;
+                order: 0;
+            }
+            .content {
+                width: 100%;
+                padding: 20px;
+            }
+        }
+
             @media (max-width: 768px) {
     .container {
         background-color: #181A1B; /* Updated for mobile */
@@ -143,21 +155,17 @@
         background-color: #282A2B; /* Slightly lighter tone for footer links */
         color: #ffffff; /* Consistent text color */
     }
-
-    .footer a:hover {
-        background-color: #3A3C3D; /* Subtle hover effect */
-    }
 }
 
-        /* Footer Section */
+        /* Navigation Footer Styles */
         .footer {
             margin-top: 20px;
             text-align: center;
             font-size: 18px;
             display: flex;
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
-            flex-wrap: wrap; /* Allow wrapping if needed */
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
         }
 
         .footer a {
@@ -166,40 +174,26 @@
             padding: 10px 20px;
             background-color: #f0f0f0;
             border-radius: 5px;
-            margin: 5px; /* Add margin to create space between buttons */
+            margin: 5px;
             transition: background-color 0.3s ease;
         }
 
-        /* Adjust button layout on mobile */
+        .footer a:hover {
+            background-color: #d8e1e9;
+        }
+
         @media (max-width: 768px) {
             .footer {
-                flex-direction: row; /* Force buttons to be in a row */
-                flex-wrap: nowrap; /* Prevent wrapping */
+                flex-direction: row;
+                flex-wrap: nowrap;
             }
 
-            /* Adjust button sizes */
             .footer a:nth-child(1), .footer a:nth-child(3) {
-                flex: 2; /* Make left and right buttons larger */
+                flex: 2;
             }
 
             .footer a:nth-child(2) {
-                flex: 1; /* Make the middle button smaller */
-            }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1080px) {
-            .container {
-                flex-direction: column;
-            }
-            .sidebar {
-                width: 100%;
-                padding: 15px;
-                order: 0;
-            }
-            .content {
-                width: 100%;
-                padding: 20px;
+                flex: 1;
             }
         }
     </style>
@@ -207,58 +201,37 @@
 <body>
     <div class="container">
         <div class="content">
-            <h1>Art Tutorial 4</h1>
-            <p><strong>Date:</strong> 2024-9-26 12:00:00</p>
+            <h1>Art Tutorial 3</h1>
+            <p><strong>Date:</strong> 2024-7-11 12:00:00</p>
             <audio controls>
-                <source src="../audio/The Militia.flac">
+                <source src="../audio/I'm Old Fasioned.flac">
             </audio>
-            <h2>Welcome back</h2>
-            <p>Hey there! I have some bigger projects in the pipeline, but I figured it'd be best to finish this tutorial first. We only have two lessons left anyway. Today, we'll be working on some clothes!</p>
+            <h2>Welcome back!</h2>
+            <p>This lesson will be short since we'll be finishing making our body. Different body shapes exist, depending on what you want to make. I'll show off a few pictures, and you'll decide what you want to make for your drawing.</p>
 
-            <p>There's a few things you have to understand first before we go into clothes, the most important thing is that cloth is some of the hardest thing to look amazing, so don't fret over if it's not as detailed as you'd like it to be, it just happens like that.</p>
+            <img src="../pics/tut/femalebody.png" alt="Body Female">
+            <img src="../pics/tut/body22.jpg" alt="Second Body Female">
+            <img src="../pics/tut/body3.jpg" alt="Male body">
+            <img src="../pics/tut/body4.jpg" alt="Second Male Body">
 
-            <p>You also want to determine what clothes you want for the drawing. While I can't go over every clothing style, I'll try to give a good overview. First, we'll start with shirts.</p>
+            <p>Something to note is that you have to start the curve early at the top, and make sure the body ends by the hips properly. Similar to the face example, everything can be done with math, and you can line everything perfectly. I'll start with the main body for now.</p>
 
-            <p>The first thing to note is that you want to note is that the upper half of the body will typically be more "stuck" to the person compared to the bottom part. Now, this can depend on how the character pose is done, the state of the character, or finally, if you just want it to be a tight shirt for the booba. The best way to line things up is with the breast area being more of the middle portion (men have breasts, too).</p>
+            <img src="../pics/tut/rough body 2.png" alt="Adding a body">
 
-            <p>How far down you want it to be is also up to you. I tend to like the shirt over the pants, but that's also up to you. Dresses will be done similarly. Another nice thing is that you can mask bad body proportions if you mess things up. For now, the shirt will look flat in this instance, but once some detail is done, it'll look better.</p>
+            <p>Because I'm drawing a female, I have to make sure to leave some room around the top/middle of the body for the breast, you can see the line is about where it'll end, leaving room for the stomach on the space below. Now we'll clean up our arms/legs.</p>
 
-            <h2>Shirt Example</h2>
-            <img src="../pics/tut/shirt.png" alt="Example of a shirt">
+            <img src="../pics/tut/rough body 4.png" alt="Body art done">
 
-            <p>It'll look something like this. Using different colors/layers while drafting the image is always good. You'll want to use lighter colors if you're on paper/pencil.</p>
-
-            <h2>Pants Example</h2>
-            <img src="../pics/tut/pants.png" alt="Example of pants">
-
-            <p>This looks rather simple, but it's just a sketch! Now, we'll add some more detail.</p>
-
-            <audio controls>
-                <source src="../audio/Guitars, Whiskey, Guns And Knives.flac">
-            </audio>
-
-            <h2>Cleaning Up the Shirt and Pants</h2>
-            <img src="../pics/tut/shirt and pants.png" alt="Cleaned up shirt and pants">
-
-            <p>But now we'll add some detail to our clothing. A good way to add depth to a shirt is weight, showing one side having more of a "baggier area" than the other. We can also have parts of it fold onto itself, making it pop more.</p>
-
-            <p>To add some detail to pants, you can add a design, maybe a belt, pockets, and some cuts. There are lots of options, depending on how you feel.</p>
-
-            <h2>Final Shirt and Pants Example</h2>
-            <img src="../pics/tut/shirt pants redone.png" alt="New shirts and pants">
-
-            <p>Went from a fairly flat image to now something better.</p>
-
-            <p>That's all the work done today! I'm pretty happy with it! The next lesson will be cleaning up the rest of the art, and adding a few more details.</p>
+            <p>It all started from basic shapes, and now we got our figure done! We're gonna work on clothes next time you're here, so be sure to have a full pose picture ready for that.</p>
 
             <!-- Footer Section -->
             <div class="footer">
-                <a href="tut3.html">Previous Tutorial</a>
+                <a href="tut2.html">Previous Tutorial</a>
                 <a href="tuthome.html">Back to Tutorial Home</a>
-                <a href="tut5.html">Next Tutorial</a>
+                <a href="tut4.html">Next Tutorial</a>
             </div>
         </div>
-        
+
         <div class="sidebar">
             <ul>
                 <li><a href="../index.html">Back to Home Page</a></li>
