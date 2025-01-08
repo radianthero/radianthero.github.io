@@ -146,11 +146,12 @@
         /* Navigation Footer Styles */
         .footer {
             margin-top: 20px;
-            text-align: center;
-            font-size: 18px;
             display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
+            justify-content: space-evenly; /* Ensure even spacing */
+            align-items: center; /* Center buttons vertically */
+            width: 100%;
+            max-width: 600px; /* Limit the width of the footer buttons */
+            margin: 0 auto; /* Center the footer in the container */
         }
 
         .footer a {
@@ -160,6 +161,9 @@
             background-color: #f0f0f0;
             border-radius: 5px;
             margin: 5px;
+            text-align: center;
+            flex-grow: 1;
+            min-width: 150px; /* Ensures minimum button width */
             transition: background-color 0.3s ease;
         }
 
@@ -167,13 +171,10 @@
             background-color: #d8e1e9; /* Light gray hover effect */
         }
 
-        @media (min-width: 1081px) {
-            .footer a:nth-child(1), .footer a:nth-child(3) {
-                flex: 2;
-            }
-
-            .footer a:nth-child(2) {
-                flex: 1;
+        @media (max-width: 1080px) {
+            .footer a {
+                flex-grow: 0;
+                min-width: 120px; /* Smaller buttons on mobile */
             }
         }
     </style>
