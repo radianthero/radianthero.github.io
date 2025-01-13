@@ -139,25 +139,44 @@
             }
         }
         @media (max-width: 768px) {
-            .container {
-                background-color: #181A1B; /* Updated for mobile */
-                color: #ffffff; /* White text for contrast */
-            }
+    .container {
+        background-color: #181A1B; /* Updated for mobile */
+        color: #ffffff; /* White text for contrast */
+    }
 
-            .content {
-                background-color: #181A1B; /* Match container background */
-                color: #ffffff; /* White text for readability */
-            }
+    .content {
+        background-color: #181A1B; /* Match container background */
+        color: #ffffff; /* White text for readability */
+    }
 
-            .footer a {
-                background-color: #282A2B; /* Slightly lighter tone for footer links */
-                color: #ffffff; /* Consistent text color */
-            }
+    .footer {
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: center;
+        margin-top: 10px; /* Reduce top margin */
+    }
 
-            .footer a:hover {
-                background-color: #3A3C3D; /* Subtle hover effect */
-            }
-        }
+    .footer a {
+        background-color: #282A2B; /* Slightly lighter tone for footer links */
+        color: #ffffff; /* Consistent text color */
+        padding: 12px 18px; /* Larger button size */
+        font-size: 16px; /* Increase font size */
+        margin: 8px 0; /* Adjust spacing between stacked buttons */
+        border-radius: 6px; /* Maintain rounded corners */
+    }
+
+    .footer a:hover {
+        background-color: #3A3C3D; /* Subtle hover effect */
+    }
+
+    .sidebar ul li {
+        padding: 12px; /* Slightly larger padding for buttons */
+        font-size: 18px; /* Larger font for readability */
+    }
+
+    .sidebar ul li:hover {
+        box-shadow: 0 0 8px rgba(255, 255, 255, 0.5); /* Adjust hover effect */
+    }
+}
 
         /* Navigation Footer Styles */
         .footer {
