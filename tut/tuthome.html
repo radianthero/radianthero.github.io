@@ -156,21 +156,74 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
 
-        /* Responsive Design */
-        @media (max-width: 1080px) {
-            .container {
-                flex-direction: column;
-            }
-            .sidebar {
-                width: 100%;
-                padding: 15px;
-                order: 0;
-            }
-            .content {
-                width: 100%;
-                padding: 20px;
-            }
-        }
+/* Responsive Design */
+@media (max-width: 1080px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 15px;
+        order: 0;
+    }
+
+    .content {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .sections {
+        flex-direction: column; /* Stack sections vertically */
+    }
+
+    .section {
+        flex: 1 1 100%;
+        margin: 10px 0; /* Add spacing between stacked sections */
+    }
+
+    p, h2, h3 {
+        font-size: 16px; /* Scale down font sizes for better fit */
+    }
+}
+
+@media (max-width: 768px) {
+    .sections {
+        gap: 10px; /* Reduce spacing between sections */
+    }
+
+    .section {
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
+
+    .sidebar ul li {
+        font-size: 18px; /* Make sidebar items more compact */
+        padding: 10px;
+    }
+
+    .sidebar ul li:hover {
+        box-shadow: none; /* Simplify hover effect for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        font-size: 18px; /* Reduce sidebar text size */
+        padding: 10px;
+    }
+
+    .content {
+        padding: 10px; /* Adjust padding for content */
+    }
+
+    .section h2 {
+        font-size: 18px; /* Scale down section headers */
+    }
+
+    .section h3 {
+        font-size: 14px;
+    }
+}
     </style>
 </head>
 <body>
