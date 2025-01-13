@@ -159,94 +159,83 @@
 /* General Mobile Fix */
 @media (max-width: 1080px) {
     body {
-        background-color: #E6F1F6; /* Ensure consistent background on mobile */
+        background-color: #E6F1F6; /* Ensure consistent body background */
     }
 
     .container {
-        flex-direction: column;
-    }
-
-    .sidebar {
-        width: 100%;
-        padding: 15px;
-        order: 0;
-        background-color: #1e2d3b; /* Explicit background for mobile */
-    }
-
-    .content {
-        width: 100%;
-        padding: 20px 10px; /* Reduce side padding */
-    }
-
-    .sections {
-        flex-direction: column; /* Stack sections vertically */
+        background-color: transparent; /* Match container background to body */
     }
 
     .section {
-        flex: 1 1 100%;
-        padding: 15px 10px; /* Adjust padding inside sections */
+        background-color: #f7f3ef; /* Explicit section background */
+        padding: 15px 10px; /* Adjust padding */
         margin: 10px 0; /* Reduce spacing between sections */
     }
 
     .section h2 {
-        font-size: 20px; /* Increase section header size */
-        margin-bottom: 10px; /* Reduce spacing below the title */
+        font-size: 20px; /* Adjust title size */
+        margin-bottom: 8px; /* Reduce spacing below title */
     }
 
     .section h3 {
-        font-size: 16px; /* Increase link size */
-        margin-bottom: 8px; /* Tighten spacing between links */
+        font-size: 16px; /* Adjust link size */
+        margin-bottom: 6px; /* Reduce spacing between links */
     }
 
     .section p {
-        font-size: 18px; /* Increase paragraph text size */
-        margin-bottom: 10px; /* Reduce paragraph spacing */
+        font-size: 18px; /* Keep paragraph readable */
+        margin-bottom: 8px; /* Reduce paragraph spacing */
     }
 }
 
 /* Smaller Mobile Devices */
 @media (max-width: 768px) {
+    .content {
+        padding: 10px 5px; /* Adjust content padding */
+    }
+
     .sections {
-        gap: 10px; /* Reduce spacing between sections */
+        gap: 8px; /* Reduce spacing between sections */
     }
 
     .section {
-        padding: 12px 8px; /* Further adjust section padding */
+        padding: 12px 8px; /* Adjust section padding */
     }
 
     .sidebar ul li {
-        font-size: 18px; /* Slightly increase sidebar text size */
-        padding: 12px;
+        font-size: 18px; /* Sidebar text size */
+        padding: 10px;
     }
 
     p, h2, h3 {
-        font-size: 18px; /* Improve readability on smaller screens */
+        font-size: 18px; /* Readable font sizes */
     }
 }
 
 /* Extra Small Mobile Devices */
 @media (max-width: 480px) {
     .content {
-        padding: 10px 5px; /* Tighten content padding further */
+        padding: 8px 4px; /* Further adjust content padding */
     }
 
     .section h2 {
-        font-size: 18px; /* Adjust header size for small screens */
+        font-size: 18px; /* Scale down header size */
+        margin-bottom: 6px; /* Reduce spacing below headers */
     }
 
     .section h3 {
-        font-size: 16px; /* Keep link size consistent */
-        margin-bottom: 6px; /* Reduce spacing */
+        font-size: 16px; /* Link size */
+        margin-bottom: 4px; /* Tighten spacing between links */
     }
 
     .sidebar ul li {
-        font-size: 16px; /* Compact sidebar text */
-        padding: 10px;
+        font-size: 16px; /* Sidebar text size */
+        padding: 8px;
     }
 
     p {
-        font-size: 16px; /* Ensure text is readable */
-        margin-bottom: 8px; /* Reduce spacing */
+        font-size: 16px; /* Text size */
+        margin-bottom: 6px; /* Tighten paragraph spacing */
     }
 }
 

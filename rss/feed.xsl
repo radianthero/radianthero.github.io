@@ -37,12 +37,6 @@
   <xsl:template match="rss/channel">
     <h1>Radiant Ink's Web Feed Preview</h1>
     <p>This RSS feed provides the latest posts from Radiant Ink.
-    <a class="head_link" target="www.radiant-ink.com">
-      <xsl:attribute name="href">
-        <xsl:value-of select="link"/>
-      </xsl:attribute>
-      Visit Website &#x2192;
-    </a>
     </p>
 
     <h2>What is an RSS feed?</h2>
