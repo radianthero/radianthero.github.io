@@ -19,7 +19,7 @@
       <body>
         <section>
           <div class="alert">
-            <p><strong>This is a web feed</strong>, also known as an RSS feed. <strong>Subscribe</strong> by copying the URL from the address bar into your newsreader app.</p>
+            <p><strong>This is a web feed</strong>, also known as an RSS feed. <strong>Subscribe</strong> by copying the URL from the address bar into an RSS reader, I recommend Feeder, Raven Reader, or NetNewsWire.</p>
           </div>
         </section>
         <section>
@@ -35,9 +35,9 @@
 
   <!-- Match the RSS channel element -->
   <xsl:template match="rss/channel">
-    <h1><xsl:value-of select="title"/>'s Web Feed Preview</h1>
-    <p>This RSS feed provides the latest posts from <xsl:value-of select="title"/>'s website.
-    <a class="head_link" target="_blank">
+    <h1>Radiant Ink's Web Feed Preview</h1>
+    <p>This RSS feed provides the latest posts from Radiant Ink.
+    <a class="head_link" target="www.radiant-ink.com">
       <xsl:attribute name="href">
         <xsl:value-of select="link"/>
       </xsl:attribute>
@@ -52,7 +52,6 @@
       <li><strong>Feeds are private by design.</strong> No one owns web feeds, so no one is harvesting your personal information and profiting by selling it to advertisers.</li>
       <li><strong>Feeds are spam-proof.</strong> Had enough? Easy, just unsubscribe from the feed.</li>
     </ul>
-    <p>All you need to do to get started is to add the URL (web address) for this feed to a special app called a newsreader. Visit <a href="https://aboutfeeds.com/">About Feeds</a> to get started with newsreaders and subscribing. It’s free. </p>
   </xsl:template>
 
   <!-- Match the RSS item element -->
