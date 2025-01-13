@@ -202,26 +202,47 @@
             background-color: #555;
         }
 
-        /* Navigation Footer Styles */
-        .footer {
-            margin-top: 20px;
-            text-align: center;
-            font-size: 18px;
-            display: flex;
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
-            flex-wrap: wrap; /* Allow wrapping if needed */
-        }
+/* Navigation Footer Styles */
+.footer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex-wrap: wrap; /* Allow wrapping if needed */
+}
 
-        .footer a {
-            color: #004c6d;
-            text-decoration: none;
-            padding: 10px 20px;
-            background-color: #f0f0f0;
-            border-radius: 5px;
-            margin: 5px; /* Add margin to create space between buttons */
-            transition: background-color 0.3s ease;
-        }
+.footer a {
+    color: #004c6d;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    margin: 5px; /* Add margin to create space between buttons */
+    transition: background-color 0.3s ease;
+}
+
+.footer a:hover {
+    background-color: #d8e1e9;
+}
+
+/* Mobile-specific footer button adjustments */
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: row; /* Maintain row layout for buttons */
+        flex-wrap: nowrap; /* No wrapping, keep buttons in a single line */
+    }
+
+    /* Adjust button proportions for mobile */
+    .footer a:nth-child(1), .footer a:nth-child(3) {
+        flex: 2;
+    }
+
+    .footer a:nth-child(2) {
+        flex: 1;
+    }
+}
 
         /* Desktop button adjustments */
         @media (min-width: 1024px) {
