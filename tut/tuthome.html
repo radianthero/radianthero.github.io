@@ -14,7 +14,7 @@
     <link rel="mask-icon" href="../favicons/safari-pinned-tab.svg" color="#5bbad5">
     <link rel="browserconfig" href="../favicons/browserconfig.xml" />
     <link rel="manifest" href="../favicons/site.webmanifest">
-    <title>Lesson Layout</title>
+    <title>Art Tutorial Series - Radiant Ink</title>
     <style>
         * {
             margin: 0;
@@ -26,170 +26,156 @@
             width: 100%;
             height: 100%;
             font-family: Arial, sans-serif;
-            background-color: #E6F1F6; /* Soft light blue */
-            overflow-x: hidden;
+            background-color: #E6F1F6; /* Dark autumn red */
+            color: #f0f0f0; /* Light off-white for text contrast */
+            overflow: auto;
         }
 
-        .wrapper {
-            display: flex;
-            justify-content: center;
-            align-items: stretch;
-            width: 100%;
-            height: 100vh;
-        }
-
+        /* Main container */
         .container {
             display: flex;
-            flex-direction: column;
-            max-width: 1200px;
-            background-color: #ffffff;
+            max-width: 1440px;
+            margin: 0 auto;
+            background-color: #ffffff; /* Dark autumn red for container */
             border: 1px solid #000;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 80%;
-            padding: 20px;
-            flex-grow: 1;
+            width: 100%;
+            flex-wrap: wrap;
         }
 
-        .lipsum {
-            text-align: justify;
-            font-size: 18px;
-            line-height: 1.5;
-            color: #555;
-            margin: 20px 0;
-            padding: 10px;
-            background-color: #eaeaea;
-            border-radius: 8px;
+        /* Content styles */
+        .content {
+            flex: 1;
+            padding: 40px 20px;
         }
 
         .sections {
             display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            width: 100%;
+            flex-wrap: wrap;
             gap: 20px;
         }
 
         .section {
-            flex: 1;
-            border: 1px solid #ccc;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: flex-start; /* Align all content to the left */
-            padding: 20px;
+            flex: 1 1 calc(33.33% - 20px);
             background-color: #f7f3ef;
+            border: 1px solid #ccc;
             border-radius: 8px;
+            padding: 20px;
             text-align: left;
             line-height: 1.5;
+            font-size: 16px;
         }
 
         .section h2 {
-            margin-bottom: 10px;
             font-size: 22px;
-            color: #006f8a; /* Slightly lighter blue */
-        }
-
-        .section p {
-            font-size: 16px;
-            color: #555;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
+            color: #006f8a;
         }
 
         .section h3 {
-            margin-bottom: 10px;
             font-size: 18px;
+            margin-bottom: 10px;
             color: #444;
-            text-align: left;
-            width: 100%;
         }
 
         .section h3 a {
-            text-decoration: none;
             color: #007BFF;
-            display: block; /* Ensure each link starts on a new line */
-            margin-left: 10px; /* Indent all links uniformly */
+            text-decoration: none;
         }
 
         .section h3 a:hover {
             text-decoration: underline;
         }
 
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: #B27B3B; /* Subdued golden yellow for links */
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Sidebar styles */
         .sidebar {
-            width: 20%;
-            background-color: #1e2d3b; /* Deep navy blue */
-            color: #ffffff;
-            height: 100%;
-            padding: 20px;
-            font-size: 22px;
+            width: 25%;
+            background-color: #1e2d3b; /* Dark brick red for sidebar */
+            color: #f0f0f0; /* Light text for contrast */
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
-            border: 1px solid #fff;
+            padding: 20px;
+            font-size: 22px;
+            height: 100vh;
+            position: sticky;
+            top: 0;
         }
 
         .sidebar ul {
             list-style: none;
             padding: 0;
             margin: 0;
+            display: flex;
+            flex-direction: column;
         }
 
+        /* List item styles */
         .sidebar ul li {
             padding: 15px;
             text-align: center;
-            background-color: #333;
+            background-color: #333; /* Same as sidebar background */
             border: 2px solid #fff;
-            font-size: 18px;
+            font-size: 22px;
+            line-height: 1.5;
             margin-bottom: 5px;
             transition: background-color 0.5s ease, box-shadow 0.3s ease;
         }
 
+        /* Link styles inside list item */
         .sidebar ul li a {
-            color: #fff;
+            color: #f0f0f0; /* Light text for links */
             text-decoration: none;
             display: block;
         }
 
+        /* Sidebar hover effect */
         .sidebar ul li:hover {
-            background-color: #3c4d66; /* Slightly lighter navy */
+            background-color: #B27B3B; /* Subdued golden yellow on hover */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
 
+        /* Responsive Design */
         @media (max-width: 1080px) {
-            .wrapper {
-                flex-direction: column;
-            }
-
             .container {
                 flex-direction: column;
-                width: 100%;
-                background-color: #132A34; /* New background color for mobile */
             }
-
-            .sections {
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .section {
-                background-color: #2C2116; /* Change to #2C2116 for mobile */
-            }
-
             .sidebar {
                 width: 100%;
-                position: relative;
                 padding: 15px;
-                background-color: #132A34; /* New background color for mobile sidebar */
+                order: 0;
+            }
+            .content {
+                width: 100%;
+                padding: 20px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="wrapper">
-        <div class="container">
-            <div class="lipsum">
-                <p>Interested in learning how to start drawing, or want some brush ups on the basic? Just because you "know how to draw" doesn't mean that learning things on a more technical level won't help, far from it! The most important thing is to always practice.</p>
-            </div>
-
+    <div class="container">
+        <div class="content">
             <div class="sections">
                 <div class="section">
                     <h2>Beginner Lessons</h2>
@@ -211,10 +197,9 @@
                 </div>
             </div>
         </div>
-
         <div class="sidebar">
             <ul>
-                <li><a href="../index.html">Home Page</a></li>
+                <li><a href="../index.html">Back to Home Page</a></li>
                 <li><a href="../port/porthome.html">My Art Portfolio</a></li>
                 <li><a href="../blog/bloghome.html">My Blog Posts</a></li>
                 <li><a href="../aboutme.html">About Me</a></li>
