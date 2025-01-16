@@ -89,7 +89,14 @@ def generate_rss():
 
                     # Extract metadata and generate RSS item
                     title, description, thumbnail_url = extract_metadata(file_path)
-                    link = f"{SITE_URL}/{relative_path.replace(os.sep, '/')}"
+                    
+                    # Determine the subdirectory and prepend it to the link
+                    for directory in SEARCH_DIRECTORIES:
+                        if file_path.startswith(os.path.join(directory, "")):
+                            subdirectory = os.path.basename(directory)
+                            break
+                    
+                    link = f"{SITE_URL}/{subdirectory}/{relative_path[len(directory)+1:].replace(os.sep, '/')}"
                     link = encode_url(link)
 
                     pub_date = datetime.datetime.now(datetime.timezone.utc).strftime("%a, %d %b %Y %H:%M:%S GMT")
