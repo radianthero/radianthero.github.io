@@ -96,7 +96,10 @@ def generate_rss():
                             subdirectory = os.path.basename(directory)
                             break
                     
-                    link = f"{SITE_URL}/{subdirectory}/{relative_path[len(directory)+1:].replace(os.sep, '/')}"
+                    # Ensure the relative_path includes the subdirectory
+                    link = f"{SITE_URL}/{subdirectory}/{relative_path.replace(os.sep, '/')}"
+
+                    # Encode URL (if needed)
                     link = encode_url(link)
 
                     pub_date = datetime.datetime.now(datetime.timezone.utc).strftime("%a, %d %b %Y %H:%M:%S GMT")
@@ -126,6 +129,10 @@ def generate_rss():
     rss_tree = ET.ElementTree(rss)
     rss_string = ET.tostring(rss, encoding="unicode")
     xslt_directive = f'<?xml-stylesheet type="text/xsl" href="{XSLT_FILE}"?>\n'
+
+    # Debug: Print RSS string before writing
+    print("Generated RSS string:")
+    print(rss_string)
 
     # Write the feed with the XSLT directive
     try:
