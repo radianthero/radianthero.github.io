@@ -1,4 +1,33 @@
+import os
+import datetime
+import xml.etree.ElementTree as ET
+from bs4 import BeautifulSoup
+from urllib.parse import quote
+
+# Configuration
+SITE_URL = "https://www.radiant-ink.com"  # Correct domain for your website
+OUTPUT_FILE = "feed.xml"
+XSLT_FILE = "feed.xsl"  # Path to the XSLT file
+SEARCH_DIRECTORIES = [
+    "../blog",
+    "../port/",
+    "../tut/"
+]
 TRACKER_FILE = "processed_files.txt"  # File to track processed items
+
+def encode_url(url):
+    """Encodes spaces and special characters in a URL."""
+    return quote(url, safe="/:")
+
+def escape_text(text):
+    """Escapes reserved XML characters in a text."""
+    return (
+        text.replace("&", "&amp;")
+            .replace("<", "&lt;")
+            .replace(">", "&gt;")
+            .replace('"', "&quot;")
+            .replace("'", "&apos;")
+    )
 
 def load_processed_items():
     """Loads the list of already processed items from the tracker file."""
@@ -13,6 +42,20 @@ def save_processed_items(processed_items):
         for item in processed_items:
             file.write(item + "\n")
 
+def extract_metadata(file_path):
+    """Extracts metadata like title, description, and thumbnail from an HTML file."""
+    with open(file_path, "r", encoding="utf-8") as file:
+        soup = BeautifulSoup(file, "html.parser")
+        title = soup.title.string if soup.title else "Untitled"
+        description_meta = soup.find("meta", attrs={"name": "description"})
+        description = description_meta["content"] if description_meta else "Description not provided."
+        
+        # Extract thumbnail from <meta property="og:image">
+        thumbnail_meta = soup.find("meta", property="og:image")
+        thumbnail_url = thumbnail_meta["content"] if thumbnail_meta else None
+        
+        return escape_text(title), escape_text(description), thumbnail_url
+
 def generate_rss():
     """Generates an RSS feed with thumbnails for new items only."""
     rss = ET.Element("rss", version="2.0", xmlns_media="http://search.yahoo.com/mrss/")
@@ -20,7 +63,7 @@ def generate_rss():
 
     # Add basic channel info
     ET.SubElement(channel, "title").text = "Radiant Ink"
-    ET.SubElement(channel, "link").text = www.radiant-ink.com
+    ET.SubElement(channel, "link").text = SITE_URL
     ET.SubElement(channel, "description").text = "An art blog"
     ET.SubElement(channel, "language").text = "en-US"
     ET.SubElement(channel, "lastBuildDate").text = datetime.datetime.now(datetime.timezone.utc).strftime("%a, %d %b %Y %H:%M:%S GMT")
@@ -66,6 +109,11 @@ def generate_rss():
 
                     # Mark this item as processed
                     new_items.add(relative_path)
+
+    # Check if there are new items
+    if not new_items:
+        print("No new items to add to the RSS feed.")
+        return
 
     # Convert to string and add the XSLT directive
     rss_tree = ET.ElementTree(rss)
