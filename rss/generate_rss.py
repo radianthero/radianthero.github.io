@@ -20,7 +20,7 @@ def generate_rss():
 
     # Add basic channel info
     ET.SubElement(channel, "title").text = "Radiant Ink"
-    ET.SubElement(channel, "link").text = SITE_URL
+    ET.SubElement(channel, "link").text = www.radiant-ink.com
     ET.SubElement(channel, "description").text = "An art blog"
     ET.SubElement(channel, "language").text = "en-US"
     ET.SubElement(channel, "lastBuildDate").text = datetime.datetime.now(datetime.timezone.utc).strftime("%a, %d %b %Y %H:%M:%S GMT")
