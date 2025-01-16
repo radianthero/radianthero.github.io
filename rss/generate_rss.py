@@ -89,10 +89,9 @@ def generate_rss():
 
                     # Extract metadata and generate RSS item
                     title, description, thumbnail_url = extract_metadata(file_path)
-                    relative_path = os.path.relpath(file_path, start=os.path.commonpath(SEARCH_DIRECTORIES))
-                    relative_url = relative_path.replace(os.sep, "/")  # Ensure forward slashes for URLs
-                    link = f"{SITE_URL}/{relative_url}"
-                    
+                    link = f"{SITE_URL}/{relative_path.replace(os.sep, '/')}"
+                    link = encode_url(link)
+
                     pub_date = datetime.datetime.now(datetime.timezone.utc).strftime("%a, %d %b %Y %H:%M:%S GMT")
 
                     item = ET.SubElement(channel, "item")
