@@ -97,7 +97,8 @@ def generate_rss():
                     
                     # Ensure the relative_path includes the subdirectory
                     relative_path = relative_path.replace(os.sep, '/')
-                    if not relative_path.startswith(subdirectory):
+
+                    if subdirectory and not relative_path.startswith(subdirectory):
                         relative_path = f"{subdirectory}/{relative_path}"
 
                     link = f"{SITE_URL}/{relative_path}"
