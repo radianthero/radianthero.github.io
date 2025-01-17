@@ -90,6 +90,7 @@ def generate_rss():
                     title, description, thumbnail_url = extract_metadata(file_path)
                     
                     # Determine the subdirectory and prepend it to the link
+                    subdirectory = None
                     for directory in SEARCH_DIRECTORIES:
                         if file_path.startswith(os.path.join(directory, "")):
                             subdirectory = os.path.basename(directory)
@@ -98,8 +99,10 @@ def generate_rss():
                     # Ensure the relative_path includes the subdirectory
                     relative_path = relative_path.replace(os.sep, '/')
 
-                    if subdirectory and not relative_path.startswith(subdirectory):
-                        relative_path = f"{subdirectory}/{relative_path}"
+                    if subdirectory:
+                        link = f"{SITE_URL}/{subdirectory}/{relative_path}"
+                    else:
+                        link = f"{SITE_URL}/{relative_path}"
 
                     link = f"{SITE_URL}/{relative_path}"
 
