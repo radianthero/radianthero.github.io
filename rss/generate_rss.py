@@ -25,7 +25,6 @@ def escape_text(text):
         text.replace("&", "&amp;")
             .replace("<", "&lt;")
             .replace(">", "&gt;")
-            .replace('"', "&quot;")
     )
 
 def load_processed_items():
