@@ -80,7 +80,9 @@ def generate_rss():
             for file_name in files:
                 if file_name.endswith(".html"):
                     file_path = os.path.join(root, file_name)
-                    relative_path = os.path.relpath(file_path, start=directory)
+                    # Normalize the path to use forward slashes
+                    file_path = file_path.replace("\\", "/")
+                    relative_path = os.path.relpath(file_path, start=directory).replace("\\", "/")
 
                     # Use relative_path as a unique identifier
                     if relative_path in processed_items:
@@ -89,22 +91,25 @@ def generate_rss():
                     # Extract metadata and generate RSS item
                     title, description, thumbnail_url = extract_metadata(file_path)
 
-                    # Determine the subdirectory and prepend it to the link
+                    # Check if the file path belongs to a specific subdirectory (e.g., 'port', 'blog', 'tut')
                     subdirectory = None
-                    for directory in SEARCH_DIRECTORIES:
-                        if file_path.startswith(os.path.join(directory, "")):
-                            relative_to_directory = os.path.relpath(file_path, start=directory)
-                            subdirectory = os.path.basename(directory)  # Set the subdirectory name (e.g., 'port')
+                    for dir in SEARCH_DIRECTORIES:
+                        if file_path.startswith(os.path.join(dir, "")):  # Check if file_path starts with this directory
+                            subdirectory = os.path.basename(dir)  # Extract the base directory name ('port', 'blog', etc.)
                             break
 
-                    # Ensure the relative_path includes the subdirectory
-                    relative_path = relative_path.replace(os.sep, '/')
+                    # Debugging output: Print subdirectory detection
+                    print(f"Checking file: {file_path}")
+                    print(f"Relative path: {relative_path}")
+                    print(f"Subdirectory detected: {subdirectory}")
 
                     # Construct the correct link
                     if subdirectory:
                         link = f"{SITE_URL}/{subdirectory}/{relative_path}"
                     else:
                         link = f"{SITE_URL}/{relative_path}"
+                    
+                    print(f"Final link: {link}")
 
                     # Encode URL (if needed)
                     link = encode_url(link)
@@ -150,7 +155,6 @@ def generate_rss():
     # Update the tracker
     processed_items.update(new_items)
     save_processed_items(processed_items)
-
 
 # Run the script
 if __name__ == "__main__":
