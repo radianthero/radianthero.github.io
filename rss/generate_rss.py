@@ -91,12 +91,10 @@ def generate_rss():
                     # Extract metadata and generate RSS item
                     title, description, thumbnail_url = extract_metadata(file_path)
 
-                    # Check if the file path belongs to a specific subdirectory (e.g., 'port', 'blog', 'tut')
+                    # Check if the file belongs to the 'port' directory by simple path check
                     subdirectory = None
-                    for dir in SEARCH_DIRECTORIES:
-                        if file_path.startswith(os.path.join(dir, "")):  # Check if file_path starts with this directory
-                            subdirectory = os.path.basename(dir)  # Extract the base directory name ('port', 'blog', etc.)
-                            break
+                    if "../port/" in file_path:  # Check if file is under the 'port' folder
+                        subdirectory = "port"
 
                     # Debugging output: Print subdirectory detection
                     print(f"Checking file: {file_path}")
