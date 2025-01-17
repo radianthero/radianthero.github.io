@@ -96,7 +96,11 @@ def generate_rss():
                             break
                     
                     # Ensure the relative_path includes the subdirectory
-                    link = f"{SITE_URL}/{subdirectory}/{relative_path.replace(os.sep, '/')}"
+                    relative_path = relative_path.replace(os.sep, '/')
+                    if not relative_path.startswith(subdirectory):
+                        relative_path = f"{subdirectory}/{relative_path}"
+
+                    link = f"{SITE_URL}/{relative_path}"
 
                     # Encode URL (if needed)
                     link = encode_url(link)
