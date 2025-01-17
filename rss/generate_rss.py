@@ -10,7 +10,7 @@ OUTPUT_FILE = "feed.xml"
 XSLT_FILE = "feed.xsl"  # Path to the XSLT file
 SEARCH_DIRECTORIES = [
     "../blog",
-    "../port/",
+    "../port",
     "../tut/"
 ]
 TRACKER_FILE = "processed_files.txt"  # File to track processed items
@@ -88,14 +88,16 @@ def generate_rss():
 
                     # Extract metadata and generate RSS item
                     title, description, thumbnail_url = extract_metadata(file_path)
-                    
-                    # Determine the subdirectory and prepend it to the link
-                    for directory in SEARCH_DIRECTORIES:
-                        if file_path.startswith(os.path.join(directory, "")):
-                            subdirectory = os.path.basename(directory)
+
+                    # Determine the subdirectory based on the search directory it belongs to
+                    subdirectory = None  # Ensure subdirectory is initialized
+                    for base_directory in SEARCH_DIRECTORIES:
+                        base_directory_abs = os.path.abspath(base_directory)
+                        if file_path.startswith(base_directory_abs):
+                            subdirectory = os.path.basename(base_directory_abs)
                             break
-                    
-                    # Ensure the relative_path includes the subdirectory
+
+                    # Construct the link correctly with the subdirectory
                     link = f"{SITE_URL}/{subdirectory}/{relative_path.replace(os.sep, '/')}"
 
                     # Encode URL (if needed)
