@@ -88,32 +88,23 @@ def generate_rss():
 
                     # Extract metadata and generate RSS item
                     title, description, thumbnail_url = extract_metadata(file_path)
-                    
+
                     # Determine the subdirectory and prepend it to the link
                     subdirectory = None
                     for directory in SEARCH_DIRECTORIES:
                         if file_path.startswith(os.path.join(directory, "")):
                             relative_to_directory = os.path.relpath(file_path, start=directory)
+                            subdirectory = os.path.basename(directory)  # Set the subdirectory name (e.g., 'port')
                             break
 
-                    # Debug: Print the subdirectory found
-                    print(f"Relative to directory ({directory}): {relative_to_directory}")
-                    
                     # Ensure the relative_path includes the subdirectory
                     relative_path = relative_path.replace(os.sep, '/')
 
-                    # Debug: Print the relative path before finalizing the link
-                    print(f"Relative path: {relative_path}")
-
+                    # Construct the correct link
                     if subdirectory:
                         link = f"{SITE_URL}/{subdirectory}/{relative_path}"
                     else:
                         link = f"{SITE_URL}/{relative_path}"
-
-                    # Debug: Print the final constructed link
-                    print(f"Final link: {link}")
-
-                    link = f"{SITE_URL}/{relative_path}"
 
                     # Encode URL (if needed)
                     link = encode_url(link)
@@ -146,10 +137,6 @@ def generate_rss():
     rss_string = ET.tostring(rss, encoding="unicode")
     xslt_directive = f'<?xml-stylesheet type="text/xsl" href="{XSLT_FILE}"?>\n'
 
-    # Debug: Print RSS string before writing
-    print("Generated RSS string:")
-    print(rss_string)
-
     # Write the feed with the XSLT directive
     try:
         with open(OUTPUT_FILE, "w", encoding="utf-8") as file:
@@ -164,8 +151,7 @@ def generate_rss():
     processed_items.update(new_items)
     save_processed_items(processed_items)
 
+
 # Run the script
 if __name__ == "__main__":
     generate_rss()
-
-    
