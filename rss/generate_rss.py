@@ -45,14 +45,31 @@ def extract_metadata(file_path):
     """Extracts metadata like title, description, and thumbnail from an HTML file."""
     with open(file_path, "r", encoding="utf-8") as file:
         soup = BeautifulSoup(file, "html.parser")
+        
+        # Extract title and description as before
         title = soup.title.string if soup.title else "Untitled"
         description_meta = soup.find("meta", attrs={"name": "description"})
         description = description_meta["content"] if description_meta else "Description not provided."
-        
-        # Extract thumbnail from <meta property="og:image">
+
+        # Try to extract the thumbnail from the <meta property="og:image">
+        thumbnail_url = None
         thumbnail_meta = soup.find("meta", property="og:image")
-        thumbnail_url = thumbnail_meta["content"] if thumbnail_meta else None
+        if thumbnail_meta:
+            thumbnail_url = thumbnail_meta["content"]
+        else:
+            # Fallback: Try extracting the first image on the page
+            img_tag = soup.find("img")
+            if img_tag and img_tag.get("src"):
+                # Check if the src is relative or absolute
+                img_src = img_tag["src"]
+                if img_src.startswith("/"):
+                    # If it's relative, make it absolute by combining with SITE_URL
+                    thumbnail_url = SITE_URL + img_src
+                else:
+                    thumbnail_url = img_src
         
+        print(f"Thumbnail URL for {file_path}: {thumbnail_url}")  # Debug print
+
         return escape_text(title), escape_text(description), thumbnail_url
 
 def generate_rss():
@@ -125,7 +142,9 @@ def generate_rss():
 
                     if thumbnail_url:
                         media_thumbnail = ET.SubElement(item, "{http://search.yahoo.com/mrss/}thumbnail")
-                        media_thumbnail.set("url", thumbnail_url)
+                        ET.SubElement(channel, "image").set("url", thumbnail_url)
+
+                    print(f"Thumbnail URL: {thumbnail_url}")
 
                     # Mark this item as processed
                     new_items.add(relative_path)
