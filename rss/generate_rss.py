@@ -93,16 +93,25 @@ def generate_rss():
                     subdirectory = None
                     for directory in SEARCH_DIRECTORIES:
                         if file_path.startswith(os.path.join(directory, "")):
-                            subdirectory = os.path.basename(directory)
+                            subdirectory = os.path.relpath(file_path, start=directory).split(os.sep, 1)[0]
                             break
+
+                    # Debug: Print the subdirectory found
+                    print(f"Subdirectory: {subdirectory}")
                     
                     # Ensure the relative_path includes the subdirectory
                     relative_path = relative_path.replace(os.sep, '/')
+
+                    # Debug: Print the relative path before finalizing the link
+                    print(f"Relative path: {relative_path}")
 
                     if subdirectory:
                         link = f"{SITE_URL}/{subdirectory}/{relative_path}"
                     else:
                         link = f"{SITE_URL}/{relative_path}"
+
+                    # Debug: Print the final constructed link
+                    print(f"Final link: {link}")
 
                     link = f"{SITE_URL}/{relative_path}"
 
@@ -158,3 +167,5 @@ def generate_rss():
 # Run the script
 if __name__ == "__main__":
     generate_rss()
+
+    
