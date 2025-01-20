@@ -111,6 +111,10 @@ def generate_rss():
                     subdirectory = None
                     if "../port/" in file_path:  # Check if file is under the 'port' folder
                         subdirectory = "port"
+                    if "../tut/" in file_path:
+                        subdirectory = "tut"
+                    if "../blog/" in file_path:
+                        subdirectory = "blog"
 
                     # Debugging output: Print subdirectory detection
                     print(f"Checking file: {file_path}")
