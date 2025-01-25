@@ -107,7 +107,7 @@ def extract_metadata(file_path):
         print(f"Extracted content preview: {content[:200]}...")  # Preview the first 200 characters
         print(f"Extracted thumbnail URL: {thumbnail_url}")
 
-        return title, description, content, thumbnail_url
+        return escape_text(title), escape_text(description), content, thumbnail_url
 
 def format_blog_content(raw_content):
     """
@@ -207,11 +207,11 @@ def generate_rss():
                         media_thumbnail.set("url", encode_url(thumbnail_url))
 
                     # Escape HTML content to prevent misinterpretation in RSS reader
-                    content_escaped = content
+                    content_escaped = html.escape(content)
 
                     # Ensure content is wrapped in CDATA to preserve HTML formatting
                     content_element = ET.SubElement(item, "{http://purl.org/rss/1.0/modules/content/}encoded")
-                    content_element.text = f"<![CDATA[{content}]]>"
+                    content_element.text = f"<![CDATA[{content_escaped}]]>"
 
                     new_items.add(relative_path)
 
