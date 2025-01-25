@@ -79,7 +79,6 @@ def extract_metadata(file_path):
 
 def generate_rss():
     """Generates an RSS feed with thumbnails and full content for new items only."""
-    # Removed Atom namespace entirely to avoid `ns0`
     rss = ET.Element("rss", version="2.0")
     channel = ET.SubElement(rss, "channel")
 
@@ -117,9 +116,9 @@ def generate_rss():
                     subdirectory = None
                     if "../port/" in file_path:  # Check if file is under the 'port' folder
                         subdirectory = "port"
-                    if "../tut/" in file_path:
+                    elif "../tut/" in file_path:
                         subdirectory = "tut"
-                    if "../blog/" in file_path:
+                    elif "../blog/" in file_path:
                         subdirectory = "blog"
 
                     # Debugging output: Print subdirectory detection
@@ -127,12 +126,13 @@ def generate_rss():
                     print(f"Relative path: {relative_path}")
                     print(f"Subdirectory detected: {subdirectory}")
 
-                    # Construct the correct link
+                    # Correctly construct the link, ensuring subdirectory is included
                     if subdirectory:
+                        # Ensure the subdirectory is correctly part of the path
                         link = f"{SITE_URL}/{subdirectory}/{relative_path}"
                     else:
                         link = f"{SITE_URL}/{relative_path}"
-                    
+
                     print(f"Final link: {link}")
                     # Encode URL (if needed)
                     link = encode_url(link)
@@ -159,10 +159,31 @@ def generate_rss():
 
                     # Add the full content to the RSS feed (as CDATA to preserve formatting)
                     content_element = ET.SubElement(item, "{http://purl.org/rss/1.0/modules/content/}encoded")
-                    # Insert the raw content directly inside CDATA
                     content_element.text = f"<![CDATA[{content}]]>"
 
                     new_items.add(relative_path)
+
+    if not new_items:
+        print("No new items to add to the RSS feed.")
+        return
+
+    # Convert to string and add the XSLT directive
+    rss_tree = ET.ElementTree(rss)
+    rss_string = ET.tostring(rss, encoding="unicode")
+    xslt_directive = f'<?xml-stylesheet type="text/xsl" href="{XSLT_FILE}"?>\n'
+
+    try:
+        with open(OUTPUT_FILE, "w", encoding="utf-8") as file:
+            file.write('<?xml version="1.0" encoding="UTF-8"?>\n')
+            file.write(xslt_directive)
+            file.write(rss_string)
+        print(f"RSS feed generated: {OUTPUT_FILE}")
+    except Exception as e:
+        print(f"Error writing feed.xml: {e}")
+
+    processed_items.update(new_items)
+    save_processed_items(processed_items)
+
 
     if not new_items:
         print("No new items to add to the RSS feed.")
