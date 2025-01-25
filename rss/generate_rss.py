@@ -41,18 +41,35 @@ def save_processed_items(processed_items):
         for item in processed_items:
             file.write(item + "\n")
 
+def format_blog_content(raw_content):
+    """
+    Formats blog content by sanitizing HTML and extracting only relevant parts for RSS feed.
+    """
+    soup = BeautifulSoup(raw_content, 'html.parser')
+
+    # Remove redundant elements (e.g., duplicate headings)
+    for tag in soup.find_all(['h1', 'h2']):
+        tag.decompose()
+
+    # Clean up unnecessary tags
+    for tag in soup.find_all(['script', 'style']):
+        tag.decompose()
+
+    # Return cleaned and formatted content
+    return soup.prettify()
+
 def extract_metadata(file_path):
     """Extracts metadata like title, description, and full content from an HTML file."""
     with open(file_path, "r", encoding="utf-8") as file:
         soup = BeautifulSoup(file, "html.parser")
-        
+
         # Extract the title
         title = soup.title.string if soup.title else "Untitled"
-        
+
         # Extract description from meta tag
         description_meta = soup.find("meta", attrs={"name": "description"})
         description = description_meta["content"] if description_meta else "Description not provided."
-        
+
         # Extract the full content (inside <div class="content">)
         content = ""
         content_div = soup.find("div", class_="content")
@@ -60,11 +77,12 @@ def extract_metadata(file_path):
             # Remove unwanted tags like <style> or <script>
             for tag in content_div.find_all(["style", "script"]):
                 tag.decompose()
-            
-            # Serialize the content while keeping important tags
-            content = "".join(str(tag) for tag in content_div.find_all(["h1", "h2", "p", "img", "a"]))
 
-        # Extract the thumbnail URL (using Open Graph or first image in the post)
+            # Serialize the content while keeping important tags
+            raw_content = "".join(str(tag) for tag in content_div.find_all(["h1", "h2", "p", "img", "a"]))
+            content = format_blog_content(raw_content)  # Sanitize the content here
+
+        # Extract the thumbnail URL
         thumbnail_url = None
         thumbnail_meta = soup.find("meta", property="og:image")
         if thumbnail_meta:
@@ -78,17 +96,7 @@ def extract_metadata(file_path):
                 else:
                     thumbnail_url = img_src
 
-        
-        print(f"Extracted title: {title}")
-        print(f"Extracted description: {description}")
-        print(f"Extracted content preview: {content[:200]}...")  # Preview the first 200 characters
-        print(f"Extracted thumbnail URL: {thumbnail_url}")
-
-
-
         return escape_text(title), escape_text(description), content, thumbnail_url
-
-
 
 def generate_rss():
     """Generates an RSS feed with thumbnails and full content for new items only."""
