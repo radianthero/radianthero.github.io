@@ -2,18 +2,19 @@ import os
 import datetime
 import xml.etree.ElementTree as ET
 from bs4 import BeautifulSoup
-from urllib.parse import quote
+from urllib.parse import urljoin, quote
+import html
 
 # Configuration
-SITE_URL = "https://www.radiant-ink.com"  # Correct domain for your website
+SITE_URL = "https://www.radiant-ink.com"
 OUTPUT_FILE = "feed.xml"
-XSLT_FILE = "feed.xsl"  # Path to the XSLT file
+XSLT_FILE = "feed.xsl"
 SEARCH_DIRECTORIES = [
     "../blog",
     "../port/",
     "../tut/"
 ]
-TRACKER_FILE = "processed_files.txt"  # File to track processed items
+TRACKER_FILE = "processed_files.txt"
 
 def encode_url(url):
     """Encodes spaces and special characters in a URL."""
@@ -41,53 +42,62 @@ def save_processed_items(processed_items):
             file.write(item + "\n")
 
 def extract_metadata(file_path):
-    """Extracts metadata like title, description, and thumbnail from an HTML file."""
+    """Extracts metadata like title, description, and full content from an HTML file."""
     with open(file_path, "r", encoding="utf-8") as file:
         soup = BeautifulSoup(file, "html.parser")
         
-        # Extract title and description as before
+        # Extract the title
         title = soup.title.string if soup.title else "Untitled"
+        
+        # Extract description from meta tag
         description_meta = soup.find("meta", attrs={"name": "description"})
         description = description_meta["content"] if description_meta else "Description not provided."
+        
+        # Extract the full content (assuming it's inside a <div class="post-content">)
+        content = ""
+        content_div = soup.find("div", class_="post-content")
+        if content_div:
+            content = str(content_div)
+        else:
+            content = "No content available."
 
-        # Try to extract the thumbnail from the <meta property="og:image">
+        # Extract the thumbnail URL (using Open Graph or first image in the post)
         thumbnail_url = None
         thumbnail_meta = soup.find("meta", property="og:image")
         if thumbnail_meta:
             thumbnail_url = thumbnail_meta["content"]
         else:
-            # Fallback: Try extracting the first image on the page
             img_tag = soup.find("img")
             if img_tag and img_tag.get("src"):
-                # Check if the src is relative or absolute
                 img_src = img_tag["src"]
                 if img_src.startswith("/"):
-                    # If it's relative, make it absolute by combining with SITE_URL
-                    thumbnail_url = SITE_URL + img_src
+                    thumbnail_url = urljoin(SITE_URL, img_src)
                 else:
                     thumbnail_url = img_src
-        
-        print(f"Thumbnail URL for {file_path}: {thumbnail_url}")  # Debug print
 
-        return escape_text(title), escape_text(description), thumbnail_url
+        return escape_text(title), escape_text(description), content, thumbnail_url
 
 def generate_rss():
-    """Generates an RSS feed with thumbnails for new items only."""
-    rss = ET.Element("rss", version="2.0", xmlns_media="http://search.yahoo.com/mrss/")
+    """Generates an RSS feed with thumbnails and full content for new items only."""
+    # Removed Atom namespace entirely to avoid `ns0`
+    rss = ET.Element("rss", version="2.0")
     channel = ET.SubElement(rss, "channel")
 
     # Add basic channel info
     ET.SubElement(channel, "title").text = "Radiant Ink"
-    ET.SubElement(channel, "link").text = SITE_URL
+    ET.SubElement(channel, "link").text = f"{SITE_URL}/feed.xml"
     ET.SubElement(channel, "description").text = "An art blog"
     ET.SubElement(channel, "language").text = "en-US"
     ET.SubElement(channel, "lastBuildDate").text = datetime.datetime.now(datetime.timezone.utc).strftime("%a, %d %b %Y %H:%M:%S GMT")
+    
+    image = ET.SubElement(channel, "image")
+    ET.SubElement(image, "url").text = f"{SITE_URL}/favicons/favicon-32x32.png"
+    ET.SubElement(image, "title").text = "Radiant Ink"
+    ET.SubElement(image, "link").text = SITE_URL
 
-    # Load processed items
     processed_items = load_processed_items()
     new_items = set()
 
-    # Scan directories for HTML files
     for directory in SEARCH_DIRECTORIES:
         if not os.path.exists(directory):
             print(f"Directory not found: {directory}")
@@ -96,48 +106,25 @@ def generate_rss():
             for file_name in files:
                 if file_name.endswith(".html"):
                     file_path = os.path.join(root, file_name)
-                    # Normalize the path to use forward slashes
                     file_path = file_path.replace("\\", "/")
                     relative_path = os.path.relpath(file_path, start=directory).replace("\\", "/")
 
-                    # Use relative_path as a unique identifier
                     if relative_path in processed_items:
-                        continue  # Skip already processed items
+                        continue
 
-                    # Extract metadata and generate RSS item
-                    title, description, thumbnail_url = extract_metadata(file_path)
+                    title, description, content, thumbnail_url = extract_metadata(file_path)
 
-                    # Check if the file belongs to the 'port' directory by simple path check
-                    subdirectory = None
-                    if "../port/" in file_path:  # Check if file is under the 'port' folder
-                        subdirectory = "port"
-                    if "../tut/" in file_path:
-                        subdirectory = "tut"
-                    if "../blog/" in file_path:
-                        subdirectory = "blog"
+                    # Ensure thumbnail URL is absolute
+                    if thumbnail_url and not thumbnail_url.startswith("http"):
+                        thumbnail_url = urljoin(SITE_URL, thumbnail_url)
 
-                    # Debugging output: Print subdirectory detection
-                    print(f"Checking file: {file_path}")
-                    print(f"Relative path: {relative_path}")
-                    print(f"Subdirectory detected: {subdirectory}")
-
-                    # Construct the correct link
-                    if subdirectory:
-                        link = f"{SITE_URL}/{subdirectory}/{relative_path}"
-                    else:
-                        link = f"{SITE_URL}/{relative_path}"
-                    
-                    print(f"Final link: {link}")
-
-                    # Encode URL (if needed)
-                    link = encode_url(link)
-
+                    link = encode_url(f"{SITE_URL}/{relative_path}")
                     pub_date = datetime.datetime.now(datetime.timezone.utc).strftime("%a, %d %b %Y %H:%M:%S GMT")
 
                     item = ET.SubElement(channel, "item")
-                    ET.SubElement(item, "title").text = title
+                    ET.SubElement(item, "title").text = html.unescape(title) or "Untitled"
                     ET.SubElement(item, "link").text = link
-                    ET.SubElement(item, "description").text = description
+                    ET.SubElement(item, "description").text = description or "No description available."
                     ET.SubElement(item, "pubDate").text = pub_date
                     guid = ET.SubElement(item, "guid")
                     guid.text = link
@@ -145,14 +132,15 @@ def generate_rss():
 
                     if thumbnail_url:
                         media_thumbnail = ET.SubElement(item, "{http://search.yahoo.com/mrss/}thumbnail")
-                        ET.SubElement(channel, "image").set("url", thumbnail_url)
+                        media_thumbnail.set("url", encode_url(thumbnail_url))  # Ensure thumbnail URL encoding
 
-                    print(f"Thumbnail URL: {thumbnail_url}")
+                    # Add the full content to the RSS feed (as CDATA to preserve formatting)
+                    content_element = ET.SubElement(item, "{http://purl.org/rss/1.0/modules/content/}encoded")
+                    # Insert the raw content directly inside CDATA
+                    content_element.text = f"<![CDATA[{content}]]>"
 
-                    # Mark this item as processed
                     new_items.add(relative_path)
 
-    # Check if there are new items
     if not new_items:
         print("No new items to add to the RSS feed.")
         return
@@ -162,7 +150,6 @@ def generate_rss():
     rss_string = ET.tostring(rss, encoding="unicode")
     xslt_directive = f'<?xml-stylesheet type="text/xsl" href="{XSLT_FILE}"?>\n'
 
-    # Write the feed with the XSLT directive
     try:
         with open(OUTPUT_FILE, "w", encoding="utf-8") as file:
             file.write('<?xml version="1.0" encoding="UTF-8"?>\n')
@@ -172,7 +159,6 @@ def generate_rss():
     except Exception as e:
         print(f"Error writing feed.xml: {e}")
 
-    # Update the tracker
     processed_items.update(new_items)
     save_processed_items(processed_items)
 
