@@ -2,19 +2,19 @@ import os
 import datetime
 import xml.etree.ElementTree as ET
 from bs4 import BeautifulSoup
-from urllib.parse import urljoin, quote
+from urllib.parse import quote, urljoin
 import html
 
 # Configuration
-SITE_URL = "https://www.radiant-ink.com"
+SITE_URL = "https://www.radiant-ink.com"  # Correct domain for your website
 OUTPUT_FILE = "feed.xml"
-XSLT_FILE = "feed.xsl"
+XSLT_FILE = "feed.xsl"  # Path to the XSLT file
 SEARCH_DIRECTORIES = [
     "../blog",
     "../port/",
     "../tut/"
 ]
-TRACKER_FILE = "processed_files.txt"
+TRACKER_FILE = "processed_files.txt"  # File to track processed items
 
 def encode_url(url):
     """Encodes spaces and special characters in a URL."""
@@ -121,14 +121,8 @@ def generate_rss():
                     elif "../blog/" in file_path:
                         subdirectory = "blog"
 
-                    # Debugging output: Print subdirectory detection
-                    print(f"Checking file: {file_path}")
-                    print(f"Relative path: {relative_path}")
-                    print(f"Subdirectory detected: {subdirectory}")
-
                     # Correctly construct the link, ensuring subdirectory is included
                     if subdirectory:
-                        # Ensure the subdirectory is correctly part of the path
                         link = f"{SITE_URL}/{subdirectory}/{relative_path}"
                     else:
                         link = f"{SITE_URL}/{relative_path}"
@@ -141,7 +135,6 @@ def generate_rss():
                     if thumbnail_url and not thumbnail_url.startswith("http"):
                         thumbnail_url = urljoin(SITE_URL, thumbnail_url)
 
-                    link = encode_url(f"{SITE_URL}/{relative_path}")
                     pub_date = datetime.datetime.now(datetime.timezone.utc).strftime("%a, %d %b %Y %H:%M:%S GMT")
 
                     item = ET.SubElement(channel, "item")
@@ -162,28 +155,6 @@ def generate_rss():
                     content_element.text = f"<![CDATA[{content}]]>"
 
                     new_items.add(relative_path)
-
-    if not new_items:
-        print("No new items to add to the RSS feed.")
-        return
-
-    # Convert to string and add the XSLT directive
-    rss_tree = ET.ElementTree(rss)
-    rss_string = ET.tostring(rss, encoding="unicode")
-    xslt_directive = f'<?xml-stylesheet type="text/xsl" href="{XSLT_FILE}"?>\n'
-
-    try:
-        with open(OUTPUT_FILE, "w", encoding="utf-8") as file:
-            file.write('<?xml version="1.0" encoding="UTF-8"?>\n')
-            file.write(xslt_directive)
-            file.write(rss_string)
-        print(f"RSS feed generated: {OUTPUT_FILE}")
-    except Exception as e:
-        print(f"Error writing feed.xml: {e}")
-
-    processed_items.update(new_items)
-    save_processed_items(processed_items)
-
 
     if not new_items:
         print("No new items to add to the RSS feed.")
