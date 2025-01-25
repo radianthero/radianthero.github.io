@@ -109,6 +109,30 @@ def extract_metadata(file_path):
 
         return escape_text(title), escape_text(description), content, thumbnail_url
 
+def format_blog_content(raw_content):
+    """
+    Formats blog content for RSS feed by sanitizing and fixing relative paths.
+    Ensures that HTML tags like <p>, <h1>, <h2> are preserved and URLs are absolute.
+    """
+    soup = BeautifulSoup(raw_content, 'html.parser')
+
+    # Convert all image src to absolute URLs
+    for img in soup.find_all("img"):
+        if img.get("src"):
+            img["src"] = urljoin(SITE_URL, img["src"].replace("../", ""))
+
+    # Clean up unnecessary tags (e.g., <script>, <style>)
+    for tag in soup.find_all(["script", "style"]):
+        tag.decompose()
+
+    # Remove duplicate "here" links
+    for tag in soup.find_all("a", string="here"):
+        if tag.next_sibling and tag.next_sibling.name == "a":
+            tag.next_sibling.decompose()
+
+    # Return prettified HTML for the content, ensuring that tags like <p>, <h1>, etc., remain intact
+    return soup.prettify()
+
 def generate_rss():
     """Generates an RSS feed with thumbnails and full content for new items only."""
     rss = ET.Element("rss", version="2.0", attrib={"xmlns:content": "http://purl.org/rss/1.0/modules/content/", "xmlns:media": "http://search.yahoo.com/mrss/"})
@@ -180,6 +204,7 @@ def generate_rss():
                         media_thumbnail = ET.SubElement(item, "{http://search.yahoo.com/mrss/}thumbnail")
                         media_thumbnail.set("url", encode_url(thumbnail_url))
 
+                    # Wrap the content in CDATA to preserve HTML tags correctly
                     content_element = ET.SubElement(item, "{http://purl.org/rss/1.0/modules/content/}encoded")
                     content_element.text = f"<![CDATA[{content}]]>"
 
@@ -204,6 +229,7 @@ def generate_rss():
 
     processed_items.update(new_items)
     save_processed_items(processed_items)
+
 
 if __name__ == "__main__":
     generate_rss()
