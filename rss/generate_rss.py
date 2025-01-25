@@ -207,7 +207,7 @@ def generate_rss():
                         media_thumbnail.set("url", encode_url(thumbnail_url))
 
                     # Escape HTML content to prevent misinterpretation in RSS reader
-                    content_escaped = html.escape(content)
+                    content_escaped = content
 
                     # Ensure content is wrapped in CDATA to preserve HTML formatting
                     content_element = ET.SubElement(item, "{http://purl.org/rss/1.0/modules/content/}encoded")
