@@ -114,6 +114,14 @@ def generate_rss():
 
                     title, description, content, thumbnail_url = extract_metadata(file_path)
 
+                    subdirectory = None
+                    if "../port/" in file_path:  # Check if file is under the 'port' folder
+                        subdirectory = "port"
+                    if "../tut/" in file_path:
+                        subdirectory = "tut"
+                    if "../blog/" in file_path:
+                        subdirectory = "blog"
+
                     # Ensure thumbnail URL is absolute
                     if thumbnail_url and not thumbnail_url.startswith("http"):
                         thumbnail_url = urljoin(SITE_URL, thumbnail_url)
