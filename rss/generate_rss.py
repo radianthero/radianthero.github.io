@@ -171,6 +171,15 @@ def generate_rss():
 
                     title, description, content, thumbnail_url = extract_metadata(file_path)
 
+                    # Convert relative audio src to absolute URLs
+                    soup = BeautifulSoup(content, 'html.parser')
+                    for audio in soup.find_all("audio"):
+                        for source in audio.find_all("source"):
+                            if source.get("src"):
+                                source["src"] = urljoin(SITE_URL, source["src"].replace("../", ""))
+
+                    content = soup.prettify()  # Rebuild content with fixed URLs
+
                     subdirectory = None
                     if "../port/" in file_path:
                         subdirectory = "port"
@@ -231,7 +240,6 @@ def generate_rss():
 
     processed_items.update(new_items)
     save_processed_items(processed_items)
-
 
 if __name__ == "__main__":
     generate_rss()
