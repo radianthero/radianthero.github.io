@@ -1,10 +1,11 @@
 <xsl:stylesheet
   version="1.0"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
   exclude-result-prefixes="xsl">
 
   <xsl:output method="html" version="1.0" encoding="UTF-8" indent="yes"/>
-  
+
   <!-- Match the root element of the RSS feed -->
   <xsl:template match="/">
     <html xmlns="http://www.w3.org/1999/xhtml">
@@ -53,6 +54,10 @@
       <small>
         Published: <xsl:value-of select="pubDate" />
       </small>
+      <!-- Display the content in CDATA -->
+      <div class="content">
+        <xsl:value-of select="content:encoded" disable-output-escaping="yes"/>
+      </div>
     </div>
   </xsl:template>
 
