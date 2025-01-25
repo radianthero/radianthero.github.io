@@ -122,6 +122,21 @@ def generate_rss():
                     if "../blog/" in file_path:
                         subdirectory = "blog"
 
+                    # Debugging output: Print subdirectory detection
+                    print(f"Checking file: {file_path}")
+                    print(f"Relative path: {relative_path}")
+                    print(f"Subdirectory detected: {subdirectory}")
+
+                    # Construct the correct link
+                    if subdirectory:
+                        link = f"{SITE_URL}/{subdirectory}/{relative_path}"
+                    else:
+                        link = f"{SITE_URL}/{relative_path}"
+                    
+                    print(f"Final link: {link}")
+                    # Encode URL (if needed)
+                    link = encode_url(link)
+
                     # Ensure thumbnail URL is absolute
                     if thumbnail_url and not thumbnail_url.startswith("http"):
                         thumbnail_url = urljoin(SITE_URL, thumbnail_url)
