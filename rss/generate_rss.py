@@ -211,7 +211,7 @@ def generate_rss():
 
                     # Ensure content is wrapped in CDATA to preserve HTML formatting
                     content_element = ET.SubElement(item, "{http://purl.org/rss/1.0/modules/content/}encoded")
-                    content_element.text = f"<![CDATA[{content_escaped}]]>"
+                    content_element.text = f"<![CDATA[{content}]]>"
 
                     new_items.add(relative_path)
 
