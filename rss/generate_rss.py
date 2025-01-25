@@ -107,7 +107,7 @@ def extract_metadata(file_path):
         print(f"Extracted content preview: {content[:200]}...")  # Preview the first 200 characters
         print(f"Extracted thumbnail URL: {thumbnail_url}")
 
-        return escape_text(title), escape_text(description), content, thumbnail_url
+        return title, description, content, thumbnail_url
 
 def format_blog_content(raw_content):
     """
