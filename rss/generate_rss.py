@@ -43,34 +43,39 @@ def save_processed_items(processed_items):
 
 def format_blog_content(raw_content):
     """
-    Formats blog content by sanitizing HTML and extracting only relevant parts for RSS feed.
+    Formats blog content for RSS feed by sanitizing and fixing relative paths.
     """
     soup = BeautifulSoup(raw_content, 'html.parser')
 
-    # Remove redundant elements (e.g., duplicate headings)
-    for tag in soup.find_all(['h1', 'h2']):
+    # Convert all image src to absolute URLs
+    for img in soup.find_all("img"):
+        if img.get("src"):
+            img["src"] = urljoin(SITE_URL, img["src"].replace("../", ""))
+
+    # Clean up unnecessary tags (e.g., <script>, <style>)
+    for tag in soup.find_all(["script", "style"]):
         tag.decompose()
 
-    # Clean up unnecessary tags
-    for tag in soup.find_all(['script', 'style']):
-        tag.decompose()
+    # Remove duplicate "here" links
+    for tag in soup.find_all("a", string="here"):
+        if tag.next_sibling and tag.next_sibling.name == "a":
+            tag.next_sibling.decompose()
 
-    # Return cleaned and formatted content
     return soup.prettify()
 
 def extract_metadata(file_path):
     """Extracts metadata like title, description, and full content from an HTML file."""
     with open(file_path, "r", encoding="utf-8") as file:
         soup = BeautifulSoup(file, "html.parser")
-
+        
         # Extract the title
         title = soup.title.string if soup.title else "Untitled"
-
+        
         # Extract description from meta tag
         description_meta = soup.find("meta", attrs={"name": "description"})
         description = description_meta["content"] if description_meta else "Description not provided."
-
-        # Extract the full content (inside <div class="content">)
+        
+        # Extract the full content (inside <div class='content'>)
         content = ""
         content_div = soup.find("div", class_="content")
         if content_div:
@@ -79,10 +84,9 @@ def extract_metadata(file_path):
                 tag.decompose()
 
             # Serialize the content while keeping important tags
-            raw_content = "".join(str(tag) for tag in content_div.find_all(["h1", "h2", "p", "img", "a"]))
-            content = format_blog_content(raw_content)  # Sanitize the content here
+            content = format_blog_content(content_div.decode_contents())
 
-        # Extract the thumbnail URL
+        # Extract the thumbnail URL (using Open Graph or first image in the post)
         thumbnail_url = None
         thumbnail_meta = soup.find("meta", property="og:image")
         if thumbnail_meta:
@@ -93,14 +97,21 @@ def extract_metadata(file_path):
                 img_src = img_tag["src"]
                 if img_src.startswith("/"):
                     thumbnail_url = urljoin(SITE_URL, img_src)
+                elif img_src.startswith("../"):
+                    thumbnail_url = urljoin(SITE_URL, img_src.replace("../", ""))
                 else:
                     thumbnail_url = img_src
+
+        print(f"Extracted title: {title}")
+        print(f"Extracted description: {description}")
+        print(f"Extracted content preview: {content[:200]}...")  # Preview the first 200 characters
+        print(f"Extracted thumbnail URL: {thumbnail_url}")
 
         return escape_text(title), escape_text(description), content, thumbnail_url
 
 def generate_rss():
     """Generates an RSS feed with thumbnails and full content for new items only."""
-    rss = ET.Element("rss", version="2.0")
+    rss = ET.Element("rss", version="2.0", attrib={"xmlns:content": "http://purl.org/rss/1.0/modules/content/", "xmlns:media": "http://search.yahoo.com/mrss/"})
     channel = ET.SubElement(rss, "channel")
 
     # Add basic channel info
@@ -135,21 +146,19 @@ def generate_rss():
                     title, description, content, thumbnail_url = extract_metadata(file_path)
 
                     subdirectory = None
-                    if "../port/" in file_path:  # Check if file is under the 'port' folder
+                    if "../port/" in file_path:
                         subdirectory = "port"
                     elif "../tut/" in file_path:
                         subdirectory = "tut"
                     elif "../blog/" in file_path:
                         subdirectory = "blog"
 
-                    # Correctly construct the link, ensuring subdirectory is included
+                    # Correctly construct the link
                     if subdirectory:
                         link = f"{SITE_URL}/{subdirectory}/{relative_path}"
                     else:
                         link = f"{SITE_URL}/{relative_path}"
 
-                    print(f"Final link: {link}")
-                    # Encode URL (if needed)
                     link = encode_url(link)
 
                     # Ensure thumbnail URL is absolute
@@ -169,9 +178,8 @@ def generate_rss():
 
                     if thumbnail_url:
                         media_thumbnail = ET.SubElement(item, "{http://search.yahoo.com/mrss/}thumbnail")
-                        media_thumbnail.set("url", encode_url(thumbnail_url))  # Ensure thumbnail URL encoding
+                        media_thumbnail.set("url", encode_url(thumbnail_url))
 
-                    # Add the full content to the RSS feed (as CDATA to preserve formatting)
                     content_element = ET.SubElement(item, "{http://purl.org/rss/1.0/modules/content/}encoded")
                     content_element.text = f"<![CDATA[{content}]]>"
 
@@ -181,7 +189,6 @@ def generate_rss():
         print("No new items to add to the RSS feed.")
         return
 
-    # Convert to string and add the XSLT directive
     rss_tree = ET.ElementTree(rss)
     rss_string = ET.tostring(rss, encoding="unicode")
     xslt_directive = f'<?xml-stylesheet type="text/xsl" href="{XSLT_FILE}"?>\n'
@@ -198,6 +205,5 @@ def generate_rss():
     processed_items.update(new_items)
     save_processed_items(processed_items)
 
-# Run the script
 if __name__ == "__main__":
     generate_rss()
