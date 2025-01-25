@@ -133,6 +133,8 @@ def format_blog_content(raw_content):
     # Return prettified HTML for the content, ensuring that tags like <p>, <h1>, etc., remain intact
     return soup.prettify()
 
+import html
+
 def generate_rss():
     """Generates an RSS feed with thumbnails and full content for new items only."""
     rss = ET.Element("rss", version="2.0", attrib={"xmlns:content": "http://purl.org/rss/1.0/modules/content/", "xmlns:media": "http://search.yahoo.com/mrss/"})
@@ -204,31 +206,14 @@ def generate_rss():
                         media_thumbnail = ET.SubElement(item, "{http://search.yahoo.com/mrss/}thumbnail")
                         media_thumbnail.set("url", encode_url(thumbnail_url))
 
+                    # Escape HTML content to prevent misinterpretation in RSS reader
+                    content_escaped = html.escape(content)
+
                     # Ensure content is wrapped in CDATA to preserve HTML formatting
                     content_element = ET.SubElement(item, "{http://purl.org/rss/1.0/modules/content/}encoded")
-                    content_element.text = f"<![CDATA[{content}]]>"
+                    content_element.text = f"<![CDATA[{content_escaped}]]>"
 
                     new_items.add(relative_path)
-
-    if not new_items:
-        print("No new items to add to the RSS feed.")
-        return
-
-    rss_tree = ET.ElementTree(rss)
-    rss_string = ET.tostring(rss, encoding="unicode")
-    xslt_directive = f'<?xml-stylesheet type="text/xsl" href="{XSLT_FILE}"?>\n'
-
-    try:
-        with open(OUTPUT_FILE, "w", encoding="utf-8") as file:
-            file.write('<?xml version="1.0" encoding="UTF-8"?>\n')
-            file.write(xslt_directive)
-            file.write(rss_string)
-        print(f"RSS feed generated: {OUTPUT_FILE}")
-    except Exception as e:
-        print(f"Error writing feed.xml: {e}")
-
-    processed_items.update(new_items)
-    save_processed_items(processed_items)
 
     if not new_items:
         print("No new items to add to the RSS feed.")
