@@ -36,8 +36,7 @@
 
   <!-- Match the RSS channel element -->
   <xsl:template match="rss/channel">
-    <h1>Radiant Ink's Web Feed Preview</h1>
-    <p>This RSS feed provides the latest posts from Radiant Ink.</p>
+    <p>In your RSS reader app, set the option to fetch full article, otherwise it won't display properly.</p>
   </xsl:template>
 
   <!-- Match the RSS item element -->
