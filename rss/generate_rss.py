@@ -53,13 +53,16 @@ def extract_metadata(file_path):
         description_meta = soup.find("meta", attrs={"name": "description"})
         description = description_meta["content"] if description_meta else "Description not provided."
         
-        # Extract the full content (assuming it's inside a <div class="post-content">)
+        # Extract the full content (inside <div class="content">)
         content = ""
-        content_div = soup.find("div", class_="post-content")
+        content_div = soup.find("div", class_="content")
         if content_div:
-            content = str(content_div)
-        else:
-            content = "No content available."
+            # Remove unwanted tags like <style> or <script>
+            for tag in content_div.find_all(["style", "script"]):
+                tag.decompose()
+            
+            # Serialize the content while keeping important tags
+            content = "".join(str(tag) for tag in content_div.find_all(["h1", "h2", "p", "img", "a"]))
 
         # Extract the thumbnail URL (using Open Graph or first image in the post)
         thumbnail_url = None
@@ -67,7 +70,7 @@ def extract_metadata(file_path):
         if thumbnail_meta:
             thumbnail_url = thumbnail_meta["content"]
         else:
-            img_tag = soup.find("img")
+            img_tag = content_div.find("img") if content_div else None
             if img_tag and img_tag.get("src"):
                 img_src = img_tag["src"]
                 if img_src.startswith("/"):
@@ -75,7 +78,17 @@ def extract_metadata(file_path):
                 else:
                     thumbnail_url = img_src
 
+        
+        print(f"Extracted title: {title}")
+        print(f"Extracted description: {description}")
+        print(f"Extracted content preview: {content[:200]}...")  # Preview the first 200 characters
+        print(f"Extracted thumbnail URL: {thumbnail_url}")
+
+
+
         return escape_text(title), escape_text(description), content, thumbnail_url
+
+
 
 def generate_rss():
     """Generates an RSS feed with thumbnails and full content for new items only."""
