@@ -1,8 +1,8 @@
 import os
 import datetime
 import xml.etree.ElementTree as ET
-from bs4 import BeautifulSoup
 from urllib.parse import quote, urljoin
+from bs4 import BeautifulSoup
 import html
 
 # Configuration
@@ -20,14 +20,6 @@ def encode_url(url):
     """Encodes spaces and special characters in a URL."""
     return quote(url, safe="/:")
 
-def escape_text(text):
-    """Escapes reserved XML characters in a text."""
-    return (
-        text.replace("&", "&amp;")
-            .replace("<", "&lt;")
-            .replace(">", "&gt;")
-    )
-
 def load_processed_items():
     """Loads the list of already processed items from the tracker file."""
     if not os.path.exists(TRACKER_FILE):
@@ -41,28 +33,6 @@ def save_processed_items(processed_items):
         for item in processed_items:
             file.write(item + "\n")
 
-def format_blog_content(raw_content):
-    """
-    Formats blog content for RSS feed by sanitizing and fixing relative paths.
-    """
-    soup = BeautifulSoup(raw_content, 'html.parser')
-
-    # Convert all image src to absolute URLs
-    for img in soup.find_all("img"):
-        if img.get("src"):
-            img["src"] = urljoin(SITE_URL, img["src"].replace("../", ""))
-
-    # Clean up unnecessary tags (e.g., <script>, <style>)
-    for tag in soup.find_all(["script", "style"]):
-        tag.decompose()
-
-    # Remove duplicate "here" links
-    for tag in soup.find_all("a", string="here"):
-        if tag.next_sibling and tag.next_sibling.name == "a":
-            tag.next_sibling.decompose()
-
-    return soup.prettify()
-
 def extract_metadata(file_path):
     """Extracts metadata like title, description, and full content from an HTML file."""
     with open(file_path, "r", encoding="utf-8") as file:
@@ -75,24 +45,13 @@ def extract_metadata(file_path):
         description_meta = soup.find("meta", attrs={"name": "description"})
         description = description_meta["content"] if description_meta else "Description not provided."
         
-        # Extract the full content (inside <div class='content'>)
-        content = ""
-        content_div = soup.find("div", class_="content")
-        if content_div:
-            # Remove unwanted tags like <style> or <script>
-            for tag in content_div.find_all(["style", "script"]):
-                tag.decompose()
-
-            # Serialize the content while keeping important tags
-            content = format_blog_content(content_div.decode_contents())
-
         # Extract the thumbnail URL (using Open Graph or first image in the post)
         thumbnail_url = None
         thumbnail_meta = soup.find("meta", property="og:image")
         if thumbnail_meta:
             thumbnail_url = thumbnail_meta["content"]
         else:
-            img_tag = content_div.find("img") if content_div else None
+            img_tag = soup.find("img")
             if img_tag and img_tag.get("src"):
                 img_src = img_tag["src"]
                 if img_src.startswith("/"):
@@ -104,40 +63,13 @@ def extract_metadata(file_path):
 
         print(f"Extracted title: {title}")
         print(f"Extracted description: {description}")
-        print(f"Extracted content preview: {content[:200]}...")  # Preview the first 200 characters
         print(f"Extracted thumbnail URL: {thumbnail_url}")
 
-        return escape_text(title), escape_text(description), content, thumbnail_url
-
-def format_blog_content(raw_content):
-    """
-    Formats blog content for RSS feed by sanitizing and fixing relative paths.
-    Ensures that HTML tags like <p>, <h1>, <h2> are preserved and URLs are absolute.
-    """
-    soup = BeautifulSoup(raw_content, 'html.parser')
-
-    # Convert all image src to absolute URLs
-    for img in soup.find_all("img"):
-        if img.get("src"):
-            img["src"] = urljoin(SITE_URL, img["src"].replace("../", ""))
-
-    # Clean up unnecessary tags (e.g., <script>, <style>)
-    for tag in soup.find_all(["script", "style"]):
-        tag.decompose()
-
-    # Remove duplicate "here" links
-    for tag in soup.find_all("a", string="here"):
-        if tag.next_sibling and tag.next_sibling.name == "a":
-            tag.next_sibling.decompose()
-
-    # Return prettified HTML for the content, ensuring that tags like <p>, <h1>, etc., remain intact
-    return soup.prettify()
-
-import html
+        return title, description, thumbnail_url
 
 def generate_rss():
-    """Generates an RSS feed with thumbnails and full content for new items only."""
-    rss = ET.Element("rss", version="2.0", attrib={"xmlns:content": "http://purl.org/rss/1.0/modules/content/", "xmlns:media": "http://search.yahoo.com/mrss/"})
+    """Generates an RSS feed with basic metadata for new items only."""
+    rss = ET.Element("rss", version="2.0", attrib={"xmlns:media": "http://search.yahoo.com/mrss/"})
     channel = ET.SubElement(rss, "channel")
 
     # Add basic channel info
@@ -169,16 +101,7 @@ def generate_rss():
                     if relative_path in processed_items:
                         continue
 
-                    title, description, content, thumbnail_url = extract_metadata(file_path)
-
-                    # Convert relative audio src to absolute URLs
-                    soup = BeautifulSoup(content, 'html.parser')
-                    for audio in soup.find_all("audio"):
-                        for source in audio.find_all("source"):
-                            if source.get("src"):
-                                source["src"] = urljoin(SITE_URL, source["src"].replace("../", ""))
-
-                    content = soup.prettify()  # Rebuild content with fixed URLs
+                    title, description, thumbnail_url = extract_metadata(file_path)
 
                     subdirectory = None
                     if "../port/" in file_path:
@@ -214,10 +137,6 @@ def generate_rss():
                     if thumbnail_url:
                         media_thumbnail = ET.SubElement(item, "{http://search.yahoo.com/mrss/}thumbnail")
                         media_thumbnail.set("url", encode_url(thumbnail_url))
-
-                    # Ensure content is wrapped in CDATA to preserve HTML formatting
-                    content_element = ET.SubElement(item, "{http://purl.org/rss/1.0/modules/content/}encoded")
-                    content_element.text = f"<![CDATA[{content}]]>"
 
                     new_items.add(relative_path)
 
