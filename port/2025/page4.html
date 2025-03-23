@@ -3,8 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Art Portfolio - 2025</title>
+    <meta name="description" content="Art for Arhkma">
+    <link rel="icon" href="../../favicons/favicon.ico" sizes="32x32" type="image/x-icon">
+    <link rel="icon" href="../../favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="../../favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="../../favicons/mstile-150x150.png" sizes="150x150" type="image/png">
+    <link rel="icon" href="../../favicons/android-chrome-192x192.png" sizes="192x192" type="image/png">
+    <link rel="icon" href="../../favicons/android-chrome-512x512.png" sizes="512x512" type="image/png">
+    <link rel="icon" href="../../favicons/apple-touch-icon.png" sizes="180x180" type="image/png">
+    <link rel="mask-icon" href="../../favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="browserconfig" href="../../favicons/browserconfig.xml" />
+    <link rel="manifest" href="../../favicons/site.webmanifest">
+    <title>Arhkma's Commission</title>
     <style>
+        /* Reset and Global Styles */
         * {
             margin: 0;
             padding: 0;
@@ -15,8 +27,8 @@
             width: 100%;
             height: 100%;
             font-family: Arial, sans-serif;
-            background-color: #2E1C47; /* Dark purple for background */
-            color: #D6C6E0; /* Light off-white for text */
+            background-color: #2E1C47;
+            color: #D6C6E0;
             overflow: auto;
         }
 
@@ -33,15 +45,13 @@
 
         .content {
             flex: 1;
-            padding: 40px 20px;
+            padding: 20px;
             color: #D6C6E0;
             background-color: #2E1C47;
-        }
-
-        .text-center {
             text-align: center;
-            margin: 20px auto;
-            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         h1 {
@@ -50,49 +60,17 @@
             color: #8E4D92;
         }
 
-        .thumbnail-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center; /* Centers the thumbnails horizontally */
-            margin: 0 auto; /* Centers the container itself */
-        }
-
-        .thumbnail {
-            width: 200px;
-            height: 200px;
-            background-color: #3F2457;
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            border: 2px solid #8E4D92;
-        }
-
-        .thumbnail img {
+        img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 10px;
+            height: auto;
+            max-width: 800px;
+            margin-bottom: 20px;
         }
 
-        .thumbnail-text {
-    position: absolute;
-    bottom: 0; /* Aligns text to the bottom of the thumbnail */
-    left: 0;
-    width: 100%; /* Ensures the text spans the full width of the thumbnail */
-    color: #D6C6E0;
-    font-size: 18px;
-    font-weight: bold;
-    background-color: rgba(0, 0, 0, 0.6); /* Adds a semi-transparent background */
-    padding: 10px; /* Adds padding around the text */
-    text-align: center; /* Centers the text horizontally */
-    border-radius: 0 0 10px 10px; /* Matches thumbnail's bottom border radius */
-}
-
-
-        .back-button-container {
+        .button-wrapper {
+            width: 100%;
             text-align: center;
-            margin-top: 20px;
+            margin-top: 10px;
         }
 
         .back-button {
@@ -155,6 +133,18 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
 
+        @media (min-width: 1920px) and (max-width: 2559px) {
+            img {
+                max-width: 900px;
+            }
+        }
+
+        @media (min-width: 2560px) {
+            img {
+                max-width: 1000px;
+            }
+        }
+
         @media (max-width: 1080px) {
             .container {
                 flex-direction: column;
@@ -168,11 +158,8 @@
 
             .content {
                 width: 100%;
-                padding: 20px;
-            }
-
-            .thumbnail-container {
-                justify-content: center;
+                padding: 15px;
+                flex-direction: column;
             }
         }
     </style>
@@ -180,34 +167,10 @@
 <body>
     <div class="container">
         <div class="content">
-            <div class="text-center">
-                <h1>2025</h1>
-            </div>
-            <div class="thumbnail-container">
-                <a href="page1.html" class="thumbnail">
-                    <img src="../../pics/port/thumbnail/2025/banner.jpg" alt="Banner art">
-                    <div class="thumbnail-text">New banner art</div>
-                </a>
-                
-                <a href="page2.html" class="thumbnail">
-                    <img src="../../pics/port/thumbnail/2025/ff11.jpg" alt="Banner art">
-                    <div class="thumbnail-text">Thumbnail for new video</div>
-                </a>
-				
-				<a href="page3.html" class="thumbnail">
-                    <img src="../../pics/port/thumbnail/2025/daetea.jpg" alt="Banner art">
-                    <div class="thumbnail-text">Art foe Daetea</div>
-                </a>
-
-                <a href="page4.html" class="thumbnail">
-                    <img src="../../pics/port/thumbnail/2025/arhkma.jpg" alt="Banner art">
-                    <div class="thumbnail-text">Art for Arhkma</div>
-                </a>
-
-            </div>
-            <div class="back-button-container">
-                <a href="../porthome.html" class="back-button">Back</a>
-            </div>
+            <h1>Art for Daetea</h1>
+            <img src="../../pics/port/2025/arhkma1.png" alt="First image" />
+            <img src="../../pics/port/2025/arhkma2.png" alt="Second Image" />
+            <a href="../2025/2025port.html" class="back-button">Back</a> <!-- Button link -->
         </div>
         <div class="sidebar">
             <ul>
